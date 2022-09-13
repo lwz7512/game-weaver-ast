@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../css/site.css" rel="stylesheet" />
+<link href="../css/prism-tomorrow.css" rel="stylesheet" />
+<title>basics/08 sprite rotation &ndash; Phaser CE Examples</title>
+<div id="phaser-example"></div>
+<div class="controls">
+  <button id="fullscreen">Full Screen</button> <button id="restart">Restart</button> <label for="scaleMode">scale:</label> <select id="scaleMode">
+    <option value="0">
+      Exact Fit
+    </option>
+    <option selected value="1">
+      No Scale
+    </option>
+    <option value="2">
+      Show All
+    </option>
+    <option value="3">
+      Resize
+    </option>
+    <option value="4">
+      User Scale
+    </option>
+  </select> <label for="userScale">user scale:</label><select id="userScale">
+    <option>
+      0.25
+    </option>
+    <option>
+      0.5
+    </option>
+    <option>
+      0.75
+    </option>
+    <option selected>
+      1
+    </option>
+    <option>
+      2
+    </option>
+  </select> <label for="rendering">rendering:</label> <select id="rendering">
+    <option>
+      auto
+    </option>
+    <option>
+      crisp-edges
+    </option>
+    <option>
+      pixelated
+    </option>
+  </select> <label title="Enlarge the game container (on larger displays)"><input id="bigger" type="checkbox">Bigger</label>
+</div>
+<h1>
+  basics/08 sprite rotation
+</h1>
+<div class="sourcelinks">
+  <a href="../js/node_modules/phaser-examples/examples/basics/08%20sprite%20rotation.js" title="basics/08 sprite rotation.js">source</a> — <a href="../js/node_modules/phaser-examples/examples/basics/08%20sprite%20rotation.js" download="" title="Download: basics/08 sprite rotation.js" type="application/javascript">download</a>
+</div>
+<pre class="highlight"> <code class="language-javascript">var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+function preload() {
+
+    game.load.image('arrow', 'assets/sprites/longarrow-white.png');
+
+}
+
+var arrow;
+
+function create() {
+
+    //  The code isn't too important for this example
+    //  What we're showing here is the angles, in degrees and radians,
+    //  that a Phaser sprite uses when rotating.
+    //  
+    //  You can rotate a sprite by setting either property.
+    //  
+    //  `angle` is in degrees, from -180 to 180.
+    //  `rotation` is in radians, from -PI to PI
+    //  
+    //  For example:
+    //  
+    //  sprite.angle = 45
+    //  
+    //  is the same as:
+    //  
+    //  sprite.rotation = 0.785
+
+    game.stage.backgroundColor = '#000000';
+
+    var labelStyle = { font: "16px courier", fill: "#00ff00", align: "center" };
+
+    //  Create a large circle, then draw the angles on it
+
+    var circle = new Phaser.Circle(400, 300, 450);
+    var labelCircle = new Phaser.Circle(400, 300, 530);
+
+    var graphics = game.add.graphics(0, 0);
+
+    graphics.lineStyle(2, 0x00ff00, 1);
+
+    graphics.drawCircle(circle.x, circle.y, circle.diameter);
+
+    for (var a = 0; a < 360; a += 22.5)
+    {
+        graphics.moveTo(400, 300);
+
+        var p = circle.circumferencePoint(a, true);
+
+        graphics.lineTo(p.x, p.y);
+
+        var lp = labelCircle.circumferencePoint(a, true);
+
+        var na = a;
+
+        if (a > 180)
+        {
+            na -= 360;
+        }
+
+        var rads = String(Phaser.Math.degToRad(na)).substr(0, 5);
+        var info = na + "°\n" + rads;
+
+        var label = game.add.text(lp.x, lp.y, info, labelStyle);
+        label.centerX = lp.x;
+        label.centerY = lp.y;
+    }
+
+    arrow = game.add.sprite(game.world.centerX, game.world.centerY, 'arrow');
+    arrow.anchor.set(0, 0.5);
+    arrow.tint = 0xff0000;
+
+}
+
+function update() {
+
+    arrow.angle += 0.2;
+
+}
+
+function render() {
+
+    game.debug.text('Sprite Rotation', 24, 32);
+    game.debug.text('Angle: ' + arrow.angle.toFixed(2), 24, 64);
+    game.debug.text('Rotation: ' + arrow.rotation.toFixed(2), 24, 96);
+
+}</code></pre>
+<meta content="../" name="loadPath">
+<footer class="footer">
+  <p><a href="https://github.com/samme/phaser-examples-mirror">phaser-examples-mirror</a> is made from <a href="https://github.com/photonstorm/phaser-examples">photonstorm/phaser-examples</a> (<a href="http://opensource.org/licenses/MIT">MIT License</a>).</p>
+  
+  <p>The media files are included without license. Don't use them in commercial games.</p>
+  
+</footer>
+<script>
+  this.loadPath = "../";
+</script>
+<script src="../js/node_modules/phaser-ce/build/phaser.js" defer="defer"></script><script src="../js/node_modules/phaser-examples/examples/basics/08%20sprite%20rotation.js" defer="defer"></script><script src="../js/node_modules/prismjs/prism.js" defer="defer"></script><script src="../js/example.js" defer="defer"></script>

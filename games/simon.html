@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../css/site.css" rel="stylesheet" />
+<link href="../css/prism-tomorrow.css" rel="stylesheet" />
+<title>games/simon &ndash; Phaser CE Examples</title>
+<div id="phaser-example"></div>
+<div class="controls">
+  <button id="fullscreen">Full Screen</button> <button id="restart">Restart</button> <label for="scaleMode">scale:</label> <select id="scaleMode">
+    <option value="0">
+      Exact Fit
+    </option>
+    <option selected value="1">
+      No Scale
+    </option>
+    <option value="2">
+      Show All
+    </option>
+    <option value="3">
+      Resize
+    </option>
+    <option value="4">
+      User Scale
+    </option>
+  </select> <label for="userScale">user scale:</label><select id="userScale">
+    <option>
+      0.25
+    </option>
+    <option>
+      0.5
+    </option>
+    <option>
+      0.75
+    </option>
+    <option selected>
+      1
+    </option>
+    <option>
+      2
+    </option>
+  </select> <label for="rendering">rendering:</label> <select id="rendering">
+    <option>
+      auto
+    </option>
+    <option>
+      crisp-edges
+    </option>
+    <option>
+      pixelated
+    </option>
+  </select> <label title="Enlarge the game container (on larger displays)"><input id="bigger" type="checkbox">Bigger</label>
+</div>
+<h1>
+  games/simon
+</h1>
+<div class="sourcelinks">
+  <a href="../js/node_modules/phaser-examples/examples/games/simon.js" title="games/simon.js">source</a> — <a href="../js/node_modules/phaser-examples/examples/games/simon.js" download="" title="Download: games/simon.js" type="application/javascript">download</a>
+</div>
+<pre class="highlight"> <code class="language-javascript">// mods by Patrick OReilly
+// Twitter: @pato_reilly Web: http://patricko.byethost9.com
+
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+function preload() {
+
+    game.load.spritesheet('item', 'assets/buttons/number-buttons.png', 160, 160);
+}
+
+var simon;
+var N = 1;
+var userCount = 0;
+var currentCount = 0;
+var sequenceCount = 16;
+var sequenceList = [];
+var simonSez = false;
+var timeCheck;
+var litSquare;
+var winner;
+var loser;
+var intro;
+
+function create() {
+
+    simon = game.add.group();
+    var item;
+
+    for (var i = 0; i < 3; i++)
+    {
+        item = simon.create(150 + 168 * i, 150, 'item', i);
+        // Enable input.
+        item.inputEnabled = true;
+        item.input.start(0, true);
+        item.events.onInputDown.add(select);
+        item.events.onInputUp.add(release);
+        item.events.onInputOut.add(moveOff);
+        simon.getAt(i).alpha = 0;
+    }
+
+    for (var i = 0; i < 3; i++)
+    {
+        item = simon.create(150 + 168 * i, 318, 'item', i + 3);
+        // Enable input.
+        item.inputEnabled = true;
+        item.input.start(0, true);
+        item.events.onInputDown.add(select);
+        item.events.onInputUp.add(release);
+        item.events.onInputOut.add(moveOff);
+        simon.getAt(i + 3).alpha = 0;
+    }
+
+    introTween();
+    setUp();
+    setTimeout(function(){simonSequence(); intro = false;}, 6000);
+
+}
+
+function restart() {
+
+    N = 1;
+    userCount = 0;
+    currentCount = 0;
+    sequenceList = [];
+    winner = false;
+    loser = false;
+    introTween();
+    setUp();
+    setTimeout(function(){simonSequence(); intro=false;}, 6000);
+
+}
+
+function introTween() {
+
+    intro = true;
+
+    for (var i = 0; i < 6; i++)
+    {
+        var flashing = game.add.tween(simon.getAt(i)).to( { alpha: 1 }, 500, Phaser.Easing.Linear.None, true, 0, 4, true);
+        var final = game.add.tween(simon.getAt(i)).to( { alpha: .25 }, 500, Phaser.Easing.Linear.None, true);
+
+        flashing.chain(final);
+        flashing.start();
+    }
+
+}
+
+function update() {
+
+    if (simonSez)
+    {
+        if (game.time.now - timeCheck >700-N*40)
+        {
+            simon.getAt(litSquare).alpha = .25;
+            game.paused = true;
+
+            setTimeout(function()
+            {
+                if ( currentCount< N)
+                {
+                    game.paused = false;
+                    simonSequence();
+                }
+                else
+                {
+                    simonSez = false;
+                    game.paused = false;
+                }
+            }, 400 - N * 20);
+        }
+    }
+}
+
+function playerSequence(selected) {
+
+    correctSquare = sequenceList[userCount];
+    userCount++;
+    thisSquare = simon.getIndex(selected);
+
+    if (thisSquare == correctSquare)
+    {
+        if (userCount == N)
+        {
+            if (N == sequenceCount)
+            {
+                winner = true;
+                setTimeout(function(){restart();}, 3000);
+            }
+            else
+            {
+                userCount = 0;
+                currentCount = 0;
+                N++;
+                simonSez = true;
+            }
+        }
+    }
+    else
+    {
+        loser = true;
+        setTimeout(function(){restart();}, 3000);
+    }
+
+}
+
+function simonSequence () {
+
+    simonSez = true;
+    litSquare = sequenceList[currentCount];
+    simon.getAt(litSquare).alpha = 1;
+    timeCheck = game.time.now;
+    currentCount++;
+
+}
+
+function setUp() {
+
+    for (var i = 0; i < sequenceCount; i++)
+    {
+        thisSquare = game.rnd.integerInRange(0,5);
+        sequenceList.push(thisSquare);
+    }
+
+}
+
+function select(item, pointer) {
+
+    if (!simonSez && !intro && !loser && !winner)
+    {
+        item.alpha = 1;
+    }
+
+}
+
+function release(item, pointer) {
+
+    if (!simonSez && !intro && !loser && !winner)
+    {
+        item.alpha = .25;
+        playerSequence(item);
+    }
+}
+
+function moveOff(item, pointer) {
+
+    if (!simonSez && !intro && !loser && !winner)
+    {
+        item.alpha = .25;
+    }
+
+}
+
+function render() {
+
+    if (!intro)
+    {
+        if (simonSez)
+        {
+            game.debug.text('Simon Sez', 360, 96, 'rgb(255,0,0)');
+        }
+        else
+        {
+            game.debug.text('Your Turn', 360, 96, 'rgb(0,255,0)');
+        }
+    }
+    else
+    {
+        game.debug.text('Get Ready', 360, 96, 'rgb(0,0,255)');
+    }
+
+    if (winner)
+    {
+        game.debug.text('You Win!', 360, 32, 'rgb(0,0,255)');
+    }
+    else if (loser)
+    {
+        game.debug.text('You Lose!', 360, 32, 'rgb(0,0,255)');
+    }
+
+}
+</code></pre>
+<meta content="../" name="loadPath">
+<footer class="footer">
+  <p><a href="https://github.com/samme/phaser-examples-mirror">phaser-examples-mirror</a> is made from <a href="https://github.com/photonstorm/phaser-examples">photonstorm/phaser-examples</a> (<a href="http://opensource.org/licenses/MIT">MIT License</a>).</p>
+  
+  <p>The media files are included without license. Don't use them in commercial games.</p>
+  
+</footer>
+<script>
+  this.loadPath = "../";
+</script>
+<script src="../js/node_modules/phaser-ce/build/phaser.js" defer="defer"></script><script src="../js/node_modules/phaser-examples/examples/games/simon.js" defer="defer"></script><script src="../js/node_modules/prismjs/prism.js" defer="defer"></script><script src="../js/example.js" defer="defer"></script>

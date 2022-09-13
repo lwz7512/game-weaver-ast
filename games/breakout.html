@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../css/site.css" rel="stylesheet" />
+<link href="../css/prism-tomorrow.css" rel="stylesheet" />
+<title>games/breakout &ndash; Phaser CE Examples</title>
+<div id="phaser-example"></div>
+<div class="controls">
+  <button id="fullscreen">Full Screen</button> <button id="restart">Restart</button> <label for="scaleMode">scale:</label> <select id="scaleMode">
+    <option value="0">
+      Exact Fit
+    </option>
+    <option selected value="1">
+      No Scale
+    </option>
+    <option value="2">
+      Show All
+    </option>
+    <option value="3">
+      Resize
+    </option>
+    <option value="4">
+      User Scale
+    </option>
+  </select> <label for="userScale">user scale:</label><select id="userScale">
+    <option>
+      0.25
+    </option>
+    <option>
+      0.5
+    </option>
+    <option>
+      0.75
+    </option>
+    <option selected>
+      1
+    </option>
+    <option>
+      2
+    </option>
+  </select> <label for="rendering">rendering:</label> <select id="rendering">
+    <option>
+      auto
+    </option>
+    <option>
+      crisp-edges
+    </option>
+    <option>
+      pixelated
+    </option>
+  </select> <label title="Enlarge the game container (on larger displays)"><input id="bigger" type="checkbox">Bigger</label>
+</div>
+<h1>
+  games/breakout
+</h1>
+<div class="sourcelinks">
+  <a href="../js/node_modules/phaser-examples/examples/games/breakout.js" title="games/breakout.js">source</a> — <a href="../js/node_modules/phaser-examples/examples/games/breakout.js" download="" title="Download: games/breakout.js" type="application/javascript">download</a>
+</div>
+<pre class="highlight"> <code class="language-javascript">
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+
+function preload() {
+
+    game.load.atlas('breakout', 'assets/games/breakout/breakout.png', 'assets/games/breakout/breakout.json');
+    game.load.image('starfield', 'assets/misc/starfield.jpg');
+
+}
+
+var ball;
+var paddle;
+var bricks;
+
+var ballOnPaddle = true;
+
+var lives = 3;
+var score = 0;
+
+var scoreText;
+var livesText;
+var introText;
+
+var s;
+
+function create() {
+
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //  We check bounds collisions against all walls other than the bottom one
+    game.physics.arcade.checkCollision.down = false;
+
+    s = game.add.tileSprite(0, 0, 800, 600, 'starfield');
+
+    bricks = game.add.group();
+    bricks.enableBody = true;
+    bricks.physicsBodyType = Phaser.Physics.ARCADE;
+
+    var brick;
+
+    for (var y = 0; y < 4; y++)
+    {
+        for (var x = 0; x < 15; x++)
+        {
+            brick = bricks.create(120 + (x * 36), 100 + (y * 52), 'breakout', 'brick_' + (y+1) + '_1.png');
+            brick.body.bounce.set(1);
+            brick.body.immovable = true;
+        }
+    }
+
+    paddle = game.add.sprite(game.world.centerX, 500, 'breakout', 'paddle_big.png');
+    paddle.anchor.setTo(0.5, 0.5);
+
+    game.physics.enable(paddle, Phaser.Physics.ARCADE);
+
+    paddle.body.collideWorldBounds = true;
+    paddle.body.bounce.set(1);
+    paddle.body.immovable = true;
+
+    ball = game.add.sprite(game.world.centerX, paddle.y - 16, 'breakout', 'ball_1.png');
+    ball.anchor.set(0.5);
+    ball.checkWorldBounds = true;
+
+    game.physics.enable(ball, Phaser.Physics.ARCADE);
+
+    ball.body.collideWorldBounds = true;
+    ball.body.bounce.set(1);
+
+    ball.animations.add('spin', [ 'ball_1.png', 'ball_2.png', 'ball_3.png', 'ball_4.png', 'ball_5.png' ], 50, true, false);
+
+    ball.events.onOutOfBounds.add(ballLost, this);
+
+    scoreText = game.add.text(32, 550, 'score: 0', { font: "20px Arial", fill: "#ffffff", align: "left" });
+    livesText = game.add.text(680, 550, 'lives: 3', { font: "20px Arial", fill: "#ffffff", align: "left" });
+    introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#ffffff", align: "center" });
+    introText.anchor.setTo(0.5, 0.5);
+
+    game.input.onDown.add(releaseBall, this);
+
+}
+
+function update () {
+
+    //  Fun, but a little sea-sick inducing :) Uncomment if you like!
+    // s.tilePosition.x += (game.input.speed.x / 2);
+
+    paddle.x = game.input.x;
+
+    if (paddle.x < 24)
+    {
+        paddle.x = 24;
+    }
+    else if (paddle.x > game.width - 24)
+    {
+        paddle.x = game.width - 24;
+    }
+
+    if (ballOnPaddle)
+    {
+        ball.body.x = paddle.x;
+    }
+    else
+    {
+        game.physics.arcade.collide(ball, paddle, ballHitPaddle, null, this);
+        game.physics.arcade.collide(ball, bricks, ballHitBrick, null, this);
+    }
+
+}
+
+function releaseBall () {
+
+    if (ballOnPaddle)
+    {
+        ballOnPaddle = false;
+        ball.body.velocity.y = -300;
+        ball.body.velocity.x = -75;
+        ball.animations.play('spin');
+        introText.visible = false;
+    }
+
+}
+
+function ballLost () {
+
+    lives--;
+    livesText.text = 'lives: ' + lives;
+
+    if (lives === 0)
+    {
+        gameOver();
+    }
+    else
+    {
+        ballOnPaddle = true;
+
+        ball.reset(paddle.body.x + 16, paddle.y - 16);
+        
+        ball.animations.stop();
+    }
+
+}
+
+function gameOver () {
+
+    ball.body.velocity.setTo(0, 0);
+    
+    introText.text = 'Game Over!';
+    introText.visible = true;
+
+}
+
+function ballHitBrick (_ball, _brick) {
+
+    _brick.kill();
+
+    score += 10;
+
+    scoreText.text = 'score: ' + score;
+
+    //  Are they any bricks left?
+    if (bricks.countLiving() == 0)
+    {
+        //  New level starts
+        score += 1000;
+        scoreText.text = 'score: ' + score;
+        introText.text = '- Next Level -';
+
+        //  Let's move the ball back to the paddle
+        ballOnPaddle = true;
+        ball.body.velocity.set(0);
+        ball.x = paddle.x + 16;
+        ball.y = paddle.y - 16;
+        ball.animations.stop();
+
+        //  And bring the bricks back from the dead :)
+        bricks.callAll('revive');
+    }
+
+}
+
+function ballHitPaddle (_ball, _paddle) {
+
+    var diff = 0;
+
+    if (_ball.x < _paddle.x)
+    {
+        //  Ball is on the left-hand side of the paddle
+        diff = _paddle.x - _ball.x;
+        _ball.body.velocity.x = (-10 * diff);
+    }
+    else if (_ball.x > _paddle.x)
+    {
+        //  Ball is on the right-hand side of the paddle
+        diff = _ball.x -_paddle.x;
+        _ball.body.velocity.x = (10 * diff);
+    }
+    else
+    {
+        //  Ball is perfectly in the middle
+        //  Add a little random X to stop it bouncing straight up!
+        _ball.body.velocity.x = 2 + Math.random() * 8;
+    }
+
+}
+</code></pre>
+<meta content="../" name="loadPath">
+<footer class="footer">
+  <p><a href="https://github.com/samme/phaser-examples-mirror">phaser-examples-mirror</a> is made from <a href="https://github.com/photonstorm/phaser-examples">photonstorm/phaser-examples</a> (<a href="http://opensource.org/licenses/MIT">MIT License</a>).</p>
+  
+  <p>The media files are included without license. Don't use them in commercial games.</p>
+  
+</footer>
+<script>
+  this.loadPath = "../";
+</script>
+<script src="../js/node_modules/phaser-ce/build/phaser.js" defer="defer"></script><script src="../js/node_modules/phaser-examples/examples/games/breakout.js" defer="defer"></script><script src="../js/node_modules/prismjs/prism.js" defer="defer"></script><script src="../js/example.js" defer="defer"></script>
