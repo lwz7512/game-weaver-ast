@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello PhaserCE</title>
+        <link rel="shortcut icon" href="./assets/24x24.png" type="image/png" />
+    </head>
+    <script src="//cdn.jsdelivr.net/npm/phaser-ce@2.19.2/build/phaser.min.js"></script>
+    <body style="margin: 0;">
+        <div id="phaser-example"></div>
+        <script type="text/javascript">
+            window.onload = function() {
+                const mainScript = document.createElement('script');
+                const v = Math.random()
+                mainScript.type = 'module';
+                mainScript.src = `./main.js?v=${v}`; // need parameter to invalidate the cache
+                document.head.appendChild(mainScript);
+            };
+        </script>
+    </body>
+</html>

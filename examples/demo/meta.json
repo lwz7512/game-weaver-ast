@@ -1,0 +1,6 @@
+{
+  "name": "Your first game",
+  "icon": "assets/24x24.png",
+  "description": "Default game to download and run first under user workspace",
+  "note": "Dont modify me manually after downloaded in workspace."
+}
