@@ -9,6 +9,7 @@
   <body style="margin: 0">
     <div id="phaser-example"></div>
     <script type="text/javascript">
+      // load game script
       window.onload = function () {
         const mainScript = document.createElement('script')
         const v = Math.random()
@@ -21,6 +22,12 @@
         bridgeScript.type = 'module'
         bridgeScript.src = `./assets/bridge.js?r=${r}`
         document.head.appendChild(bridgeScript)
+      }
+      // set game flags
+      window.PhaserGlobal = {
+        disableAudio: true,
+        hideBanner: true,
+        stopFocus: true,
       }
     </script>
   </body>
