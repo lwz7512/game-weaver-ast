@@ -1,41 +1,41 @@
 [
   {
-    "name": "building_spritesheet.png",
+    "path": "tiles/building_spritesheet.png",
     "tileSize": 70,
     "space": 0
   },
   {
-    "name": "kenney_redux_64x64.png",
+    "path": "tiles/kenney_redux_64x64.png",
     "tileSize": 64,
     "space": 0
   },
   {
-    "name": "platformPack_tilesheet.png",
+    "path": "tiles/platformPack_tilesheet.png",
     "tileSize": 64,
     "space": 0
   },
   {
-    "name": "spritesheet_underground.png",
+    "path": "tiles/spritesheet_underground.png",
     "tileSize": 128,
     "space": 0
   },
   {
-    "name": "terrainTiles_default.png",
+    "path": "tiles/terrainTiles_default.png",
     "tileSize": 64,
     "space": 0
   },
   {
-    "name": "tilesheet_complete_32.png",
+    "path": "tiles/tilesheet_complete_32.png",
     "tileSize": 32,
     "space": 0
   },
   {
-    "name": "tilesheet_complete_64.png",
+    "path": "tiles/tilesheet_complete_64.png",
     "tileSize": 64,
     "space": 0
   },
   {
-    "name": "yellow_spritesheet_512.png",
+    "path": "tiles/yellow_spritesheet_512.png",
     "tileSize": 64,
     "space": 0
   }
