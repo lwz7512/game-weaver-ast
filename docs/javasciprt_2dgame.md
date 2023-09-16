@@ -60,5 +60,5 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 - [Teach Yourself Computer Science](https://teachyourselfcs.com/)
 - [BABYLON.JS](https://www.babylonjs.com/)
 - [WarriorJS, An exciting game of programming and Artificial Intelligence](https://github.com/olistic/warriorjs)
-- [...]()
+- [Books For Game Developers](https://mrelusive.com/books/books.html)
 - [...]()

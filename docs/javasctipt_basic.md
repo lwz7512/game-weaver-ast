@@ -31,7 +31,7 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 ### Javascript Overview
 
 - [MDN Javascript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour](https://www.youtube.com/watch?v=W6NZfCO5SIk)
+- [JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour(youtube video)](https://www.youtube.com/watch?v=W6NZfCO5SIk)
 - [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 - [...]()
 
@@ -50,7 +50,7 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 
 ### Javascript hands-on Projects
 
-- [10 HTML CSS JavaScript projects (HTML5, CSS3, vanilla JavaScript) [2023]](https://youtu.be/g6v_vbqKYeU)([website](https://www.100jsprojects.com/))
+- [10 HTML CSS JavaScript projects (HTML5, CSS3, vanilla JavaScript) [2023](youtube video)](https://youtu.be/g6v_vbqKYeU)([website](https://www.100jsprojects.com/))
 - [40 JavaScript Projects for Beginners – Easy Ideas to Get Started Coding JS](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)
 
 
@@ -67,3 +67,4 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 
 - [Teach Yourself Computer Science](https://teachyourselfcs.com/)
 - [Full Stack JavaScript](https://www.theodinproject.com/paths/full-stack-javascript?)
+- More to come...
