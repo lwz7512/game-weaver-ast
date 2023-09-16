@@ -7,18 +7,25 @@ As a lightweight programming language towards interactions in web browser initia
 
 ```
 - Javascrit Basics 
-  |- one branch
-     | - one sub branch
-     | - one sub branch
-     | - one sub branch
-  |- two branch
-     | - one sub branch
-     | - one sub branch
-     | - one sub branch
-  |- three branch
-     | - one sub branch
-     | - one sub branch
-     | - one sub branch
+  |- Prototype-based programming
+  |  | - First-class Function
+  |  | - single-threaded
+  |  | - Dynamic typing
+  |- JavaScript building blocks
+  |  | - conditionals statements
+  |  | - Looping code
+  |  | - Functions
+  |  | - Events
+  |- JavaScript objects
+  |  | - Object basics
+  |  | - Object prototypes
+  |  | - Object-oriented programming
+  |  | - Classes in JavaScript
+  |- Asynchronous JavaScript
+  |  | - Synchronous programming
+  |  | - Event handlers
+  |  | - Callbacks
+  |  | - Promises
 ```
 
 
