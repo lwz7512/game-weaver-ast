@@ -37,7 +37,7 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 - [2D breakout game using pure JavaScript](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)
 - [2D breakout game using Phaser](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_breakout_game_Phaser)
 - [Game development at MDN](https://developer.mozilla.org/en-US/docs/Games)
-- (Make Flappy Bird in HTML5 and JavaScript with Phaser)(https://www.lessmilk.com/phaser-game-tutorial/)
+- [Make Flappy Bird in HTML5 and JavaScript with Phaser](https://www.lessmilk.com/phaser-game-tutorial/)
 - ...
 
 ## Learning methods and mindset

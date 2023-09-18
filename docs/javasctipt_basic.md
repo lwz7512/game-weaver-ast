@@ -50,6 +50,8 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 
 ### Javascript Tutorials
 
+- [JavaScript — Dynamic client-side scripting](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)(, for complete beginners).
+- [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)(, for those with previous programming experience).
 - [W3 Schools](https://www.w3schools.com/js/)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
 - [Learn JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
