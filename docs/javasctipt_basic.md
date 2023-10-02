@@ -65,7 +65,7 @@ Overview ~=> Concetps ~=> Tutorials ~=> Projects
 
 ## Online Learning Resources
 
-[30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript)
+- [30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript)
 
 
 ## Learning methods and mindset
