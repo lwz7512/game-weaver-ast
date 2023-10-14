@@ -32,7 +32,7 @@ As a lightweight programming language towards interactions in web browser initia
 ## Learning path
 
 ```
-Overview ~=> Concetps ~=> Tutorials ~=> Projects
+Overview ~=> Concepts ~=> Tutorials ~=> Projects
 ```
 
 ### Javascript Overview
