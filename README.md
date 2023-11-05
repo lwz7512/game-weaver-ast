@@ -8,3 +8,4 @@ Created @2022/08/29
 - add global flags `PhaserGlobal` @2022/10/06
 - add 3 learning docs @2023/09/10
 - completed draft content of 3 learning docs @2023/09/10
+- add `data/challenges.json` @2023/10/18
