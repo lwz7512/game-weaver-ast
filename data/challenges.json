@@ -24,9 +24,9 @@
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
       }
     ],
-    "startCode": "",
-    "testCode": "",
-    "finalCode": ""
+    "startCode": "challenges/c1_start.txt",
+    "testCode": "challenges/c1_test.txt",
+    "finalCode": "challenges/c1_final.txt"
   },
   {
     "id": 2,
