@@ -1,16 +1,1 @@
 // NOTE: challenge code 1:
-
-const canvasWidth = 440;
-const conavasHeight = 378;
-
-const canvas = document.getElementById("codePresenter");
-const ctx = canvas.getContext("2d");
-
-ctx.fillStyle = "yellow";
-ctx.strokeStyle = "red";
-ctx.lineWidth = 4;
-
-ctx.beginPath();
-ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-ctx.stroke();
-ctx.fill();
