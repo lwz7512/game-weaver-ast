@@ -24,6 +24,7 @@
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
       }
     ],
+    "baseCode": "challenges/c1_base.txt",
     "startCode": "challenges/c1_start.txt",
     "testCode": "challenges/c1_test.txt",
     "finalCode": "challenges/c1_final.txt"
@@ -49,6 +50,7 @@
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/startCode/Global_Objects/Array"
       }
     ],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -63,6 +65,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -77,6 +80,7 @@
     "level": 2,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -91,6 +95,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -105,6 +110,7 @@
     "level": 2,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -119,6 +125,7 @@
     "level": 3,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -133,6 +140,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -147,6 +155,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -161,6 +170,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -173,9 +183,10 @@
     "keywords": ["undefined"],
     "keypoints": [],
     "level": 3,
-    "videoURL": "",
+    "videoURL": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Adding_bouncing_balls_features",
     "prerequsite": [],
-    "startCode": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Adding_bouncing_balls_features",
+    "baseCode": "",
+    "startCode": "",
     "testCode": "",
     "finalCode": "https://github.com/mdn/learning-area/blob/main/javascript/oojs/bouncing-balls/main-finished.js"
   },
@@ -189,6 +200,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -203,6 +215,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -217,6 +230,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -231,6 +245,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -245,6 +260,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -259,6 +275,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -273,6 +290,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -287,6 +305,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -301,6 +320,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -315,6 +335,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -329,6 +350,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -340,10 +362,11 @@
     "objective": "",
     "keywords": ["undefined"],
     "keypoints": [],
-    "prerequsite": [],
-    "startCode": "",
-    "videoURL": "",
     "level": 1,
+    "videoURL": "",
+    "prerequsite": [],
+    "baseCode": "",
+    "startCode": "",
     "testCode": "",
     "finalCode": ""
   },
@@ -357,6 +380,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -371,6 +395,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -385,6 +410,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -399,6 +425,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -413,6 +440,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -427,6 +455,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -441,6 +470,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -455,6 +485,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -469,6 +500,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -483,6 +515,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -497,6 +530,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -511,6 +545,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -525,6 +560,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
@@ -539,6 +575,7 @@
     "level": 1,
     "videoURL": "",
     "prerequsite": [],
+    "baseCode": "",
     "startCode": "",
     "testCode": "",
     "finalCode": ""
