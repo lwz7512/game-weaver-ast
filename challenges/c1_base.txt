@@ -1,18 +1,2 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
-const canvasWidth = 440;
-const conavasHeight = 378;
-
-const canvas = document.getElementById("codePresenter");
-const ctx = canvas.getContext("2d");
-
-ctx.fillStyle = "yellow";
-ctx.strokeStyle = "red";
-ctx.lineWidth = 4;
-
-function drawCircle(startX, startY, radius) {
-  ctx.beginPath();
-  ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-  ctx.stroke();
-  ctx.fill();
-}
