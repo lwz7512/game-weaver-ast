@@ -1,32 +1,40 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
-var canvasWidth = 440;
-var conavasHeight = 378;
+const drawer = (function() {
 
-var canvas = document.getElementById("codePresenter");
-var ctx = canvas.getContext("2d");
+  var canvasWidth = 440;
+  var conavasHeight = 378;
 
-ctx.fillStyle = "yellow";
-ctx.strokeStyle = "red";
-ctx.lineWidth = 4;
+  var canvas = document.getElementById("codePresenter");
+  var ctx = canvas.getContext("2d");
 
-function clearCanvas() {
-  ctx.clearRect(0, 0, 450, 450);
-} 
+  ctx.fillStyle = "yellow";
+  ctx.strokeStyle = "red";
+  ctx.lineWidth = 4;
 
-function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
-  if (fillStyle) {
-    ctx.fillStyle = fillStyle;
+  function clearCanvas() {
+    ctx.clearRect(0, 0, 450, 450);
+  } 
+
+  function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
+    if (fillStyle) {
+      ctx.fillStyle = fillStyle;
+    }
+    if (strokeStyle) {
+      ctx.strokeStyle = strokeStyle;
+    }
+
+    ctx.beginPath();
+    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
   }
-  if (strokeStyle) {
-    ctx.strokeStyle = strokeStyle;
+
+  clearCanvas();
+
+  return {
+    drawCircle
   }
 
-  ctx.beginPath();
-  ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-  ctx.stroke();
-  ctx.fill();
-}
-
-clearCanvas();
+})()
