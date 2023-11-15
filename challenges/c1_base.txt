@@ -1,7 +1,7 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
-const drawer = (function() {
+const { drawCircle } = (function() {
 
   var canvasWidth = 440;
   var conavasHeight = 378;
