@@ -1,15 +1,18 @@
 // global function declarations
 
-
-/**
-* Draw a cirle by assign position, size and styles. 
-* Origin(0,0) of coordinate system is in top left.
-* 
-* @param startX - circle center point horizontal coordinate
-* @param startY - cirlce center point vertical coordinate
-* @param radius - circle size
-* @param fillStyle - circle fill color, color name such as `red`, or hex color value suche as `#FF0000`
-* 
-* @returns void
-*/
-export function drawCircle(startX:number, startY:number, radius:number, fillStyle?:string, strokeStyle?:string): void;
+declare global {
+  interface Window {
+    /**
+    * Draw a cirle by assign position, size and styles. 
+    * Origin(0,0) of coordinate system is in top left.
+    * 
+    * @param startX - circle center point horizontal coordinate
+    * @param startY - cirlce center point vertical coordinate
+    * @param radius - circle size
+    * @param fillStyle - circle fill color, color name such as `red`, or hex color value suche as `#FF0000`
+    * 
+    * @returns void
+    */
+    drawCircle: (startX:number, startY:number, radius:number, fillStyle?:string, strokeStyle?:string) => void;
+  }
+}
