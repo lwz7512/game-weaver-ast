@@ -11,6 +11,7 @@ ctx.strokeStyle = "red";
 ctx.lineWidth = 4;
 
 function drawCircle(startX, startY, radius) {
+  ctx.clearRect(0, 0, 450, 450);
   ctx.beginPath();
   ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
   ctx.stroke();
