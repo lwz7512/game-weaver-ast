@@ -1,10 +1,10 @@
 // NOTE: challenge code 1:
 
-const canvasWidth = 440;
-const conavasHeight = 378;
+var canvasWidth = 440;
+var conavasHeight = 378;
 
-const canvas = document.getElementById("codePresenter");
-const ctx = canvas.getContext("2d");
+var canvas = document.getElementById("codePresenter");
+var ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "yellow";
 ctx.strokeStyle = "red";
