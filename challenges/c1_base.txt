@@ -1,44 +1,32 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
-const { drawCircle, cleanup } = (function(){
-  var canvasWidth = 440;
-  var conavasHeight = 378;
+var canvasWidth = 440;
+var conavasHeight = 378;
 
-  var canvas = document.getElementById("codePresenter");
-  var ctx = canvas.getContext("2d");
+var canvas = document.getElementById("codePresenter");
+var ctx = canvas.getContext("2d");
 
-  ctx.fillStyle = "yellow";
-  ctx.strokeStyle = "red";
-  ctx.lineWidth = 4;
+ctx.fillStyle = "yellow";
+ctx.strokeStyle = "red";
+ctx.lineWidth = 4;
 
-  function clearCanvas() {
-    ctx.clearRect(0, 0, 450, 450);
-  } 
+function clearCanvas() {
+  ctx.clearRect(0, 0, 450, 450);
+} 
 
-  function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
-    if (fillStyle) {
-      ctx.fillStyle = fillStyle;
-    }
-    if (strokeStyle) {
-      ctx.strokeStyle = strokeStyle;
-    }
-
-    ctx.beginPath();
-    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.fill();
+function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
+  if (fillStyle) {
+    ctx.fillStyle = fillStyle;
+  }
+  if (strokeStyle) {
+    ctx.strokeStyle = strokeStyle;
   }
 
-  function cleanup() {
-    delete window.drawCircle;
-    delete window.cleanup;
-  }
+  ctx.beginPath();
+  ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.fill();
+}
 
-  clearCanvas();
-
-  return {
-    drawCircle,
-    cleanup
-  }
-})()
+clearCanvas();
