@@ -2,7 +2,9 @@
 console.log('## this is a challenge code base ...');
 
 // delete previous function declarations
-delete window.drawCircle;
+delete globalThis.drawCircle;
+
+console.log(globalThis);
 
 // declare interface function:
 const { drawCircle } = (function() {
