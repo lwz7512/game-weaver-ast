@@ -1,11 +1,11 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
-var canvasWidth = 440;
-var conavasHeight = 378;
+const canvasWidth = 440;
+const conavasHeight = 378;
 
-var canvas = document.getElementById("codePresenter");
-var ctx = canvas.getContext("2d");
+const canvas = document.getElementById("codePresenter");
+const ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "yellow";
 ctx.strokeStyle = "red";
