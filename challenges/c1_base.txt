@@ -1,46 +1,32 @@
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
-// delete previous function declarations
-delete globalThis.drawCircle;
+var canvasWidth = 440;
+var conavasHeight = 378;
 
-console.log(globalThis);
+var canvas = document.getElementById("codePresenter");
+var ctx = canvas.getContext("2d");
 
-// declare interface function:
-const { drawCircle } = (function() {
+ctx.fillStyle = "yellow";
+ctx.strokeStyle = "red";
+ctx.lineWidth = 4;
 
-  var canvasWidth = 440;
-  var conavasHeight = 378;
+function clearCanvas() {
+  ctx.clearRect(0, 0, 450, 450);
+} 
 
-  var canvas = document.getElementById("codePresenter");
-  var ctx = canvas.getContext("2d");
-
-  ctx.fillStyle = "yellow";
-  ctx.strokeStyle = "red";
-  ctx.lineWidth = 4;
-
-  function clearCanvas() {
-    ctx.clearRect(0, 0, 450, 450);
-  } 
-
-  function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
-    if (fillStyle) {
-      ctx.fillStyle = fillStyle;
-    }
-    if (strokeStyle) {
-      ctx.strokeStyle = strokeStyle;
-    }
-
-    ctx.beginPath();
-    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.fill();
+function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
+  if (fillStyle) {
+    ctx.fillStyle = fillStyle;
+  }
+  if (strokeStyle) {
+    ctx.strokeStyle = strokeStyle;
   }
 
-  clearCanvas();
+  ctx.beginPath();
+  ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.fill();
+}
 
-  return {
-    drawCircle
-  }
-
-})()
+clearCanvas();
