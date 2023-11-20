@@ -1,4 +1,7 @@
-function assertEqual(x, y) {
+/**
+ * test two value: x, y if equal, and throw errorMessage if not
+ */
+function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
   if (
     x === y ||
     (typeof x === 'object' &&
@@ -8,7 +11,7 @@ function assertEqual(x, y) {
   ) {
     return;
   } else {
-    throw new Error(`${x} != ${y}`);
+    throw new Error(errorMessage);
   }
 }
 
