@@ -1,2 +1,0 @@
-// test code for challenge
-console.log('## this is a challenge code test cases ...');

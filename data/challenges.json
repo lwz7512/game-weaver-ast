@@ -26,7 +26,7 @@
     ],
     "baseCode": "challenges/c1_base.txt",
     "startCode": "challenges/c1_start.txt",
-    "testCode": "challenges/c1_test.txt",
+    "testCode": "challenges/c1_test.json",
     "finalCode": "challenges/c1_final.txt"
   },
   {

@@ -1,0 +1,44 @@
+[
+  {
+    "description": "Call drawCircle twice and called drawLine once to meet challenge.",
+    "comment": "just check funTracer in base code if have 2 C and 1 L",
+    "validator": [
+      "() => {",
+      "  let grpC = funTracer.filter(s => s === 'C');",
+      "  let grpL = funTracer.filter(s => s === 'L');",
+      "  if (grpC.length === 2 && grpL.length === 1) return true;",
+      "  return false;",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
+  },
+  {
+    "description": "Same eyes(circle) size is required to meet challenge.",
+    "comment": "just check function parameters to figure out cicle radius is the same",
+    "validator": [
+      "() => {",
+      "  let r1 = circleRadius[0];",
+      "  let r2 = circleRadius[1];",
+      "  if (!r2) throw new Error('No 2th circle on canvas!')",
+      "  if (r1 === r2) return true;",
+      "  return false;",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
+  },
+  {
+    "description": "Line should be absolutely horizontal",
+    "comment": "just check start point have save `y` value with end point",
+    "validator": [
+      "() => {",
+      "  if (!lineYpos.length) throw new Error('No line on canvas!')",
+      "  if (lineYpos[0] === lineYpos[1]) return true;",
+      "  return false;",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
+  }
+]

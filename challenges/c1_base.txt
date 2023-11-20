@@ -1,3 +1,31 @@
+function assertEqual(x, y) {
+  if (
+    x === y ||
+    (typeof x === 'object' &&
+      typeof y === 'object' &&
+      x.length === y.length &&
+      x.every((element, index) => element === y[index]))
+  ) {
+    return;
+  } else {
+    throw new Error(`${x} != ${y}`);
+  }
+}
+
+function assertTrue(x) {
+  assertEqual(x, true);
+}
+
+function assertFalse(x) {
+  assertEqual(x, false);
+}
+
+// == remember drawing result for test case use ==
+const funTracer = [];
+const circleRadius = [];
+const lineYpos = [];
+
+
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
@@ -27,6 +55,21 @@ function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle =
   ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.fill();
+
+  funTracer.push('C');
+  circleRadius.push(radius);
+}
+
+function drawLine(startX, startY, endX, endY, strokeStyle = 'red', lineWidth = 8) {
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = strokeStyle;
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(endX, endY);
+  ctx.stroke();
+
+  funTracer.push('L');
+  lineYpos.push(startY, endY);
 }
 
 clearCanvas();
