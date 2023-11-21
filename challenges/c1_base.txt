@@ -46,7 +46,7 @@ function clearCanvas() {
   ctx.clearRect(0, 0, 450, 450);
 } 
 
-function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle = undefined) {
+function drawCircle(startX, startY, radius, fillStyle = '#7bbfea', strokeStyle = '#009ad6') {
   if (fillStyle) {
     ctx.fillStyle = fillStyle;
   }
