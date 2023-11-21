@@ -1,6 +1,6 @@
 [
   {
-    "description": "Call drawCircle twice and called drawLine once to meet challenge.",
+    "description": "2 circle and 1 line is required!",
     "comment": "just check funTracer in base code if have 2 C and 1 L",
     "validator": [
       "() => {",
@@ -14,7 +14,7 @@
     "expectation": true
   },
   {
-    "description": "Same eyes(circle) size is required to meet challenge.",
+    "description": "Same circle size is required!",
     "comment": "just check function parameters to figure out cicle radius is the same",
     "validator": [
       "() => {",
