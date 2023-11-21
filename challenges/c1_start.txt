@@ -1,2 +1,2 @@
 // Welcome to challenge project ONE!
-drawCircle(75, 75, 50);
+drawCircle(100, 100, 60);

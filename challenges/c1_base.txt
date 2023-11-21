@@ -65,7 +65,7 @@ function drawCircle(startX, startY, radius, fillStyle = undefined, strokeStyle =
 
 function drawLine(startX, startY, endX, endY, strokeStyle = 'red', lineWidth = 8) {
   ctx.beginPath();
-  ctx.lineWidth = 4;
+  ctx.lineWidth = lineWidth;
   ctx.strokeStyle = strokeStyle;
   ctx.moveTo(startX, startY);
   ctx.lineTo(endX, endY);
