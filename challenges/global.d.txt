@@ -11,7 +11,7 @@
 * 
 * @returns void
 */    
-declare function drawCircle: (startX:number, startY:number, radius:number, fillStyle?:string, strokeStyle?:string) => void;
+declare function drawCircle(startX:number, startY:number, radius:number, fillStyle?:string, strokeStyle?:string) => void;
 
 /**
  * Draw a straght line by assign starting point, and end point.
