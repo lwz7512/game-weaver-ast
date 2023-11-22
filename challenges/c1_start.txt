@@ -5,10 +5,8 @@
  */
 drawCircle(100, 100, 60);
 
-/**
- * Step 2: draw one more cirlce:
- */
+// Step 2: draw one more cirlce:
 
-/**
- * Step 3: draw one line with `drawLine` function:
- */
+// Step 3: draw one line with `drawLine` function:
+
+// == THE END ==
