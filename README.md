@@ -9,3 +9,4 @@ Created @2022/08/29
 - add 3 learning docs @2023/09/10
 - completed draft content of 3 learning docs @2023/09/10
 - add `data/challenges.json` @2023/10/18
+- completed challenge 1 code setting and test cases setting @2023/11/21
