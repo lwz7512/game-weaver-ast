@@ -3,7 +3,7 @@
  * 
  * Step 1: Lets start draw one circle first!
  */
-drawCircle(100, 100, 60);
+drawCircle(120, 100, 60);
 
 // Step 2: draw one more cirlce:
 
