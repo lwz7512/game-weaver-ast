@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Whac-A-Mole - Part 1",
+    "name": "Whac-A-Mole - Part 1: Javascript Function",
     "description": "Draw two circles and one line with corresponding function.",
     "objective": "In order to learn how to do some specific job with code, that is called function",
     "keywords": ["function"],
@@ -15,14 +15,19 @@
     ],
     "prerequsite": [
       {
-        "name": "JavaScript For Loop *",
-        "title": "Must to read and learn about javascript loop",
-        "url": "https://www.w3schools.com/js/js_loop_for.asp"
+        "name": "JavaScript Functions *",
+        "title": "Must to read and learn about javascript function",
+        "url": "https://www.w3schools.com/js/js_functions.asp"
       },
       {
-        "name": "Loops and iteration",
-        "title": "optinal read for more and in-depth loop knowledge",
-        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
+        "name": "JavaScript Function Parameters",
+        "title": "Must to read and learn about javascript function",
+        "url": "https://www.w3schools.com/js/js_function_parameters.asp"
+      },
+      {
+        "name": "Functions - JavaScript - MDN Web Docs",
+        "title": "Optinal read for more and in-depth loop knowledge",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
       }
     ],
     "baseCode": "challenges/c1_base.txt",
