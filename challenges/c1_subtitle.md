@@ -1,4 +1,4 @@
-## English
+## In English
 
 Hi Dear:
 
@@ -39,7 +39,7 @@ Keep your hard working, the second challenge is waiting for you.
 See you then!
 
 
-## 中文
+## 中文版本
 
 
 你好呀亲爱的:
