@@ -1,0 +1,8 @@
+// Draw 36 dots with 6x6 grid layout, now we have one row dots:
+for (let x = 0; x < 6; x++) {
+  // TODO: write another `for...loop` to draw more rows vertically:
+  
+  drawCircle(x * 60 + 60, 40, 20);
+  // TODO: write the end of `for...loop`:
+  
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Drawing 36 dots totally which is 6 rows 6 columns is expected!",
+    "comment": "test draw circle function being called 36 times",
+    "validator": [
+      "() => {",
+      "  const grpC = funTracer.filter(s => s === 'C');",
+      "  return grpC.length;",
+      "}"
+    ],
+    "params": [],
+    "expectation": 36
+  },
+  {
+    "description": "Nested looping using `for` statement is expected!",
+    "comment": "check user code `for ... {` statement 2 times of occurance",
+    "validator": [
+      "(code) => {",
+      "  const occuOfFor = code.match(/for.+{/g) || [];",
+      "  return occuOfFor.length;",
+      "}"
+    ],
+    "params": [],
+    "expectation": 2
+  }
+]

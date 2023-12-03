@@ -37,30 +37,39 @@
   },
   {
     "id": 2,
-    "name": "Whac-A-Mole - Part 2",
-    "description": "",
-    "objective": "",
-    "keywords": ["undefined"],
-    "keypoints": [],
+    "name": "Whac-A-Mole - Part 2: Loop statement",
+    "description": "Draw a 6x6 round circle grid with drawing function.",
+    "objective": "Learn how to write a double layer loop statement",
+    "keywords": ["loop", "statement"],
+    "keypoints": [
+      "What is loop statement?",
+      "What is the form of a loop statement?",
+      "How to stop a loop statement?"
+    ],
     "level": 2,
     "videoURL": "",
-    "videoSubtitle": "challenges/c1_subtitle.md",
+    "videoSubtitle": "challenges/c2_subtitle.md",
     "prerequsite": [
       {
-        "name": "JavaScript Arrays from W3School*",
-        "title": "Must to read and learn about javascript array",
-        "url": "https://www.w3schools.com/js/js_arrays.asp"
+        "name": "JavaScript For Loop*",
+        "title": "Must to read and learn about javascript loop iteration processing",
+        "url": "https://www.w3schools.com/js/js_loop_for.asp"
       },
       {
-        "name": "Array Guide from MDN",
-        "title": "optinal read for more and in-depth array knowledge",
-        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/startCode/Global_Objects/Array"
+        "name": "for statements and declarations in code playground",
+        "title": "Hands on practice to get familliar with for loop",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"
+      },
+      {
+        "name": "Loops and iteration from MDN",
+        "title": "Optinal read for more and in-depth knowledge about loop",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
       }
     ],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": ""
+    "baseCode": "challenges/c2_base.txt",
+    "startCode": "challenges/c2_start.txt",
+    "testCode": "challenges/c2_test.json",
+    "finalCode": "challenges/c2_final.txt"
   },
   {
     "id": 3,

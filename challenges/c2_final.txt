@@ -1,0 +1,6 @@
+for (let x = 0; x < 6; x++) {
+  console.log(`one loop: ${x}`)
+  for (let y = 0; y < 6; y++) {
+    drawCircle(x * 60 + 60, y *60 + 40, 20);
+  }
+}
