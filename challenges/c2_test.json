@@ -13,10 +13,10 @@
   },
   {
     "description": "Nested looping using `for` statement is expected!",
-    "comment": "check user code `for ... {` statement 2 times of occurance",
+    "comment": "check user code `for (` or `for(` statement 2 times of occurance",
     "validator": [
       "(code) => {",
-      "  const occuOfFor = code.match(/for.+{/g) || [];",
+      "  const occuOfFor = code.match(/for\\s*\\(/g) || [];",
       "  return occuOfFor.length;",
       "}"
     ],
