@@ -1,2 +1,0 @@
-// a remote js module, DO not delete this file!
-export const hello = () => console.log("hello world from an exported module!");

@@ -30,10 +30,10 @@
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
       }
     ],
-    "baseCode": "challenges/c1_base.txt",
-    "startCode": "challenges/c1_start.txt",
-    "testCode": "challenges/c1_test.json",
-    "finalCode": "challenges/c1_final.txt"
+    "baseCode": "challenges/c1/c1_base.txt",
+    "startCode": "challenges/c1/c1_start.txt",
+    "testCode": "challenges/c1/c1_test.json",
+    "finalCode": "challenges/c1/c1_final.txt"
   },
   {
     "id": 2,
@@ -66,10 +66,10 @@
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
       }
     ],
-    "baseCode": "challenges/c2_base.txt",
-    "startCode": "challenges/c2_start.txt",
-    "testCode": "challenges/c2_test.json",
-    "finalCode": "challenges/c2_final.txt"
+    "baseCode": "challenges/c2/c2_base.txt",
+    "startCode": "challenges/c2/c2_start.txt",
+    "testCode": "challenges/c2/c2_test.json",
+    "finalCode": "challenges/c2/c2_final.txt"
   },
   {
     "id": 3,
