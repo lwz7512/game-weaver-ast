@@ -2,7 +2,7 @@
 
 Hi Dear Game Weavers:
 
-Welcome to Coding Challenge part-1: Javascript Function.
+Welcome to Coding Challenge `Whac-A-Mole` part-1: Javascript Function.
 
 In this challenge, you will learn what is `Javascript Function` by reading 3 tutorials below,
 
