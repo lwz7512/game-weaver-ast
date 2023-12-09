@@ -87,13 +87,13 @@ Oh yeah! we got the first row of 6 dots!
 Lets write a new code line at line 4 in editor like this:
 
 ```
-for (let y = 0; y < 6; y++) {
+  for (let y = 0; y < 6; y++) {
 ```
 
 Then, write the end character for loop body at line 7:
 
 ```
-}
+  }
 ```
 
 Its done! lets press `Run` button again!
