@@ -26,7 +26,7 @@ To instruct the computer do the repetitive work in Javascript programming langua
 
 The first part starts with key word `for`, followd by a loop scope or condition.
 
-Second part isLooping Body body, that contains the jobs to be doing.
+Second part is `Looping Body`, that contains the jobs to be doing.
 
 Lets take a look at the first part of the format of the `for` loop statement:
 
