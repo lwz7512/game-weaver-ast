@@ -51,11 +51,9 @@ The third part is `x++`, it changes counter `x` by one each time after one loop 
 Then, lets take a look at the second part of the `for` loop statement after parentheses:
 
 ```
-
 {
   looping body
 }
-
 ```
 
 `looping body` inside of brackets could be any job(or different jobs) to be repeated execution.
