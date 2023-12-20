@@ -1,0 +1,24 @@
+{
+  "name": "game-weaver-ast",
+  "version": "1.0.0",
+  "description": "Created @2022/08/29",
+  "main": "generator.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwz7512/game-weaver-ast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lwz7512/game-weaver-ast/issues"
+  },
+  "homepage": "https://github.com/lwz7512/game-weaver-ast#readme"
+}

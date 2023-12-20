@@ -1,0 +1,28 @@
+const canvas = document.getElementById('codePresenter')
+const ctx = canvas.getContext('2d')
+
+ctx.clearRect(0, 0, 450, 450);
+
+// background sky, add linear gradient
+const grd = ctx.createLinearGradient(0, 0, 0, 150);  
+// light blue
+grd.addColorStop(0, '#448EE4'); 
+// dark blue
+grd.addColorStop(1, '#5ACAF9');
+
+ctx.fillStyle = grd;
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+// grassland
+ctx.fillStyle = '#00FF00';
+ctx.fillRect(0, 250, canvas.width, 130);
+ctx.beginPath();
+ctx.ellipse(220, 250, 300, 150, 0, 0, Math.PI, true);
+ctx.fill();
+
+// one mole hole
+ctx.fillStyle = '#000000';
+ctx.beginPath();
+ctx.ellipse(220, 250, 40, 16, 0, 0, Math.PI * 2);
+ctx.fill();

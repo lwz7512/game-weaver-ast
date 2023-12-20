@@ -4,10 +4,12 @@
     "name": "Whac-A-Mole - Part 1: Javascript Function",
     "description": "Draw two circles and one line with corresponding function.",
     "objective": "Familiar with javascript function syntax and usage.",
-    "keywords": ["function", "parameters"],
+    "keywords": [
+      "function",
+      "parameters"
+    ],
     "level": 1,
     "videoURL": "",
-    "videoSubtitle": "challenges/c1/c1_subtitle.md",
     "keypoints": [
       "What is function?",
       "What is the difference between function and API?",
@@ -31,16 +33,21 @@
       }
     ],
     "baseCode": "challenges/c1/c1_base.txt",
+    "finalCode": "challenges/c1/c1_final.txt",
     "startCode": "challenges/c1/c1_start.txt",
     "testCode": "challenges/c1/c1_test.json",
-    "finalCode": "challenges/c1/c1_final.txt"
+    "videoSubtitle": "challenges/c1/c1_subtitle.md"
   },
   {
     "id": 2,
     "name": "Whac-A-Mole - Part 2: Loop statement",
     "description": "Draw a 6x6 round circle grid with drawing function.",
     "objective": "Learn how to write a double layer loop statement",
-    "keywords": ["loop", "statement"],
+    "keywords": [
+      "for",
+      "loop",
+      "statement"
+    ],
     "keypoints": [
       "What is loop statement?",
       "What is the form of a loop statement?",
@@ -48,7 +55,6 @@
     ],
     "level": 2,
     "videoURL": "",
-    "videoSubtitle": "challenges/c2/c2_subtitle.md",
     "prerequsite": [
       {
         "name": "JavaScript For Loop*",
@@ -67,48 +73,57 @@
       }
     ],
     "baseCode": "challenges/c2/c2_base.txt",
+    "finalCode": "challenges/c2/c2_final.txt",
     "startCode": "challenges/c2/c2_start.txt",
     "testCode": "challenges/c2/c2_test.json",
-    "finalCode": "challenges/c2/c2_final.txt"
+    "videoSubtitle": "challenges/c2/c2_subtitle.md"
   },
   {
     "id": 3,
-    "name": "Whac-A-Mole - Part 3: ?",
+    "name": "Whac-A-Mole - Part 3: Drawing with mask ",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "Clipping",
+      "Drawing",
+      "Animation"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
-    "videoSubtitle": "challenges/cx_subtitle.md",
     "prerequsite": [],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": ""
+    "baseCode": "challenges/c3/c3_base.txt",
+    "finalCode": "challenges/c3/c3_final.txt",
+    "startCode": "challenges/c3/c3_start.txt",
+    "testCode": "challenges/c3/c3_test.json",
+    "videoSubtitle": "challenges/cx_subtitle.md"
   },
   {
     "id": 4,
-    "name": "Whac-A-Mole - Part 4",
+    "name": "Whac-A-Mole - Part 4: Make it moving",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 2,
     "videoURL": "",
-    "videoSubtitle": "challenges/cx_subtitle.md",
+    "videoSubtitle": "challenges/c4/c4_subtitle.md",
     "prerequsite": [],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": ""
+    "baseCode": "challenges/c4/c4_base.txt",
+    "startCode": "challenges/c4/c4_start.txt",
+    "testCode": "challenges/c4/c4_test.json",
+    "finalCode": "challenges/c4/c4_final.txt"
   },
   {
     "id": 5,
     "name": "Whac-A-Mole - Part 5",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -124,7 +139,9 @@
     "name": "Whac-A-Mole - Part 6",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 2,
     "videoURL": "",
@@ -140,7 +157,9 @@
     "name": "Whac-A-Mole - Part 7",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 3,
     "videoURL": "",
@@ -156,7 +175,9 @@
     "name": "Whac-A-Mole - Part 8",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -172,7 +193,9 @@
     "name": "Whac-A-Mole - Part 9",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -188,7 +211,9 @@
     "name": "Whac-A-Mole - Part 10",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -204,7 +229,9 @@
     "name": "Bouncing Balls",
     "description": "Adding features to our bouncing balls demo",
     "objective": "To test comprehension of JavaScript objects and object-oriented constructs",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 3,
     "videoURL": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Adding_bouncing_balls_features",
@@ -220,7 +247,9 @@
     "name": "Pong - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -236,7 +265,9 @@
     "name": "Flappy Bird - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -252,7 +283,9 @@
     "name": "Breakout - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -268,7 +301,9 @@
     "name": "Jetpack Joyride - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -284,7 +319,9 @@
     "name": "Space Invaders - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -300,7 +337,9 @@
     "name": "Frogger - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -316,7 +355,9 @@
     "name": "River Raid - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -332,7 +373,9 @@
     "name": "Asteroids - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -348,7 +391,9 @@
     "name": "Spacewar! - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -364,7 +409,9 @@
     "name": "Indy 500 - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -380,7 +427,9 @@
     "name": "Pac Man - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -396,7 +445,9 @@
     "name": "Tic-Tac-Toe - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -412,7 +463,9 @@
     "name": "Conway's Game of Life - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -428,7 +481,9 @@
     "name": "Super Mario Bros. - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -444,7 +499,9 @@
     "name": "Pitfall - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -460,7 +517,9 @@
     "name": "VVVVVV - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -476,7 +535,9 @@
     "name": "Worms - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -492,7 +553,9 @@
     "name": "Dig Dug - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -508,7 +571,9 @@
     "name": "Super Monkey Ball - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -524,7 +589,9 @@
     "name": "Star Fox - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -540,7 +607,9 @@
     "name": "Crash Bandicoot - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -556,7 +625,9 @@
     "name": "Wolfenstein or Doom - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -572,7 +643,9 @@
     "name": "Mario Kart - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -588,7 +661,9 @@
     "name": "Minecraft - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -604,7 +679,9 @@
     "name": "Portal - Part 1",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -620,7 +697,9 @@
     "name": "more...",
     "description": "",
     "objective": "",
-    "keywords": ["undefined"],
+    "keywords": [
+      "undefined"
+    ],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
