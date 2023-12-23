@@ -1,28 +1,78 @@
-const canvas = document.getElementById('codePresenter')
-const ctx = canvas.getContext('2d')
+const canvas = document.getElementById("codePresenter");
+const ctx = canvas.getContext("2d");
 
 ctx.clearRect(0, 0, 450, 450);
 
 // background sky, add linear gradient
-const grd = ctx.createLinearGradient(0, 0, 0, 150);  
+const grd = ctx.createLinearGradient(0, 0, 0, 150);
 // light blue
-grd.addColorStop(0, '#448EE4'); 
+grd.addColorStop(0, "#448EE4");
 // dark blue
-grd.addColorStop(1, '#5ACAF9');
+grd.addColorStop(1, "#5ACAF9");
 
 ctx.fillStyle = grd;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
 // grassland
-ctx.fillStyle = '#00FF00';
+ctx.fillStyle = "#bed742";
 ctx.fillRect(0, 250, canvas.width, 130);
 ctx.beginPath();
 ctx.ellipse(220, 250, 300, 150, 0, 0, Math.PI, true);
 ctx.fill();
 
-// one mole hole
-ctx.fillStyle = '#000000';
-ctx.beginPath();
-ctx.ellipse(220, 250, 40, 16, 0, 0, Math.PI * 2);
-ctx.fill();
+// draw grass
+function drawGrass(startX, startY) {
+  ctx.fillStyle = "#1d953f";
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(startX + 8, startY - 30);
+  ctx.lineTo(startX + 4, startY);
+  ctx.fill();
+}
+
+for (let i = 0; i < 100; i++) {
+  const startX = 450 * Math.random();
+  const startY = 150 + 250 * Math.random();
+  drawGrass(startX, startY);
+}
+
+
+// draw bigger hole as mask, position(0~36)
+function drawMoleHoleWithDynaHead(startX, startY, position = 0) {
+  // keep current unclipped context
+  ctx.save();
+  const r = 30;
+  // transparent mask
+  ctx.fillStyle = "rgba(0, 0, 0, 0)";
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(startX + 2*r, startY);
+  ctx.lineTo(startX + 2*r, startY + 50);
+  ctx.ellipse(startX + r, startY + 50, r, r*0.3, 0, 0, Math.PI);
+  ctx.fill();
+  ctx.clip();
+  //draw dark hole
+  ctx.fillStyle = "#000000";
+  ctx.beginPath();
+  ctx.ellipse(startX+30, startY + 50, 30, r*0.3, 0, 0, 2*Math.PI);
+  ctx.fill();
+  // mole head
+  ctx.fillStyle = "#AD7223";
+  ctx.beginPath();
+  ctx.arc(startX + 30, startY + 66 - position, 20, 0, 2 * Math.PI);
+  ctx.fill();
+  // mole body
+  ctx.fillRect(startX + 10, startY + 66 - position, 40, 30);
+  // finish one session of drawing
+  ctx.restore();
+}
+
+
+const mStartX = 40;
+const mStartY = 100;
+
+for (let i = 0; i< 4; i++) {
+  for (let j = 0; j< 5; j++) {
+    drawMoleHoleWithDynaHead(i*100+mStartX, j*50+mStartY, 0);
+  }
+}

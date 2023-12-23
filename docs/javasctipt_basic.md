@@ -57,11 +57,7 @@ Overview ~=> Concepts ~=> Tutorials ~=> Projects
 - [Learn JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
 - [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
 - [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts#8-iife-modules-and-namespaces)
-
-
-## JavaScript
-
-
+- [The Valley of Code](https://thevalleyofcode.com/)
 
 
 
