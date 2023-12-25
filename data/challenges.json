@@ -74,8 +74,8 @@
   {
     "id": 3,
     "name": "Whac-A-Mole - Part 3: Calculate Position ",
-    "description": "",
-    "objective": "",
+    "description": "Draw a 4x4 mole grid with draw mole function",
+    "objective": "Learn how to layout moles into a grid and with incremental mole exposure size",
     "keywords": ["Coordinate", "Grid", "Incremental"],
     "keypoints": [
       "How to layout moles horizontally?",
