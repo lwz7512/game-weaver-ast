@@ -4,10 +4,7 @@
     "name": "Whac-A-Mole - Part 1: Javascript Function",
     "description": "Draw two circles and one line with corresponding function.",
     "objective": "Familiar with javascript function syntax and usage.",
-    "keywords": [
-      "function",
-      "parameters"
-    ],
+    "keywords": ["function", "parameters"],
     "level": 1,
     "videoURL": "",
     "keypoints": [
@@ -43,11 +40,7 @@
     "name": "Whac-A-Mole - Part 2: Loop statement",
     "description": "Draw a 6x6 round circle grid with drawing function.",
     "objective": "Learn how to write a double layer loop statement",
-    "keywords": [
-      "for",
-      "loop",
-      "statement"
-    ],
+    "keywords": ["for", "loop", "statement"],
     "keypoints": [
       "What is loop statement?",
       "What is the form of a loop statement?",
@@ -80,18 +73,24 @@
   },
   {
     "id": 3,
-    "name": "Whac-A-Mole - Part 3: Drawing with mask ",
+    "name": "Whac-A-Mole - Part 3: Calculate Position ",
     "description": "",
     "objective": "",
-    "keywords": [
-      "Clipping",
-      "Drawing",
-      "Animation"
+    "keywords": ["Coordinate", "Grid", "Incremental"],
+    "keypoints": [
+      "How to layout moles horizontally?",
+      "How to layout moles vertically?",
+      "How to expose mole size incrementally one after one?"
     ],
-    "keypoints": [],
     "level": 1,
     "videoURL": "",
-    "prerequsite": [],
+    "prerequsite": [
+      {
+        "name": "HTML Canvas Coordinates",
+        "title": "Figure out the html canvas coordinates system differ from Cartesian coordinate system",
+        "url": "https://www.w3schools.com/graphics/canvas_coordinates.asp"
+      }
+    ],
     "baseCode": "challenges/c3/c3_base.txt",
     "finalCode": "challenges/c3/c3_final.txt",
     "startCode": "challenges/c3/c3_start.txt",
@@ -103,9 +102,7 @@
     "name": "Whac-A-Mole - Part 4: Make it moving",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 2,
     "videoURL": "",
@@ -121,9 +118,7 @@
     "name": "Whac-A-Mole - Part 5",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -139,9 +134,7 @@
     "name": "Whac-A-Mole - Part 6",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 2,
     "videoURL": "",
@@ -157,9 +150,7 @@
     "name": "Whac-A-Mole - Part 7",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 3,
     "videoURL": "",
@@ -175,9 +166,7 @@
     "name": "Whac-A-Mole - Part 8",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -193,9 +182,7 @@
     "name": "Whac-A-Mole - Part 9",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -211,9 +198,7 @@
     "name": "Whac-A-Mole - Part 10",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -229,9 +214,7 @@
     "name": "Bouncing Balls",
     "description": "Adding features to our bouncing balls demo",
     "objective": "To test comprehension of JavaScript objects and object-oriented constructs",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 3,
     "videoURL": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Adding_bouncing_balls_features",
@@ -247,9 +230,7 @@
     "name": "Pong - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -265,9 +246,7 @@
     "name": "Flappy Bird - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -283,9 +262,7 @@
     "name": "Breakout - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -301,9 +278,7 @@
     "name": "Jetpack Joyride - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -319,9 +294,7 @@
     "name": "Space Invaders - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -337,9 +310,7 @@
     "name": "Frogger - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -355,9 +326,7 @@
     "name": "River Raid - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -373,9 +342,7 @@
     "name": "Asteroids - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -391,9 +358,7 @@
     "name": "Spacewar! - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -409,9 +374,7 @@
     "name": "Indy 500 - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -427,9 +390,7 @@
     "name": "Pac Man - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -445,9 +406,7 @@
     "name": "Tic-Tac-Toe - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -463,9 +422,7 @@
     "name": "Conway's Game of Life - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -481,9 +438,7 @@
     "name": "Super Mario Bros. - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -499,9 +454,7 @@
     "name": "Pitfall - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -517,9 +470,7 @@
     "name": "VVVVVV - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -535,9 +486,7 @@
     "name": "Worms - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -553,9 +502,7 @@
     "name": "Dig Dug - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -571,9 +518,7 @@
     "name": "Super Monkey Ball - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -589,9 +534,7 @@
     "name": "Star Fox - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -607,9 +550,7 @@
     "name": "Crash Bandicoot - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -625,9 +566,7 @@
     "name": "Wolfenstein or Doom - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -643,9 +582,7 @@
     "name": "Mario Kart - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -661,9 +598,7 @@
     "name": "Minecraft - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -679,9 +614,7 @@
     "name": "Portal - Part 1",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",
@@ -697,9 +630,7 @@
     "name": "more...",
     "description": "",
     "objective": "",
-    "keywords": [
-      "undefined"
-    ],
+    "keywords": ["undefined"],
     "keypoints": [],
     "level": 1,
     "videoURL": "",

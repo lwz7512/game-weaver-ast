@@ -41,7 +41,7 @@ for (let i = 0; i < 100; i++) {
 function drawMoleHoleWithDynaHead(startX, startY, position = 0) {
   // keep current unclipped context
   ctx.save();
-  const r = 30;
+  const r = 36;
   // transparent mask
   ctx.fillStyle = "rgba(0, 0, 0, 0)";
   ctx.beginPath();
@@ -54,25 +54,54 @@ function drawMoleHoleWithDynaHead(startX, startY, position = 0) {
   //draw dark hole
   ctx.fillStyle = "#000000";
   ctx.beginPath();
-  ctx.ellipse(startX+30, startY + 50, 30, r*0.3, 0, 0, 2*Math.PI);
+  ctx.ellipse(startX+r, startY + 50, r, r*0.3, 0, 0, 2*Math.PI);
   ctx.fill();
-  // mole head
+  // mole head & body
   ctx.fillStyle = "#AD7223";
   ctx.beginPath();
-  ctx.arc(startX + 30, startY + 66 - position, 20, 0, 2 * Math.PI);
+  ctx.arc(startX + r, startY + 66 - position, 20, Math.PI*0.75, 2.25*Math.PI);
+  ctx.lineTo(startX + r*5/3, startY + 120 - position);
+  ctx.ellipse(startX+r, startY + 120 - position, r*2/3, 10, 0, 0, Math.PI);
+  ctx.closePath();
+  ctx.stroke();
   ctx.fill();
-  // mole body
-  ctx.fillRect(startX + 10, startY + 66 - position, 40, 30);
+  // draw eyes
+  ctx.fillStyle = "#000000";
+  ctx.beginPath();
+  ctx.arc(startX + r - 10, startY + 62 - position, 2, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(startX + r + 10, startY + 62 - position, 2, 0, 2 * Math.PI);
+  ctx.fill();
+  // draw nose
+  ctx.fillStyle ="#CFA049";
+  ctx.beginPath();
+  ctx.ellipse(startX + r, startY + 70 - position, r*0.18, r*0.2, 0, 0, 2*Math.PI);
+  ctx.fill();
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+  ctx.arc(startX + r, startY + 72 - position, 2, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.strokeStyle = "#333333";
+  ctx.beginPath();
+  ctx.ellipse(startX + r, startY + 65 - position, r*0.14, r*0.2, 0, 0, Math.PI);
+  ctx.stroke();
+  // draw mustache
+  ctx.strokeStyle = "#000000";
+  ctx.beginPath();
+  // left part - 1
+  ctx.moveTo(startX + r - 8, startY + 70 - position);
+  ctx.lineTo(startX + r - 16, startY + 68 - position);
+  // left part - 2
+  ctx.moveTo(startX + r - 8, startY + 73 - position);
+  ctx.lineTo(startX + r - 16, startY + 71 - position);
+  // right part - 1
+  ctx.moveTo(startX + r + 8, startY + 70 - position);
+  ctx.lineTo(startX + r + 16, startY + 68 - position);
+  // right part - 2
+  ctx.moveTo(startX + r + 8, startY + 73 - position);
+  ctx.lineTo(startX + r + 16, startY + 71 - position);
+  ctx.stroke();
   // finish one session of drawing
   ctx.restore();
-}
-
-
-const mStartX = 40;
-const mStartY = 100;
-
-for (let i = 0; i< 4; i++) {
-  for (let j = 0; j< 5; j++) {
-    drawMoleHoleWithDynaHead(i*100+mStartX, j*50+mStartY, 0);
-  }
 }

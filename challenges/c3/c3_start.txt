@@ -1,0 +1,12 @@
+const mStartX = 36;
+const mStartY = 100;
+const mWidth = 100;
+const mHeight = 64;
+
+// drawMoleHoleWithDynaHead(mStartX, mStartY, 45);
+
+//for (let i = 0; i< 4; i++) {
+//  for (let j = 0; j< 4; j++) {
+
+//  }
+//}
