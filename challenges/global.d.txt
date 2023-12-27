@@ -35,10 +35,10 @@ declare function drawLine(startX:number, startY:number, endX:number, endY:number
  * For Challenge 3:
  * Draw a mole with its hole, use `position` of this function to change the body of mole relative to hole.
  *
- * @param startX - mole start point hori-coordinate
- * @param startY - mole start point verti-coordinate
+ * @param posX - mole start point hori-coordinate
+ * @param posY - mole start point verti-coordinate
  * @param position - mole positon relative to its hole
  *
  * @returns void
  */
-declare function drawMoleHoleWithDynaHead(startX:number, startY:number, position = 0)
+declare function drawMoleHoleWithDynaHead(posX:number, posY:number, position = 0)

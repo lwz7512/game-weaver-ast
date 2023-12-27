@@ -5,8 +5,8 @@ const mHeight = 64;
 
 // drawMoleHoleWithDynaHead(mStartX, mStartY, 45);
 
-//for (let i = 0; i< 4; i++) {
-//  for (let j = 0; j< 4; j++) {
-//    drawMoleHoleWithDynaHead(i*mWidth+mStartX, j*mHeight+mStartY, (i+4*j)*3);
+//for (let row = 0; row < 4; row++) {
+//  for (let col = 0; col < 4; col++) {
+//    drawMoleHoleWithDynaHead(col * mWidth + mStartX, row * mHeight + mStartY, (row + 4 * col)*3);
 //  }
 //}

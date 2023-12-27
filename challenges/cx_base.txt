@@ -30,6 +30,8 @@ const funTracer = [];
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
 
+// =============== starting challenge main code block ===================
+
 // this is the real size of canvas element in `GM`
 const canvasWidth = 440;
 const conavasHeight = 378;

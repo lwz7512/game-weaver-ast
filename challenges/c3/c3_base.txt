@@ -1,3 +1,41 @@
+/**
+ * test two value: x, y if equal, and throw errorMessage if not
+ */
+function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
+  if (
+    x === y ||
+    (typeof x === 'object' &&
+      typeof y === 'object' &&
+      x.length === y.length &&
+      x.every((element, index) => element === y[index]))
+  ) {
+    return;
+  } else {
+    throw new Error(errorMessage);
+  }
+}
+
+function assertTrue(x) {
+  assertEqual(x, true);
+}
+
+function assertFalse(x) {
+  assertEqual(x, false);
+}
+
+// == remember drawing result for test case use ==
+const funTracer = [];
+const startXList = [];
+const startYList = [];
+const positionList = [];
+
+
+
+// base functions hidden from user ... but need to be included for client side running & testing
+console.log('## this is a challenge code base ...');
+
+// =============== starting challenge main code block ===================
+
 const canvas = document.getElementById("codePresenter");
 const ctx = canvas.getContext("2d");
 
@@ -38,70 +76,80 @@ for (let i = 0; i < 100; i++) {
 
 
 // draw bigger hole as mask, position(0~36)
-function drawMoleHoleWithDynaHead(startX, startY, position = 0) {
+function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   // keep current unclipped context
   ctx.save();
   const r = 36;
   // transparent mask
   ctx.fillStyle = "rgba(0, 0, 0, 0)";
   ctx.beginPath();
-  ctx.moveTo(startX, startY);
-  ctx.lineTo(startX + 2*r, startY);
-  ctx.lineTo(startX + 2*r, startY + 50);
-  ctx.ellipse(startX + r, startY + 50, r, r*0.3, 0, 0, Math.PI);
+  ctx.moveTo(posX, posY);
+  ctx.lineTo(posX + 2*r, posY);
+  ctx.lineTo(posX + 2*r, posY + 50);
+  ctx.ellipse(posX + r, posY + 50, r, r*0.3, 0, 0, Math.PI);
   ctx.fill();
   ctx.clip();
   //draw dark hole
   ctx.fillStyle = "#000000";
   ctx.beginPath();
-  ctx.ellipse(startX+r, startY + 50, r, r*0.3, 0, 0, 2*Math.PI);
+  ctx.ellipse(posX+r, posY + 50, r, r*0.3, 0, 0, 2*Math.PI);
   ctx.fill();
   // mole head & body
   ctx.fillStyle = "#AD7223";
   ctx.beginPath();
-  ctx.arc(startX + r, startY + 66 - position, 20, Math.PI*0.75, 2.25*Math.PI);
-  ctx.lineTo(startX + r*5/3, startY + 120 - position);
-  ctx.ellipse(startX+r, startY + 120 - position, r*2/3, 10, 0, 0, Math.PI);
+  ctx.arc(posX + r, posY + 66 - position, 20, Math.PI*0.75, 2.25*Math.PI);
+  ctx.lineTo(posX + r*5/3, posY + 120 - position);
+  ctx.ellipse(posX+r, posY + 120 - position, r*2/3, 10, 0, 0, Math.PI);
   ctx.closePath();
   ctx.stroke();
   ctx.fill();
   // draw eyes
   ctx.fillStyle = "#000000";
   ctx.beginPath();
-  ctx.arc(startX + r - 10, startY + 62 - position, 2, 0, 2 * Math.PI);
+  ctx.arc(posX + r - 10, posY + 62 - position, 2, 0, 2 * Math.PI);
   ctx.fill();
   ctx.beginPath();
-  ctx.arc(startX + r + 10, startY + 62 - position, 2, 0, 2 * Math.PI);
+  ctx.arc(posX + r + 10, posY + 62 - position, 2, 0, 2 * Math.PI);
   ctx.fill();
   // draw nose
   ctx.fillStyle ="#CFA049";
   ctx.beginPath();
-  ctx.ellipse(startX + r, startY + 70 - position, r*0.18, r*0.2, 0, 0, 2*Math.PI);
+  ctx.ellipse(posX + r, posY + 70 - position, r*0.18, r*0.2, 0, 0, 2*Math.PI);
   ctx.fill();
   ctx.fillStyle = "#000";
   ctx.beginPath();
-  ctx.arc(startX + r, startY + 72 - position, 2, 0, 2 * Math.PI);
+  ctx.arc(posX + r, posY + 72 - position, 2, 0, 2 * Math.PI);
   ctx.fill();
   ctx.strokeStyle = "#333333";
   ctx.beginPath();
-  ctx.ellipse(startX + r, startY + 65 - position, r*0.14, r*0.2, 0, 0, Math.PI);
+  ctx.ellipse(posX + r, posY + 65 - position, r*0.14, r*0.2, 0, 0, Math.PI);
   ctx.stroke();
   // draw mustache
   ctx.strokeStyle = "#000000";
   ctx.beginPath();
   // left part - 1
-  ctx.moveTo(startX + r - 8, startY + 70 - position);
-  ctx.lineTo(startX + r - 16, startY + 68 - position);
+  ctx.moveTo(posX + r - 8, posY + 70 - position);
+  ctx.lineTo(posX + r - 16, posY + 68 - position);
   // left part - 2
-  ctx.moveTo(startX + r - 8, startY + 73 - position);
-  ctx.lineTo(startX + r - 16, startY + 71 - position);
+  ctx.moveTo(posX + r - 8, posY + 73 - position);
+  ctx.lineTo(posX + r - 16, posY + 71 - position);
   // right part - 1
-  ctx.moveTo(startX + r + 8, startY + 70 - position);
-  ctx.lineTo(startX + r + 16, startY + 68 - position);
+  ctx.moveTo(posX + r + 8, posY + 70 - position);
+  ctx.lineTo(posX + r + 16, posY + 68 - position);
   // right part - 2
-  ctx.moveTo(startX + r + 8, startY + 73 - position);
-  ctx.lineTo(startX + r + 16, startY + 71 - position);
+  ctx.moveTo(posX + r + 8, posY + 73 - position);
+  ctx.lineTo(posX + r + 16, posY + 71 - position);
   ctx.stroke();
   // finish one session of drawing
   ctx.restore();
+
+  // === remember function call & parameters list to analyze in test cases. ===
+  funTracer.push(1);
+  startXList.push(posX);
+  startYList.push(posY);
+  positionList.push(position);
+  console.log(funTracer);
+  console.log(startXList);
+  console.log(startYList);
+  console.log(positionList);
 }
