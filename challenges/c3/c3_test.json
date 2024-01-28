@@ -7,7 +7,7 @@
     "expectation": 16
   },
   {
-    "description": "Layout moles horizontally start from 'mStartX' and interal of 'mWidth'!",
+    "description": "Layout moles horizontally start from `mStartX` and interal of `mWidth`!",
     "comment": "Detect the first parameter of drawMoleHoleWithDynaHead",
     "validator": [
       "() => {",
@@ -22,7 +22,7 @@
     "expectation": true
   },
   {
-    "description": "Layout moles vertically start from 'mStartY' and interal of 'mHeight'!",
+    "description": "Layout moles vertically start from `mStartY` and interal of `mHeight`!",
     "comment": "Detect the second parameter of drawMoleHoleWithDynaHead",
     "validator": [
       "() => {",
