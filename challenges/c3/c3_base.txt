@@ -1,19 +1,18 @@
 /**
  * test two value: x, y if equal, and throw errorMessage if not
  */
-function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
-  if (
-    x === y ||
-    (typeof x === 'object' &&
-      typeof y === 'object' &&
-      x.length === y.length &&
-      x.every((element, index) => element === y[index]))
-  ) {
-    return;
-  } else {
+  function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
+    if (
+      x === y ||
+      (typeof x === 'object' &&
+        typeof y === 'object' &&
+        x.length === y.length &&
+        x.every((element, index) => element === y[index]))
+    ) {
+      return;
+    } 
     throw new Error(errorMessage);
   }
-}
 
 function assertTrue(x) {
   assertEqual(x, true);
