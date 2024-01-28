@@ -3,9 +3,10 @@ const mStartY = 100;
 const mWidth = 100;
 const mHeight = 64;
 
-// uncomment this line to see what a mole looks like, then comment it:
+// First, uncomment this line to see what a mole looks like, then comment it:
 // drawMoleHoleWithDynaHead(mStartX, mStartY, 45);
 
+// Then, uncoment these lines, and add one more line in line 13 to draw 16 moles:
 //for (let row = 0; row < 4; row++) {
 //  for (let col = 0; col < 4; col++) {
 // TODO: call `drawMoleHoleWithDynaHead` function below to draw a mole grid:
