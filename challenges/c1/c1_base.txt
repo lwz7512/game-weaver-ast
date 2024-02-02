@@ -10,9 +10,8 @@ function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
       x.every((element, index) => element === y[index]))
   ) {
     return;
-  } else {
-    throw new Error(errorMessage);
-  }
+  } 
+  throw new Error(errorMessage);
 }
 
 function assertTrue(x) {
