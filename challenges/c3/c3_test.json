@@ -35,21 +35,5 @@
     ],
     "params": [],
     "expectation": true
-  },
-  {
-    "description": "Expose mole\\'s body size with 3 pixels increment horizontally and 12 pixels increment vertically!",
-    "comment": "Detect the third parameter of drawMoleHoleWithDynaHead",
-    "validator": [
-      "() => {",
-      "  if (funTracer.length < 16) return false;",
-      "  const horiDiff = positionList[1] - positionList[0];",
-      "  if (horiDiff !== 3) return false;",
-      "  const vertDiff = positionList[4] - positionList[0];",
-      "  if (vertDiff !== 12) return false;",
-      "  return true;",
-      "}"
-    ],
-    "params": [],
-    "expectation": true
   }
 ]

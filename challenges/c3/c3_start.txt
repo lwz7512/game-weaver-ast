@@ -1,6 +1,10 @@
+// start position of each mole in horizontal 
 const mStartX = 36;
+// start position of each mole in vertical
 const mStartY = 100;
+// width of each mole
 const mWidth = 100;
+// height of each mole
 const mHeight = 64;
 
 // First, uncomment this line to see what a mole looks like, then comment it:

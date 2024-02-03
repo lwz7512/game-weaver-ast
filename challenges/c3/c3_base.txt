@@ -74,10 +74,13 @@ for (let i = 0; i < 100; i++) {
 }
 
 
-// draw bigger hole as mask, position(0~36)
+/**
+ * draw bigger hole as mask, with body position(0 ~ 45) above its burrow
+ */
 function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   // keep current unclipped context
   ctx.save();
+  
   const r = 36;
   // transparent mask
   ctx.fillStyle = "rgba(0, 0, 0, 0)";
@@ -88,6 +91,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.ellipse(posX + r, posY + 50, r, r*0.3, 0, 0, Math.PI);
   ctx.fill();
   ctx.clip();
+
   //draw dark hole
   ctx.fillStyle = "#000000";
   ctx.beginPath();
@@ -102,6 +106,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.closePath();
   ctx.stroke();
   ctx.fill();
+
   // draw eyes
   ctx.fillStyle = "#000000";
   ctx.beginPath();
@@ -110,6 +115,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.beginPath();
   ctx.arc(posX + r + 10, posY + 62 - position, 2, 0, 2 * Math.PI);
   ctx.fill();
+
   // draw nose
   ctx.fillStyle ="#CFA049";
   ctx.beginPath();
@@ -123,6 +129,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.beginPath();
   ctx.ellipse(posX + r, posY + 65 - position, r*0.14, r*0.2, 0, 0, Math.PI);
   ctx.stroke();
+
   // draw mustache
   ctx.strokeStyle = "#000000";
   ctx.beginPath();
@@ -139,6 +146,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.moveTo(posX + r + 8, posY + 73 - position);
   ctx.lineTo(posX + r + 16, posY + 71 - position);
   ctx.stroke();
+  
   // finish one session of drawing
   ctx.restore();
 
