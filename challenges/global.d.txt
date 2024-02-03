@@ -12,7 +12,7 @@
  * 
  * @returns void
  */    
-declare function drawCircle(startX:number, startY:number, radius:number, fillStyle?:string, strokeStyle?:string) => void;
+declare function drawCircle(startX: number, startY: number, radius: number, fillStyle?: string, strokeStyle?: string): void;
 
 /**
  * For Challenge 1:
@@ -28,7 +28,7 @@ declare function drawCircle(startX:number, startY:number, radius:number, fillSty
  * 
  * @returns void
  */
-declare function drawLine(startX:number, startY:number, endX:number, endY:number, strokeStyle = 'red', lineWidth = 8) => void;
+declare function drawLine(startX: number, startY: number, endX: number, endY: number, strokeStyle = 'red', lineWidth = 8): void;
 
 
 /**
@@ -42,4 +42,4 @@ declare function drawLine(startX:number, startY:number, endX:number, endY:number
  *
  * @returns void
  */
-declare function drawMoleHoleWithDynaHead(posX:number, posY:number, position = 0)
+declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position = 0): void;
