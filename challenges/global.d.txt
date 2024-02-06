@@ -5,10 +5,10 @@
  * Draw a cirle by assign position, size and styles. 
  * Origin(0,0) of coordinate system is in top left.
  * 
- * @param startX - circle center point horizontal coordinate
- * @param startY - cirlce center point vertical coordinate
- * @param radius - circle size
- * @param fillStyle - circle fill color, color name such as `red`, or hex color value suche as `#FF0000`
+ * @param startX circle center point horizontal coordinate
+ * @param startY cirlce center point vertical coordinate
+ * @param radius circle size
+ * @param fillStyle circle fill color, color name such as `red`, or hex color value suche as `#FF0000`
  * 
  * @returns void
  */    
@@ -19,12 +19,12 @@ declare function drawCircle(startX: number, startY: number, radius: number, fill
  * Draw a straght line by assign starting point, and end point.
  * if you want, you can also assign stroke color and width.
  * 
- * @param startX - line starting point horizontal coordinate
- * @param startY - line starting point vertical coordinate
- * @param endX - line end point horizontal coordinate
- * @param endYX - line end point horizontal coordinate
- * @param strokeStyle - stroke color, `red` by default
- * @param lineWidth - line thickness, `8` pixels by default
+ * @param startX line starting point horizontal coordinate
+ * @param startY line starting point vertical coordinate
+ * @param endX line end point horizontal coordinate
+ * @param endYX line end point horizontal coordinate
+ * @param strokeStyle stroke color, `red` by default
+ * @param lineWidth line thickness, `8` pixels by default
  * 
  * @returns void
  */
@@ -36,9 +36,9 @@ declare function drawLine(startX: number, startY: number, endX: number, endY: nu
  * Draw a mole with its hole, with posX, posY. 
  * If want mole grow more out of burrow, set `position` value. 
  *
- * @param posX - mole start point hori-coordinate.
- * @param posY - mole start point verti-coordinate.
- * @param position - mole body height above its burrow, range from 0 to 45, 0 by default.
+ * @param posX mole start point hori-coordinate.
+ * @param posY mole start point verti-coordinate.
+ * @param position mole body height above its burrow, range from 0 to 45, 0 by default.
  *
  * @returns void
  */
