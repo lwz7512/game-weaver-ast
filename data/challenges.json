@@ -92,7 +92,7 @@
     "cover": "images/cover/gw_poster.jpg",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
     "videoURL": "",
-    "videoSubtitle": "challenges/cx_subtitle.md",
+    "videoSubtitle": "challenges/c3_subtitle.md",
     "prerequisite": [
       {
         "name": "HTML Canvas Coordinates",
