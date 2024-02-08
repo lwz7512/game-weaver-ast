@@ -6,7 +6,7 @@ Welcome to the Coding Challenge `Whac-A-Mole` part-3: Calculate Position.
 
 In this challenge, you willl draw a 4x4 mole grid with mole-drawing function, specifically, learn how to layout moles with a starting point and mole size.
 
-Lets first uncomment line 11 in our starting code by clicking the line 11 and pressing key combination `Ctrl + /` in windows or `CMD + /`.
+Lets first uncomment line 11 in our starting code by clicking the line 11 and pressing key combination `Ctrl + /` in Windows or `CMD + /` in Mac.
 
 Once the double slash characters at the start of line 11 is disappeared, we could then press the `Run` button beside the coding area.
 
@@ -24,4 +24,8 @@ There would be small pane that describe the current `drawMoleHoleWithDynaHead`:
 
 The pane is an complete instruction about the usage of this `drawMoleHoleWithDynaHead` function, which includes decription, params explanations, lastly the `return` type. In this function, it returns nothing to user, that is what `void` means.
 
+
+Ok, before we move forward to the real challenge, lets comment the line 11, since the line 11 is just for demo use, and not supposed to use in our final code. By clicking on the line 11, and then press the key combination `Ctrl + /` in Windows or `CMD + /` in Mac, it will comment the line 11.
+
+Now, lets enable the rest lines from line 16 to line 21:
 
