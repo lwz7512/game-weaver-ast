@@ -28,6 +28,8 @@ const startXList = [];
 const startYList = [];
 const positionList = [];
 
+// remember parameters in user code to use in validators @2024/02/13
+const params = {};
 
 
 // base functions hidden from user ... but need to be included for client side running & testing
@@ -154,9 +156,12 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   funTracer.push(1);
   startXList.push(posX);
   startYList.push(posY);
-  positionList.push(position);
+
+}
+
+function debug() {
+  console.debug('======= debug result: ========')
   console.log(funTracer);
   console.log(startXList);
   console.log(startYList);
-  console.log(positionList);
 }

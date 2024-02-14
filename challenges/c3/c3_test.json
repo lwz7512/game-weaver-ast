@@ -10,7 +10,7 @@
     "description": "Layout moles horizontally start from `mStartX` and with intervals of `mWidth`!",
     "comment": "Detect the first parameter of drawMoleHoleWithDynaHead",
     "validator": [
-      "() => {",
+      "(mStartX) => {",
       "  if (funTracer.length < 16) return false;",
       "  if (startXList[0] !== mStartX) return false;",
       "  const horiSpace = startXList[1] - startXList[0];",
@@ -18,14 +18,14 @@
       "  return true;",
       "}"
     ],
-    "params": [],
+    "params": [36],
     "expectation": true
   },
   {
     "description": "Layout moles vertically start from `mStartY` and with intervals of `mHeight`!",
     "comment": "Detect the second parameter of drawMoleHoleWithDynaHead",
     "validator": [
-      "() => {",
+      "(mStartY) => {",
       "  if (funTracer.length < 16) return false;",
       "  if (startYList[0] !== mStartY) return false;",
       "  const vertiSpace = startYList[4] - startYList[0];",
@@ -33,7 +33,7 @@
       "  return true;",
       "}"
     ],
-    "params": [],
+    "params": [100],
     "expectation": true
   }
 ]
