@@ -13,9 +13,9 @@ const mHeight = 64;
 // Before working on the belowing codes, comment the line 11 above!
 
 // Then, uncoment these lines(16, 17, 20, 21), and add one more line in line 13 to draw 16 moles:
-//for (let row = 0; row < 4; row++) {
-//  for (let col = 0; col < 4; col++) {
+// for (let row = 0; row < 4; row += 1) {
+//   for (let col = 0; col < 4; col += 1) {
 // TODO: call `drawMoleHoleWithDynaHead` function below to draw a mole grid:
 
-//  }
-//}
+//   }
+// }

@@ -28,9 +28,6 @@ const startXList = [];
 const startYList = [];
 const positionList = [];
 
-// remember parameters in user code to use in validators @2024/02/13
-const params = {};
-
 
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...');
@@ -94,7 +91,7 @@ function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
   ctx.fill();
   ctx.clip();
 
-  //draw dark hole
+  // draw dark hole
   ctx.fillStyle = "#000000";
   ctx.beginPath();
   ctx.ellipse(posX+r, posY + 50, r, r*0.3, 0, 0, 2*Math.PI);

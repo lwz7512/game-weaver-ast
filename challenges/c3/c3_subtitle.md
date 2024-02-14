@@ -60,7 +60,7 @@ startX + gap value(or mole width) * i
 the variable `i` in our formula could be mole's column sequence number that start with `0`. In our code it is `col` in code line 17:
 
 ```
-for (let col = 0; col < 4; col++) {
+for (let col = 0; col < 4; col += 1) {
 ```
 
 
@@ -93,7 +93,7 @@ startY + vertical gap value(or mole height) * j
 `j` in this case should be the row sequence numbr that start with `0`. In our code, we could use `row` in code line 16:
 
 ```
-for (let row = 0; row < 4; row++) {
+for (let row = 0; row < 4; row += 1) {
 ```
 
 > NOTE: varaible `row` value could be one of `0|1|2|3`, it represents the vertical sequence of each mole.
@@ -101,7 +101,7 @@ for (let row = 0; row < 4; row++) {
 Now, we got the answer of the second checking point:
 
 ```
-drawMoleHoleWithDynaHead(mStartX + mWidth * col, mStartY + mHeight * row)
+drawMoleHoleWithDynaHead(mStartX + mWidth * col, mStartY + mHeight * row);
 ```
 
 > NOTE: we could use `mHeight` to mimic the vertical gap of each mole, and leave the third parameter of the drawMoleHoleWithDynaHead alone, it's save to do this.
