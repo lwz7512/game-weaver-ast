@@ -6,8 +6,8 @@
     "objective": "Familiar with javascript function syntax and usage.",
     "keywords": ["function", "parameters"],
     "level": 1,
-    "cover": "images/cover/challenge_1.jpg",
-    "thumbnail": "images/cover/javascript_poster_thumbnail.jpg",
+    "cover": "images/cover/challenges_covers.001.png",
+    "thumbnail": "images/cover/thumbnail_1.png",
     "videoURL": "",
     "videoSubtitle": "challenges/c1/c1_subtitle.md",
     "keypoints": [
@@ -50,8 +50,8 @@
       "How to stop a loop statement?"
     ],
     "level": 2,
-    "cover": "images/cover/gw_poster.jpg",
-    "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
+    "cover": "images/cover/challenges_covers.002.png",
+    "thumbnail": "images/cover/thumbnail_2.png",
     "videoURL": "",
     "videoSubtitle": "challenges/c2/c2_subtitle.md",
     "prerequisite": [
@@ -89,8 +89,8 @@
       "How to expose mole size incrementally one after one?"
     ],
     "level": 1,
-    "cover": "images/cover/gw_poster.jpg",
-    "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
+    "cover": "images/cover/challenges_covers.003.png",
+    "thumbnail": "images/cover/thumbnail_3.png",
     "videoURL": "",
     "videoSubtitle": "challenges/c3/c3_subtitle.md",
     "prerequisite": [
@@ -126,7 +126,7 @@
   },
   {
     "id": 5,
-    "name": "Whac-A-Mole - Part 5: Response to hammper hit",
+    "name": "Whac-A-Mole - Part 5: Response to hammer hit",
     "description": "Doing a response when a mole is being hit",
     "objective": "",
     "keywords": ["Event"],
