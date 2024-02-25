@@ -43,3 +43,14 @@ declare function drawLine(startX: number, startY: number, endX: number, endY: nu
  * @returns void
  */
 declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position = 0): void;
+
+
+/**
+ * Fore Challenge 4:
+ * Repaint in frames to achieve animation
+ *
+ * @param startX dropping starting point in horizontal
+ * @param startY dropping starting point in vertical
+ * @param step dropping speed
+ */
+ declare function animatedBall(startX: number, startY: number, step: number): void;
