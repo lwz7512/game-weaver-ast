@@ -1,16 +1,8 @@
 [
   {
-    "description": "test goal declarition",
+    "description": "test goal does not meet!",
     "comment": "test logic in code",
-    "validator": [
-      "() => {",
-      "  let r1 = circleRadius[0];",
-      "  let r2 = circleRadius[1];",
-      "  if (!r2) throw new Error('No 2th circle on canvas!')",
-      "  if (r1 === r2) return true;",
-      "  return false;",
-      "}"
-    ],
+    "validator": ["() => {", "  return false;", "}"],
     "params": [],
     "expectation": true
   },

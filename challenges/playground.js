@@ -27,6 +27,7 @@ function assertFalse(x) {
 // == remember drawing result for test case use ==
 const funTracer = []
 const grassPositions = []
+const molePositions = []
 
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...')
@@ -79,14 +80,22 @@ function drawSkyAndGrassland() {
     ctx.lineTo(startX + 4, startY)
     ctx.fill()
   })
+
+  // TODO: clear position list at each start of mole-grid painting
+  molePositions.length = 0
 }
 
 // STEP - 3: BUILD MOLE GRID
 
 /**
+ * TODO: to check postion list in validator
+ *
  * draw bigger hole as mask, with body position(0 ~ 45) above its burrow
  */
 function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
+  // save each position to validate later
+  molePositions.push(position)
+
   // keep current unclipped context
   ctx.save()
 
@@ -181,15 +190,18 @@ const isGameRunning = () => window.animationRunning
  * === Main function to start game repainting ===
  */
 const startGame = () => {
+  // stop loop before each game starting!
+  stopGame()
   window.animationRunning = true
   // START loop
   window.animRequestRef = window.requestAnimationFrame(loop)
+  console.log(` ### game loop started! ###`)
 }
 
 const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
-  console.log(` ### game stopped first ! ### `)
+  console.log(` ### game stopped first! ### `)
 }
 
 // ==== MAIN LOOP FUNCTION ===
@@ -211,17 +223,28 @@ const loop = () => {
   // NOTE: only continue at each 1 second
   if (loopCounter % 60 != 0) return
 
-  paint()
+  if (typeof paintOnEachSecond !== 'undefined') {
+    // TODO: leave this to user implementaion...
+    // so this is undefined in base code
+    paintOnEachSecond()
+  }
 
-  console.log(`>> one loop painted!`)
+  console.log(`>> Tick/sec!`)
 }
 
-const paint = () => {
+/**
+ * Main function that paint a Whac-A-Mole grid
+ */
+const paintOnEachSecond = () => {
+  // PARAMETERS USED IN THIS DRAWING:
+
+  const mSize = 4
   const mStartX = 36
   const mStartY = 100
   const mWidth = 100
   const mHeight = 64
-  const randomHeight = Math.random() * 45
+
+  const randomMole = Math.floor(Math.random() * mSize * mSize)
 
   // MAIN DRAWING STEPS:
 
@@ -229,17 +252,17 @@ const paint = () => {
   drawSkyAndGrassland()
 
   // - Part 2 -
-  for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 4; col++) {
+  for (let row = 0; row < mSize; row++) {
+    for (let col = 0; col < mSize; col++) {
       const posX = col * mWidth + mStartX
       const posY = row * mHeight + mStartY
-      drawMoleHoleWithDynaHead(posX, posY, randomHeight)
+      const index = row * mSize + col
+      // find the target one, and make it outstanding
+      const dynaHeightForMole = index == randomMole ? 45 : 0
+      drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole)
     }
   }
 }
-
-// stop loop before next run
-stopGame()
 
 // start game
 startGame()
