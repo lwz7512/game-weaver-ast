@@ -112,7 +112,10 @@
     "description": "Randomly make each of mole moving up and down...",
     "objective": "Learn how to achieve animation through re-painting process.",
     "keywords": ["Animation", "Repainting", "Random"],
-    "keypoints": ["", ""],
+    "keypoints": [
+      "How to generate random number?",
+      "How to use ternary expression?"
+    ],
     "level": 2,
     "cover": "images/cover/gw_poster.jpg",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
