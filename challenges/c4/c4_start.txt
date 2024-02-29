@@ -18,14 +18,17 @@ const paintOnEachSecond = () => {
   drawSkyAndGrassland()
 
   // - Part 2 -
-  for (let row = 0; row < mSize; row++) {
-    for (let col = 0; col < mSize; col++) {
+  for (let row = 0; row < mSize; row += 1) {
+    for (let col = 0; col < mSize; col += 1) {
       const posX = col * mWidth + mStartX
       const posY = row * mHeight + mStartY
       const index = row * mSize + col
       // find the target one, and make it outstanding
-      const dynaHeightForMole = index == randomMole ? 45 : 0
+      const dynaHeightForMole = index === randomMole ? 45 : 0
       drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole)
     }
   }
 }
+
+// start game
+startGame(paintOnEachSecond)

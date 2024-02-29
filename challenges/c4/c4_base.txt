@@ -32,6 +32,21 @@ const molePositions = []
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...')
 
+// ====== Mock Validator ===========
+const tester = () => {
+  const largeHeightSet = []
+  const zeroHeightSet = []
+  molePositions.forEach((h) => {
+    if (h === 45) largeHeightSet.push(1)
+    if (h === 0) zeroHeightSet.push(1)
+  })
+  const fullHeight_1 = largeHeightSet.length === 1
+  const zeroHeight_15 = zeroHeightSet.length === 15
+
+  if (fullHeight_1 && zeroHeight_15) return true
+  return false
+}
+
 // =============== starting challenge main code block ===================
 
 const canvas = document.getElementById('codePresenter')
@@ -40,7 +55,7 @@ const ctx = canvas.getContext('2d')
 // ====== start drawing =============
 
 // STEP - 1: build grass list
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i += 1) {
   const startX = 450 * Math.random()
   const startY = 150 + 250 * Math.random()
   grassPositions.push({
@@ -88,10 +103,11 @@ function drawSkyAndGrassland() {
 // STEP - 3: BUILD MOLE GRID
 
 /**
+ * TODO: to check postion list in validator
+ *
  * draw bigger hole as mask, with body position(0 ~ 45) above its burrow
  */
 function drawMoleHoleWithDynaHead(posX, posY, position = 0) {
-
   // save each position to validate later
   molePositions.push(position)
 
@@ -185,22 +201,26 @@ if (window.animRequestRef === undefined) {
 
 const isGameRunning = () => window.animationRunning
 
-/**
- * === Main function to start game repainting ===
- */
-const startGame = () => {
-  // stop loop before each game starting!
-  stopGame()
-  window.animationRunning = true
-  // START loop
-  window.animRequestRef = window.requestAnimationFrame(loop)
-  console.log(` ### game loop started! ###`);
-}
-
 const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
   console.log(` ### game stopped first! ### `)
+}
+
+// expose it to global for react/hook cleanup!
+window.stopGame = stopGame
+
+/**
+ * === Main function to start game repainting ===
+ */
+const startGame = (painter) => {
+  // stop loop before each game starting!
+  stopGame()
+  window.animationRunning = true
+  window.paintOnEachSecond = painter
+  // START loop
+  window.animRequestRef = window.requestAnimationFrame(loop)
+  console.log(` ### game loop started! ###`)
 }
 
 // ==== MAIN LOOP FUNCTION ===
@@ -220,17 +240,14 @@ const loop = () => {
   window.animRequestRef = window.requestAnimationFrame(loop)
 
   // NOTE: only continue at each 1 second
-  if (loopCounter % 60 != 0) return
+  if (loopCounter % 60 !== 0) return
 
-  if (typeof paintOnEachSecond !== 'undefined') {
+  if (typeof window.paintOnEachSecond !== 'undefined') {
     // TODO: leave this to user implementaion...
-    // so this is undefined in base code
-    paintOnEachSecond()
+    // so its is undefined in base code
+    console.log('> paint on sec!)
+    window.paintOnEachSecond()
   }
 
   console.log(`>> Tick/sec!`)
 }
-
-
-// start game
-startGame()
