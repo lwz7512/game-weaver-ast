@@ -5,12 +5,5 @@
     "validator": ["() => {", "  return false;", "}"],
     "params": [],
     "expectation": true
-  },
-  {
-    "description": "",
-    "comment": "",
-    "validator": [],
-    "params": [],
-    "expectation": true
   }
 ]

@@ -2,14 +2,21 @@
   {
     "description": "test goal does not meet!",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
-    "validator": ["() => {", "  return false;", "}"],
-    "params": [],
-    "expectation": true
-  },
-  {
-    "description": "",
-    "comment": "",
-    "validator": [],
+    "validator": [
+      "() => {",
+      "  const largeHeightSet = []",
+      "  const zeroHeightSet = []",
+      "  molePositions.forEach((h) => {",
+      "    if (h === 45) largeHeightSet.push(1)",
+      "    if (h === 0) zeroHeightSet.push(1)",
+      "  })",
+      "  const fullHeight_1 = largeHeightSet.length === 1",
+      "  const zeroHeight_15 = zeroHeightSet.length === 15",
+      "  ",
+      "  if (fullHeight_1 && zeroHeight_15) return true",
+      "  return false",
+      "}"
+    ],
     "params": [],
     "expectation": true
   }

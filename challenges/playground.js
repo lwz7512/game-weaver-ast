@@ -32,6 +32,21 @@ const molePositions = []
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...')
 
+// ====== Mock Validator ===========
+const tester = () => {
+  const largeHeightSet = []
+  const zeroHeightSet = []
+  molePositions.forEach((h) => {
+    if (h === 45) largeHeightSet.push(1)
+    if (h === 0) zeroHeightSet.push(1)
+  })
+  const fullHeight_1 = largeHeightSet.length === 1
+  const zeroHeight_15 = zeroHeightSet.length === 15
+
+  if (fullHeight_1 && zeroHeight_15) return true
+  return false
+}
+
 // =============== starting challenge main code block ===================
 
 const canvas = document.getElementById('codePresenter')
