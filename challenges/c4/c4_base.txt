@@ -245,7 +245,7 @@ const loop = () => {
   if (typeof window.paintOnEachSecond !== 'undefined') {
     // TODO: leave this to user implementaion...
     // so its is undefined in base code
-    console.log('> paint on sec!)
+    console.log(`> paint on sec!`)
     window.paintOnEachSecond()
   }
 
