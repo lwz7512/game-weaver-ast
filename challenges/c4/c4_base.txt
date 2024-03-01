@@ -201,28 +201,6 @@ if (window.animRequestRef === undefined) {
 
 const isGameRunning = () => window.animationRunning
 
-const stopGame = () => {
-  window.cancelAnimationFrame(window.animRequestRef)
-  window.animationRunning = false
-  console.log(` ### game stopped first! ### `)
-}
-
-// expose it to global for react/hook cleanup!
-window.stopGame = stopGame
-
-/**
- * === Main function to start game repainting ===
- */
-const startGame = (painter) => {
-  // stop loop before each game starting!
-  stopGame()
-  window.animationRunning = true
-  window.paintOnEachSecond = painter
-  // START loop
-  window.animRequestRef = window.requestAnimationFrame(loop)
-  console.log(` ### game loop started! ###`)
-}
-
 // ==== MAIN LOOP FUNCTION ===
 
 let loopCounter = 0
@@ -243,11 +221,33 @@ const loop = () => {
   if (loopCounter % 60 !== 0) return
 
   if (typeof window.paintOnEachSecond !== 'undefined') {
-    // TODO: leave this to user implementaion...
+    // leave this to user implementaion...
     // so its is undefined in base code
-    console.log(`> paint on sec!`)
     window.paintOnEachSecond()
   }
+  // console.log(`>> Tick/sec!`)
+}
 
-  console.log(`>> Tick/sec!`)
+const stopGame = () => {
+  window.cancelAnimationFrame(window.animRequestRef)
+  window.animationRunning = false
+  console.log(` ### game stopped first! ### `)
+}
+
+// expose it to global
+window.stopGame = stopGame
+
+/**
+ * === Main function to start game repainting ===
+ */
+const startGame = (painter) => {
+  // stop loop before each game starting!
+  stopGame()
+  window.animationRunning = true
+  window.paintOnEachSecond = painter
+  // START loop
+  window.animRequestRef = window.requestAnimationFrame(loop)
+  console.log(` ### game loop started! ###`)
+  // start first paint to enable validator
+  painter()
 }

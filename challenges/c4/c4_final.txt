@@ -29,3 +29,6 @@ const paintOnEachSecond = () => {
     }
   }
 }
+
+// start game
+startGame(paintOnEachSecond)
