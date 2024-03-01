@@ -46,7 +46,7 @@ declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position =
 
 
 /**
- * Fore Challenge 4:
+ * For Challenge 4:
  * Repaint in frames to achieve animation
  *
  * @param startX dropping starting point in horizontal
@@ -54,3 +54,28 @@ declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position =
  * @param step dropping speed
  */
  declare function animatedBall(startX: number, startY: number, step: number): void;
+
+
+/**
+ * For Challenge 4:
+ * Draw sky background and grassland
+ */
+declare function drawSkyAndGrassland(): void
+
+
+/**
+ * For Challenge 4:
+ * Draw sky background and grassland
+ *
+ * @param posX starting point in horizontal
+ * @param posY starting point in vertical
+ * @param position mole body height
+ */
+declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position: number): void
+
+/**
+ * For Challenge 4:
+ * start game with paint function
+ * 
+ */
+declare function startGame(paint: ()=>void): void
