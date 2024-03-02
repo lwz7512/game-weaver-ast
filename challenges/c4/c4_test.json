@@ -1,6 +1,6 @@
 [
   {
-    "description": "test goal does not meet!",
+    "description": "Could not find random postion from male grid!",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
       "() => {",
