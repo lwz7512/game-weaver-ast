@@ -27,7 +27,7 @@ const paintOnEachSecond = () => {
       // TODO: write a ternary expression to determine the value of `dynaHeightForMole`:
       // compare `randomMole` with `index`, if its equal, assign 45 to `dynaHeightForMole`, 
       // otherwise assign 0 to it!
-      const dynaHeightForMole = index === randomMole ? 45 : 0
+      const dynaHeightForMole = 0
       drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole)
     }
   }
