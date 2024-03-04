@@ -1,6 +1,6 @@
 [
   {
-    "description": "Could not find different postions from male grid!",
+    "description": "dynaHeightForMole need to be calculated from a ternary expression!",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
       "() => {",
@@ -21,13 +21,13 @@
     "expectation": true
   },
   {
-    "description": "Could not find random postion from male grid!",
+    "description": "randomMole should be a random value from Math API",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
       "() => {",
       "  window.testAgain();",
       "  const [first, second] = moldeIndexs;",
-      "  if (first === second) return true;",
+      "  if (first != second) return true;",
       "  return false;",
       "}"
     ],

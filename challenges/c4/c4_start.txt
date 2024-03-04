@@ -4,13 +4,13 @@
 const paintOnEachSecond = () => {
   // PARAMETERS USED IN THIS DRAWING:
 
-  const mSize = 4
-  const mStartX = 36
-  const mStartY = 100
-  const mWidth = 100
-  const mHeight = 64
+  const mSize = 4;
+  const mStartX = 36;
+  const mStartY = 100;
+  const mWidth = 100;
+  const mHeight = 64;
   // TODO: generate a random integer between 0 and 16, except for 16
-  const randomMole = 0
+  const randomMole = 0;
 
   // MAIN DRAWING STEPS:
 
@@ -20,20 +20,20 @@ const paintOnEachSecond = () => {
   // - Part 2 -
   for (let row = 0; row < mSize; row += 1) {
     for (let col = 0; col < mSize; col += 1) {
-      const posX = col * mWidth + mStartX
-      const posY = row * mHeight + mStartY
-      const index = row * mSize + col
+      const posX = col * mWidth + mStartX;
+      const posY = row * mHeight + mStartY;
+      const index = row * mSize + col;
       // find the target one, and make it outstanding
       // TODO: write a ternary expression to determine the value of `dynaHeightForMole`:
       // compare `randomMole` with `index`, if its equal, assign 45 to `dynaHeightForMole`, 
       // otherwise assign 0 to it!
-      const dynaHeightForMole = 0
-      drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole)
+      const dynaHeightForMole = 0;
+      drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole);
     }
   }
 
-  return randomMole
+  return randomMole;
 }
 
 // start game
-startGame(paintOnEachSecond)
+startGame(paintOnEachSecond);
