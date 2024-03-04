@@ -28,6 +28,7 @@ function assertFalse(x) {
 const funTracer = []
 const grassPositions = []
 const molePositions = []
+const moldeIndexs = []
 
 // base functions hidden from user ... but need to be included for client side running & testing
 console.log('## this is a challenge code base ...')
@@ -249,5 +250,14 @@ const startGame = (painter) => {
   window.animRequestRef = window.requestAnimationFrame(loop)
   console.log(` ### game loop started! ###`)
   // start first paint to enable validator
-  painter()
+  const index = painter()
+  moldeIndexs.push(index)
+}
+
+/**
+ * Expose to test case to call painter
+ */
+window.testAgain = () => {
+  const index = window.paintOnEachSecond()
+  moldeIndexs.push(index)
 }

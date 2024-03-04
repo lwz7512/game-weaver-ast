@@ -31,6 +31,8 @@ const paintOnEachSecond = () => {
       drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole)
     }
   }
+
+  return randomMole
 }
 
 // start game

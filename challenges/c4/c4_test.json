@@ -1,6 +1,6 @@
 [
   {
-    "description": "Could not find random postion from male grid!",
+    "description": "Could not find different postions from male grid!",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
       "() => {",
@@ -14,6 +14,20 @@
       "  const zeroHeight15 = zeroHeightSet.length === 15",
       "  ",
       "  if (fullHeight1 && zeroHeight15) return true",
+      "  return false",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
+  },
+  {
+    "description": "Could not find random postion from male grid!",
+    "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
+    "validator": [
+      "() => {",
+      "  window.testAgain()",
+      "  [first, second] = moldeIndexs",
+      "  if (first === second) return true",
       "  return false",
       "}"
     ],
