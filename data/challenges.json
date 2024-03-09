@@ -117,11 +117,22 @@
       "How to use ternary expression?"
     ],
     "level": 2,
-    "cover": "images/cover/gw_poster.jpg",
-    "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
+    "cover": "images/cover/challenges_covers.004.png",
+    "thumbnail": "images/cover/thumbnail_4.png",
     "videoURL": "",
     "videoSubtitle": "challenges/c4/c4_subtitle.md",
-    "prerequisite": [],
+    "prerequisite": [
+      {
+        "name": "JavaScript Math.random()",
+        "title": "Generate random integers with random function from Math object",
+        "url": "https://www.w3schools.com/jsref/jsref_random.asp"
+      },
+      {
+        "name": "Conditional (ternary) operator",
+        "title": "Simplest way to decide a value from one condition",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator"
+      }
+    ],
     "baseCode": "challenges/c4/c4_base.txt",
     "startCode": "challenges/c4/c4_start.txt",
     "testCode": "challenges/c4/c4_test.json",
