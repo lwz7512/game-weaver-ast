@@ -128,6 +128,11 @@
         "url": "https://www.w3schools.com/jsref/jsref_random.asp"
       },
       {
+        "name": "Javascript number round down",
+        "title": "Using Math floor function to round down a number",
+        "url": "https://www.w3schools.com/jsref/jsref_floor.asp"
+      },
+      {
         "name": "Conditional (ternary) operator",
         "title": "Simplest way to decide a value from one condition",
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator"

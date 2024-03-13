@@ -15,7 +15,7 @@ const paintOnEachSecond = () => {
   // MAIN DRAWING STEPS:
 
   // - Part 1 -
-  drawSkyAndGrassland()
+  drawSkyAndGrassland();
 
   // - Part 2 -
   for (let row = 0; row < mSize; row += 1) {
