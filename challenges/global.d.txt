@@ -79,3 +79,10 @@ declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position: 
  * 
  */
 declare function startGame(paint: ()=>void): void
+
+
+/**
+ * Print some message or values onto tips panel. 
+ * `string` or `number` prefered.
+ */
+declare function log(message: string | number): void

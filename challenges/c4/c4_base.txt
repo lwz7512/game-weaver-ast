@@ -248,3 +248,28 @@ window.testAgain = () => {
   const index = window.paintOnEachSecond()
   moldeIndexs.push(index)
 }
+
+/**
+ * debug method for user coding process
+ */
+window.log = (message) => {
+  // find the panel
+  const codeTipsSelector = '.coding-tips-panel'
+  const codeTips = document.querySelector(codeTipsSelector)
+  // open panel
+  const style = codeTips.classList
+  const hasAnim = style.contains('animate')
+  !hasAnim && style.add('animate')
+  // clear beforehand
+  codeTips.innerHTML = ''
+  // add one message
+  const info = document.createElement('p')
+  info.innerHTML = `${message}`
+  // success | failure
+  info.classList.add('success')
+  // display it
+  codeTips.appendChild(info)
+
+  // mark DEBUG flag open
+  window.DEBUG = true
+}
