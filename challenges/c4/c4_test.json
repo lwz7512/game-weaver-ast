@@ -21,12 +21,14 @@
     "expectation": true
   },
   {
-    "description": "randomMole should be a random value from Math API",
+    "description": "randomMole should be a random integer value from Math API",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
       "() => {",
       "  window.testAgain();",
       "  const [first, second] = moldeIndexs;",
+      "  const isDecimal = (x) => !Number.isInteger(x)",
+      "  if (isDecimal(first) || isDecimal(second)) return false;",
       "  if (first != second) return true;",
       "  return false;",
       "}"

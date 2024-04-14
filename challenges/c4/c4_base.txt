@@ -213,12 +213,17 @@ const loop = () => {
     // so its is undefined in base code
     window.paintOnEachSecond()
   }
-  // console.log(`>> Tick/sec!`)
+  if (window.DEBUG) {
+    console.log(`>> Tick/sec!`);
+  }
 }
 
+// stop previous game running first!
 const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
+  // stop debug first
+  window.DEBUG = false;
   console.log(` ### game stopped first! ### `)
 }
 
@@ -229,15 +234,18 @@ window.stopGame = stopGame
  * === Main function to start game repainting ===
  */
 const startGame = (painter) => {
-  // stop loop before each game starting!
+  // == stop loop before each game starting!
   stopGame()
+  // == set new painter
   window.animationRunning = true
   window.paintOnEachSecond = painter
-  // START loop
+  // == START game loop ==
   window.animRequestRef = window.requestAnimationFrame(loop)
   console.log(` ### game loop started! ###`)
-  // start first paint to enable validator
+  
+  // *** start first paint to enable validator ***
   const index = painter()
+  // save first validated value
   moldeIndexs.push(index)
 }
 

@@ -10,6 +10,7 @@ const paintOnEachSecond = () => {
   const mWidth = 100;
   const mHeight = 64;
   // TODO: generate a random integer between 0 and 16, except for 16
+  // assign the random value to the constant `randomMole` below:
   const randomMole = 0;
 
   // MAIN DRAWING STEPS:
@@ -26,7 +27,7 @@ const paintOnEachSecond = () => {
       // find the target one, and make it outstanding
       // TODO: write a ternary expression to determine the value of `dynaHeightForMole`:
       // compare `randomMole` with `index`, if its equal, assign 45 to `dynaHeightForMole`, 
-      // otherwise assign 0 to it!
+      // otherwise assign `0` to it!
       const dynaHeightForMole = 0;
       drawMoleHoleWithDynaHead(posX, posY, dynaHeightForMole);
     }
