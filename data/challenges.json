@@ -4,7 +4,7 @@
     "name": "Whac-A-Mole - Part 1: Javascript Function",
     "description": "Draw two circles and one line with corresponding function.",
     "objective": "Familiar with javascript function syntax and usage.",
-    "keywords": ["function", "parameters"],
+    "keywords": ["function", "parameters", "Arguments"],
     "level": 1,
     "cover": "images/cover/challenges_covers.001.png",
     "thumbnail": "images/cover/thumbnail_1.png",
@@ -111,7 +111,7 @@
     "name": "Whac-A-Mole - Part 4: Make it moving",
     "description": "Randomly make each of mole moving up and down...",
     "objective": "Learn how to achieve animation through re-painting process.",
-    "keywords": ["Animation", "Repainting", "Random"],
+    "keywords": ["Arguments", "Repainting", "Random"],
     "keypoints": [
       "How to generate random number?",
       "How to use ternary expression?"
@@ -139,7 +139,7 @@
       },
       {
         "name": "Conditional (ternary) operator",
-        "title": "Simplest way to decide a value from one condition",
+        "title": "Simplest way to decide a value from a condition",
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator"
       }
     ],

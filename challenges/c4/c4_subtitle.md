@@ -102,9 +102,9 @@ Update the line 14 into this:
 
 > const randomMole = Math.floor(Math.random() * 16);
 
-Very interesting right? 
+What's that? A two-function combination? Yes! 
 
-Just put your last step expression into a new function, then you could get a new result as you expect!
+To make a value as the `argument` of a function, just put your expression in last step into the parentheses of the target function, then you could get a new result of `rounded` and `random` number!
 
 Press the `Run` button!
 
@@ -113,4 +113,60 @@ You pass one task of this challenge!
 ### Third step: Declare a size value with a ternary expression
 
 
-...
+Now, let move on to the last task, write a `ternary` expression!
+
+What is `ternary` expression?
+
+Ternary expression is also named as `Conditional operator`, it is used to determine some simple cases that only have one `yes or no` condition to check. Take a common question in our daily life for example:
+
+> As parents you kids may once ask you: Can i drink alcohol?
+> you answer them: if your age is lager than 18, you could, otherwise you couldn't! 
+
+The simple answer above could be translated into a `ternary` expression like this:
+
+> answer = kid_age > 18 ? 'yes' : 'no'
+
+
+So a typical ternary expression have a structure like this:
+
+> condition ? exprIfTrue : exprIfFalse
+
+
+The `condition` in a ternary expression could do any type of comparision such as `equal`, `not equal`, `larger`, `smaller`...etc that could result in a `boolean` value. 
+
+The question mark `?` in a ternary evaluate the result of the `condition`, if the value of the `condition` expression is `true`, then we got the case before the colon(:), if the value of the `condition` expression is `false`, we got the the case after the colon(:).
+
+Unlike its peer `if...else` need at lease `5` lines code to the same job, ternary expression only need just `1` line code to do a simple flow control.
+
+
+Go back our challenge, we need to compare `randomMole` with `index`, if they are `equal`, so, we got the condtion:
+
+> randomMole == index
+
+NOTE here: we use double `Equals sign` to do a equal check, rather than one equals sign!
+
+Then, we know the first case after the checking is `45`, and the second case after the colon is `0`.
+
+So, our ternary expression is:
+
+> randomMole == index ? 45 : 0
+
+
+Finally, we assign this ternary expression to the constant `dynaHeightForMole` in line `31`:
+
+> const dynaHeightForMole = randomMole == index ? 45 : 0;
+
+That means, we save the condition height value from the ternary exprresion above to the constant `dynaHeightForMole`.
+
+NOTE again: here we use one `Equals sign` between the `dynaHeightForMole` and `randomMole` to do a `assign` or keeping work!
+
+
+All done!
+
+Lets hit the `Run` button again to finish this challenge!
+
+
+Congratulations!
+
+
+You pass the fourth coding challenge!
