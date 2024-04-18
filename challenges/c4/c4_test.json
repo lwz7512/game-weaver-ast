@@ -1,5 +1,21 @@
 [
   {
+    "description": "randomMole should be a random integer value from Math API",
+    "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
+    "validator": [
+      "() => {",
+      "  window.testAgain();",
+      "  const [first, second] = moldeIndexs;",
+      "  const isDecimal = (x) => !Number.isInteger(x)",
+      "  if (isDecimal(first) || isDecimal(second)) return false;",
+      "  if (first != second) return true;",
+      "  return false;",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
+  },
+  {
     "description": "dynaHeightForMole need to be calculated from a ternary expression!",
     "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
     "validator": [
@@ -14,22 +30,6 @@
       "  const zeroHeight15 = zeroHeightSet.length === 15;",
       "  ",
       "  if (fullHeight1 && zeroHeight15) return true;",
-      "  return false;",
-      "}"
-    ],
-    "params": [],
-    "expectation": true
-  },
-  {
-    "description": "randomMole should be a random integer value from Math API",
-    "comment": "test check molePositions array if there is a number 45 and 0 for others ...",
-    "validator": [
-      "() => {",
-      "  window.testAgain();",
-      "  const [first, second] = moldeIndexs;",
-      "  const isDecimal = (x) => !Number.isInteger(x)",
-      "  if (isDecimal(first) || isDecimal(second)) return false;",
-      "  if (first != second) return true;",
       "  return false;",
       "}"
     ],
