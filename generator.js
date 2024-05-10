@@ -52,7 +52,11 @@ fs.writeFileSync(targetFinalFile, `// final code for challenge ${folder}`)
 const challengesJSON = './data/challenges.json'
 const challengesContent = fs.readFileSync(challengesJSON, option)
 const challenges = JSON.parse(challengesContent)
-const challengeId = parseInt(folder.charAt(1))
+const challengeId = parseInt(folder.substring(1))
+const today = new Date()
+const yearMonthDay = `${today.getFullYear()}/${
+  today.getMonth() + 1
+}/${today.getDate()}`
 const challengesWithNew = challenges.map((clg) => {
   if (clg.id === challengeId) {
     return {
@@ -62,6 +66,7 @@ const challengesWithNew = challenges.map((clg) => {
       startCode: `challenges/${folder}/${folder}_start.txt`,
       testCode: `challenges/${folder}/${folder}_test.json`,
       videoSubtitle: `challenges/${folder}/${folder}_subtitle.md`,
+      createDate: yearMonthDay,
     }
   } else {
     return clg

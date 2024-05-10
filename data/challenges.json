@@ -176,14 +176,14 @@
     "cover": "images/cover/gw_poster.jpg",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
     "videoURL": "",
-    "videoSubtitle": "challenges/cx_subtitle.md",
     "prerequisite": [],
     "codeDecorations": [],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": "",
-    "createDate": "2024/01/28"
+    "baseCode": "challenges/c5/c5_base.txt",
+    "startCode": "challenges/c5/c5_start.txt",
+    "testCode": "challenges/c5/c5_test.json",
+    "finalCode": "challenges/c5/c5_final.txt",
+    "videoSubtitle": "challenges/c5/c5_subtitle.md",
+    "createDate": "2024/05/05"
   },
   {
     "id": 6,

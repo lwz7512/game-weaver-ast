@@ -1,0 +1,9 @@
+[
+  {
+    "description": "test goal does not meet!",
+    "comment": "test logic in code",
+    "validator": ["() => {", "  return false;", "}"],
+    "params": [],
+    "expectation": true
+  }
+]

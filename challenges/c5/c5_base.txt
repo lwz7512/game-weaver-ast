@@ -52,7 +52,8 @@ const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
 
 // hide cursor
-canvas.style.cursor = 'none'
+canvas.style.cursor = 'none';
+
 
 // ====== start drawing =============
 
