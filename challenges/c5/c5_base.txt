@@ -243,7 +243,6 @@ const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
 
-  document.removeEventListener('mousemove', mouseMoveHandler);
   console.log(` ### game stopped first! ### `)
 }
 
