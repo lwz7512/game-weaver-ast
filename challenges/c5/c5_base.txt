@@ -208,15 +208,8 @@ const isGameRunning = () => window.animationRunning
 
 let loopCounter = 0
 
-let globalMouseX = 0
-let globalMouseY = 0
-
 let globalRandomMole = 0
 
-document.addEventListener('mousemove', function (mouseEvent) {
-  globalMouseX = mouseEvent.clientX
-  globalMouseY = mouseEvent.clientY
-})
 
 const loop = () => {
   loopCounter += 1
@@ -390,12 +383,3 @@ const paintHammerDown = (ctx, mx, my) => {
   drawRotatedRect(ctx, mx + 6, my + 22, 80, 10, 15)
 }
 
-/**
- * draw hammer following mouse move ...
- */
-const paintMouseFollowHammer = () => {
-  paintHammerUp(ctx, globalMouseX, globalMouseY)
-}
-
-// start game
-startGame(paintMainScene, paintMouseFollowHammer)
