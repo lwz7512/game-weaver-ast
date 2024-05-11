@@ -206,15 +206,23 @@ const isGameRunning = () => window.animationRunning
 // ==== MAIN LOOP FUNCTION ===
 
 let loopCounter = 0
+let globalRandomMole = 0
 
 let globalMouseX = 0
 let globalMouseY = 0
 
-let globalRandomMole = 0
+let isMouseDown = false
 
 document.addEventListener('mousemove', function (mouseEvent) {
   globalMouseX = mouseEvent.clientX
   globalMouseY = mouseEvent.clientY
+})
+
+document.addEventListener('mousedown', function (mouseEvent) {
+  isMouseDown = true
+})
+document.addEventListener('mouseup', function (mouseEvent) {
+  isMouseDown = false
 })
 
 const loop = () => {

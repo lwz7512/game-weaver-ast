@@ -50,13 +50,15 @@ const grassPositions = []
 const molePositions = []
 const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
-const canvasRect = canvas.getBoundingClientRect();
 
 // hide cursor
 canvas.style.cursor = 'none';
 
 /**  Expose this function to game since challenge-5 */
-const getCanvasPosition = () => ({x: canvasRect.x, y: canvasRect.y});
+const getCanvasPosition = () => {
+  const canvasRect = canvas.getBoundingClientRect();
+  return {x: canvasRect.x, y: canvasRect.y}
+}
 
 // ====== start drawing =============
 
@@ -226,8 +228,8 @@ const loop = () => {
 
   // == Part-1: main drawing logic, first ==
   window.mainScenePainter && window.mainScenePainter(globalRandomMole)
-  // == Part-2: cursor drawing logic ==
-  window.mouseViewPainter && window.mouseViewPainter()
+  // == Part-2: cursor drawing logic with canvas `ctx` ==
+  window.mouseViewPainter && window.mouseViewPainter(ctx)
 
   // NOTE: only continue at each 1 second
   if (loopCounter % 60 !== 0) return

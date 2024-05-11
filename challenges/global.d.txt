@@ -95,3 +95,13 @@ declare function paintMainScene(): void;
  * Get canvas position to calculate the offset of global mouse position
  */
 declare function getCanvasPosition(): {x:number, y:number};
+
+/**
+ * Paint hammer normal state
+ */
+declare function paintHammerUp(ctx: CanvasRenderingContext2D, hammerX: number, hammerY: number): void;
+
+/**
+ * Paint hammer down(pressed) state
+ */
+declare function paintHammerDown(ctx: CanvasRenderingContext2D, hammerX: number, hammerY: number): void;

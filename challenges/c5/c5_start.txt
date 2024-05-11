@@ -1,6 +1,7 @@
-// start code for challenge c5
+// document level variables:
 let globalMouseX = 0;
 let globalMouseY = 0;
+let isMouseDown = false;
 
 
 // listening mouse move...to save it's position:
@@ -9,14 +10,23 @@ document.addEventListener('mousemove', function (mouseEvent){
   globalMouseY = mouseEvent.clientY;
 })
 
+// listening mouse pressed
+document.addEventListener('mousedown', function (mouseEvent) {
+  isMouseDown = true
+})
+// listening mouse up
+document.addEventListener('mouseup', function (mouseEvent) {
+  isMouseDown = false
+})
+
 /**
  * draw hammer following mouse move ...
  */
-const paintMouseFollowHammer = () => {
-  const canvasPosition = getCanvasPosition();
-  const hammerX = globalMouseX - canvasPosition.x;
-  const hammerY = globalMouseY - canvasPosition.y;
-  paintHammerUp(ctx, hammerX, hammerY);
+const paintMouseFollowHammer = (ctx) => {
+  // const canvasPosition = getCanvasPosition();
+  // const hammerX = globalMouseX - canvasPosition.x;
+  // const hammerY = globalMouseY - canvasPosition.y;
+  paintHammerUp(ctx, 100, 100);
 }
 
 // start game
