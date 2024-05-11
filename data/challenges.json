@@ -170,7 +170,7 @@
     "name": "Whac-A-Mole - Part 5: Response to hammer hit",
     "description": "Doing a response when a mole is being hit",
     "objective": "",
-    "keywords": ["Event"],
+    "keywords": ["Event", "Mouse move", "Mouse click"],
     "keypoints": [],
     "level": 1,
     "cover": "images/cover/challenges_covers.005.png",

@@ -1,12 +1,12 @@
 // start code for challenge c5
-let globalMouseX = 0
-let globalMouseY = 0
+let globalMouseX = 0;
+let globalMouseY = 0;
 
 document.addEventListener('mousemove', function (mouseEvent) {
-  globalMouseX = mouseEvent.clientX
-  globalMouseY = mouseEvent.clientY
-  console.log(`>> mouseX: ${globalMouseX}`)
-  console.log(`>> mouseY: ${globalMouseY})
+  globalMouseX = mouseEvent.clientX;
+  globalMouseY = mouseEvent.clientY;
+  console.log(`>> mouseX: ${globalMouseX}`);
+  console.log(`>> mouseY: ${globalMouseY}`);
 })
 
 
@@ -14,8 +14,8 @@ document.addEventListener('mousemove', function (mouseEvent) {
  * draw hammer following mouse move ...
  */
 const paintMouseFollowHammer = () => {
-  paintHammerUp(ctx, globalMouseX, globalMouseY)
+  paintHammerUp(ctx, globalMouseX, globalMouseY);
 }
 
 // start game
-startGame(paintMainScene, paintMouseFollowHammer)
+startGame(paintMainScene, paintMouseFollowHammer);
