@@ -50,9 +50,13 @@ const grassPositions = []
 const molePositions = []
 const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
+const canvasRect = canvas.getBoundingClientRect()
 
 // hide cursor
 canvas.style.cursor = 'none'
+
+/**  Expose this function to game since challenge-5 */
+const getCanvasPosition = () => ({ x: canvasRect.x, y: canvasRect.y })
 
 // ====== start drawing =============
 
@@ -206,24 +210,8 @@ const isGameRunning = () => window.animationRunning
 // ==== MAIN LOOP FUNCTION ===
 
 let loopCounter = 0
+
 let globalRandomMole = 0
-
-let globalMouseX = 0
-let globalMouseY = 0
-
-let isMouseDown = false
-
-document.addEventListener('mousemove', function (mouseEvent) {
-  globalMouseX = mouseEvent.clientX
-  globalMouseY = mouseEvent.clientY
-})
-
-document.addEventListener('mousedown', function (mouseEvent) {
-  isMouseDown = true
-})
-document.addEventListener('mouseup', function (mouseEvent) {
-  isMouseDown = false
-})
 
 const loop = () => {
   loopCounter += 1
@@ -253,6 +241,10 @@ const loop = () => {
 const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
+
+  if (typeof mouseMoveHandler !== 'undefined') {
+    document.removeEventListener('mousemove', mouseMoveHandler)
+  }
   console.log(` ### game stopped first! ### `)
 }
 
@@ -397,11 +389,33 @@ const paintHammerDown = (ctx, mx, my) => {
   drawRotatedRect(ctx, mx + 6, my + 22, 80, 10, 15)
 }
 
+// start code for challenge c5
+let globalMouseX = 0
+let globalMouseY = 0
+let isMouseDown = false
+
+// listening mouse move...to save it's position:
+document.addEventListener('mousemove', function (mouseEvent) {
+  globalMouseX = mouseEvent.clientX
+  globalMouseY = mouseEvent.clientY
+})
+// listening mouse pressed
+document.addEventListener('mousedown', function (mouseEvent) {
+  isMouseDown = true
+})
+// listening mouse up
+document.addEventListener('mouseup', function (mouseEvent) {
+  isMouseDown = false
+})
+
 /**
  * draw hammer following mouse move ...
  */
 const paintMouseFollowHammer = () => {
-  paintHammerUp(ctx, globalMouseX, globalMouseY)
+  const canvasPosition = getCanvasPosition()
+  const hammerX = globalMouseX - canvasPosition.x
+  const hammerY = globalMouseY - canvasPosition.y
+  paintHammerUp(ctx, hammerX, hammerY)
 }
 
 // start game

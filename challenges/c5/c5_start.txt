@@ -3,29 +3,32 @@ let globalMouseX = 0;
 let globalMouseY = 0;
 let isMouseDown = false;
 
-
 // listening mouse move...to save it's position:
 document.addEventListener('mousemove', function (mouseEvent){
   globalMouseX = mouseEvent.clientX;
   globalMouseY = mouseEvent.clientY;
 })
-
 // listening mouse pressed
-document.addEventListener('mousedown', function (mouseEvent) {
+document.addEventListener('mousedown', function () {
   isMouseDown = true
 })
 // listening mouse up
-document.addEventListener('mouseup', function (mouseEvent) {
+document.addEventListener('mouseup', function () {
   isMouseDown = false
 })
 
 /**
- * draw hammer following mouse move ...
+ * == Draw a mouse-responsive hammer ==
+ * TODO: check `isMouseDown` with `if ... else ...`
+ * to execute `paintHammerDown` while mouse is down,
+ * otherwise to execute `paintHammerUp` while mouse is up!
+ * @param ctx canvas context
  */
 const paintMouseFollowHammer = (ctx) => {
   // const canvasPosition = getCanvasPosition();
   // const hammerX = globalMouseX - canvasPosition.x;
   // const hammerY = globalMouseY - canvasPosition.y;
+  // paintHammerDown(ctx, 100, 100);
   paintHammerUp(ctx, 100, 100);
 }
 
