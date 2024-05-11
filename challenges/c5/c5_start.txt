@@ -2,19 +2,24 @@
 let globalMouseX = 0;
 let globalMouseY = 0;
 
-document.addEventListener('mousemove', function (mouseEvent) {
+const mouseMoveHandler = (mouseEvent) => {
   globalMouseX = mouseEvent.clientX;
   globalMouseY = mouseEvent.clientY;
   console.log(`>> mouseX: ${globalMouseX}`);
   console.log(`>> mouseY: ${globalMouseY}`);
-})
+}
 
+// listening mouse move...to save it's position:
+document.addEventListener('mousemove', mouseMoveHandler)
 
 /**
  * draw hammer following mouse move ...
  */
 const paintMouseFollowHammer = () => {
-  paintHammerUp(ctx, globalMouseX, globalMouseY);
+  const canvasPosition = getCanvasPosition();
+  const hammerX = globalMouseX - canvasPosition.x;
+  const hammerY = globalMouseY - canvasPosition.y;
+  paintHammerUp(ctx, hammerX, hammerY);
 }
 
 // start game

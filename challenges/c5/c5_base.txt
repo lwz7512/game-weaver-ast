@@ -50,10 +50,13 @@ const grassPositions = []
 const molePositions = []
 const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
+const canvasRect = canvas.getBoundingClientRect();
 
 // hide cursor
 canvas.style.cursor = 'none';
 
+/**  Expose this function to game since challenge-5 */
+const getCanvasPosition = () => ({x: canvasRect.x, y: canvasRect.y});
 
 // ====== start drawing =============
 
@@ -239,6 +242,8 @@ const loop = () => {
 const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef)
   window.animationRunning = false
+
+  document.removeEventListener('mousemove', mouseMoveHandler);
   console.log(` ### game stopped first! ### `)
 }
 

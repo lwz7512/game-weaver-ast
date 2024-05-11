@@ -60,7 +60,7 @@ declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position =
  * For Challenge 4:
  * Draw sky background and grassland
  */
-declare function drawSkyAndGrassland(): void
+declare function drawSkyAndGrassland(): void;
 
 
 /**
@@ -71,18 +71,27 @@ declare function drawSkyAndGrassland(): void
  * @param posY starting point in vertical
  * @param position mole body height
  */
-declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position: number): void
+declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position: number): void;
 
 /**
  * For Challenge 4:
  * start game with paint function
  * 
  */
-declare function startGame(paint: ()=>void): void
-
+declare function startGame(paint: ()=>void): void;
 
 /**
  * Print some message or values onto tips panel. 
  * `string` or `number` prefered.
  */
-declare function log(message: string | number): void
+declare function log(message: string | number): void;
+
+/**
+ * Game main scene logic
+ */
+declare function paintMainScene(): void;
+
+/**
+ * Get canvas position to calculate the offset of global mouse position
+ */
+declare function getCanvasPosition(): {x:number, y:number};
