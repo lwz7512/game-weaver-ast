@@ -53,6 +53,8 @@ const ctx = canvas.getContext('2d')
 
 // == global variables for test function use ==
 let mockHammerDrawState = 0; // 1: draw down, 0: draw up
+let currentMouseX = 0;
+let currentMouseY = 0;
 
 // == mock variable setter for test script use ==
 const triggerMouseDown = () => {
@@ -274,6 +276,7 @@ const startGame = (painter, cursor) => {
   console.log(` ### game loop started! ###`)
   // start first paint to enable validator
   painter()
+  cursor()
 }
 
 /**
@@ -338,6 +341,11 @@ function drawRotatedRect(ctx, x, y, width, height, degrees) {
 const paintHammerUp = (ctx, mx, my) => {
 
   mockHammerDrawState = 0;
+
+  // save current `hammerX` for test case
+  currentMouseX = mx;
+  // save current `hammerY` for test case
+  currentMouseY = my;
 
   if (!ctx) return;
 

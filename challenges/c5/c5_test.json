@@ -24,5 +24,18 @@
     ],
     "params": [],
     "expectation": 0
+  },
+  {
+    "description": "paintHammerUp arguments should use `hammerX` and `hammerY` ",
+    "comment": "test `currentMouseX` and `currentMouseY` if assigned by `paintHammerUp` ",
+    "validator": [
+      "() => {",
+      "  const mouseXAssigned = currentMouseX < 0; ",
+      "  const mouseYAssigned = currentMouseY < 0; ",
+      "  return mouseXAssigned && mouseYAssigned;",
+      "}"
+    ],
+    "params": [],
+    "expectation": true
   }
 ]

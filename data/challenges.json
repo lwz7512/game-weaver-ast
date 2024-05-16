@@ -177,7 +177,10 @@
     "thumbnail": "images/cover/thumbnail_5.png",
     "videoURL": "",
     "prerequisite": [],
-    "codeDecorations": [{ "type": "todo", "position": [22, 4, 22, 8] }],
+    "codeDecorations": [
+      { "type": "todo", "position": [22, 4, 22, 8] },
+      { "type": "todo", "position": [25, 4, 25, 8] }
+    ],
     "baseCode": "challenges/c5/c5_base.txt",
     "startCode": "challenges/c5/c5_start.txt",
     "testCode": "challenges/c5/c5_test.json",

@@ -22,12 +22,17 @@ document.addEventListener('mouseup', function () {
  * TODO: check `isMouseDown` with `if ... else ...`
  * to execute `paintHammerDown` while mouse is down,
  * otherwise to execute `paintHammerUp` while mouse is up!
+ * TODO: put `hammerX` and `hammerY` values into the `paintHammerDown`
+ * and `paintHammerDown` functions to make hammer moving!
+ *
  * @param ctx canvas context
  */
 const paintMouseFollowHammer = (ctx) => {
   // const canvasPosition = getCanvasPosition();
   // const hammerX = globalMouseX - canvasPosition.x;
   // const hammerY = globalMouseY - canvasPosition.y;
+  console.log({hammerX})
+  console.log({hammerY})
   if (isMouseDown) {
     paintHammerDown(ctx, 100, 100);
   } else {
