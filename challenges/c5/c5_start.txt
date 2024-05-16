@@ -28,8 +28,11 @@ const paintMouseFollowHammer = (ctx) => {
   // const canvasPosition = getCanvasPosition();
   // const hammerX = globalMouseX - canvasPosition.x;
   // const hammerY = globalMouseY - canvasPosition.y;
-  // paintHammerDown(ctx, 100, 100);
-  paintHammerUp(ctx, 100, 100);
+  if (isMouseDown) {
+    paintHammerDown(ctx, 100, 100);
+  } else {
+    paintHammerUp(ctx, 100, 100);
+  }
 }
 
 // start game
