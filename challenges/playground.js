@@ -45,6 +45,14 @@ const tester = () => {
   return false
 }
 
+// == mock variable setter for test script use ==
+const triggerMouseDown = () => {
+  document.dispatchEvent(new Event('mousedown'))
+}
+const triggerMouseUp = () => {
+  document.dispatchEvent(new Event('mouseup'))
+}
+
 // =============== starting challenge main code block ===================
 const grassPositions = []
 const molePositions = []

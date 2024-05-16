@@ -414,8 +414,11 @@ document.addEventListener('mouseup', function (mouseEvent) {
 })
 
 /**
- * draw hammer following mouse move ...
- * @param ctx canvas context 
+ * == Draw a mouse-responsive hammer ==
+ * TODO: check `isMouseDown` with `if ... else ...`
+ * to execute `paintHammerDown` while mouse is down,
+ * otherwise to execute `paintHammerUp` while mouse is up!
+ * @param ctx canvas context
  */
 const paintMouseFollowHammer = (ctx) => {
   const canvasPosition = getCanvasPosition();

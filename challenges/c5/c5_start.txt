@@ -33,4 +33,4 @@ const paintMouseFollowHammer = (ctx) => {
 }
 
 // start game
-startGame(paintMainScene, paintMouseFollowHammer);
+startGameWithCursor(paintMouseFollowHammer);

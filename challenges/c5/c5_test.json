@@ -1,9 +1,28 @@
 [
   {
-    "description": "test goal does not meet!",
-    "comment": "test logic in code",
-    "validator": ["() => {", "  return false;", "}"],
+    "description": "paintHammerDown should be used while mouse is down",
+    "comment": "test mouseViewPainter function after mockMouseDown has called ",
+    "validator": [
+      "() => {",
+      "  triggerMouseDown(); // mock mouse down to update `isMouseDown`",
+      "  window.mouseViewPainter(); // invoke `paintHammerDown` to set `mockHammerDrawState` ",
+      "  return mockHammerDrawState;",
+      "}"
+    ],
     "params": [],
-    "expectation": true
+    "expectation": 1
+  },
+  {
+    "description": "paintHammerUp should be used while mouse is up",
+    "comment": "test mouseViewPainter function after mockMouseDown has called ",
+    "validator": [
+      "() => {",
+      "  triggerMouseUp(); // mock mouse up to update `isMouseDown`",
+      "  window.mouseViewPainter(); // invoke `paintHammerUp` to set `mockHammerDrawState` ",
+      "  return mockHammerDrawState;",
+      "}"
+    ],
+    "params": [],
+    "expectation": 0
   }
 ]

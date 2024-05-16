@@ -81,6 +81,12 @@ declare function drawMoleHoleWithDynaHead(posX: number, posY: number, position: 
 declare function startGame(paint: ()=>void): void;
 
 /**
+ * For Challenge 5:
+ * start game with cursor support
+ */
+declare function startGameWithCursor(cursor: (ctx: CanvasRenderingContext2D)=>void): void;
+
+/**
  * Print some message or values onto tips panel. 
  * `string` or `number` prefered.
  */

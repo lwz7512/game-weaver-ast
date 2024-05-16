@@ -51,8 +51,17 @@ const molePositions = []
 const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
 
-// hide cursor
-canvas.style.cursor = 'none';
+// == global variables for test function use ==
+let mockHammerDrawState = 0; // 1: draw down, 0: draw up
+
+// == mock variable setter for test script use ==
+const triggerMouseDown = () => {
+  document.dispatchEvent(new Event('mousedown'))
+}
+const triggerMouseUp = () => {
+  document.dispatchEvent(new Event('mouseup'))
+}
+
 
 /**  Expose this function to game since challenge-5 */
 const getCanvasPosition = () => {
@@ -268,6 +277,13 @@ const startGame = (painter, cursor) => {
 }
 
 /**
+ * == Sub main function with cursor callback
+ */
+const startGameWithCursor = (cursor) => {
+  startGame(paintMainScene, cursor);
+}
+
+/**
  * Main function that paint a Whac-A-Mole grid
  */
 const paintMainScene = (randomMole) => {
@@ -320,6 +336,11 @@ function drawRotatedRect(ctx, x, y, width, height, degrees) {
 }
 
 const paintHammerUp = (ctx, mx, my) => {
+
+  mockHammerDrawState = 0;
+
+  if (!ctx) return;
+
   // Draw the ellipse
   ctx.fillStyle = 'red'
   // Draw the ellipse
@@ -355,6 +376,11 @@ const paintHammerUp = (ctx, mx, my) => {
 }
 
 const paintHammerDown = (ctx, mx, my) => {
+
+  mockHammerDrawState = 1;
+
+  if (!ctx) return;
+
   // Draw the ellipse
   ctx.fillStyle = 'red'
   // Draw the ellipse
