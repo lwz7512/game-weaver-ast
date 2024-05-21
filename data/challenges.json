@@ -169,14 +169,14 @@
     "id": 5,
     "name": "Whac-A-Mole - Part 5: Response to hammer hit",
     "description": "Making the hammer movable and usable through listening mouse events!",
-    "objective": "",
+    "objective": "Learn how to respond user input such as mouse actions!",
     "keywords": ["Mouse Event", "Condition Statement", "if...else"],
     "keypoints": [
       "How to respond mouse event such as move or click?",
       "How to do basic flow control?",
       "Any other condtition statement to do flow control?"
     ],
-    "level": 1,
+    "level": 2,
     "cover": "images/cover/challenges_covers.005.png",
     "thumbnail": "images/cover/thumbnail_5.png",
     "videoURL": "",
