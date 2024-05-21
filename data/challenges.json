@@ -168,7 +168,7 @@
   {
     "id": 5,
     "name": "Whac-A-Mole - Part 5: Response to hammer hit",
-    "description": "Doing a response when a mole is being hit",
+    "description": "Making the hammer movable and usable through listening mouse events!",
     "objective": "",
     "keywords": ["Mouse Event", "Condition Statement", "if...else"],
     "keypoints": [
