@@ -170,13 +170,33 @@
     "name": "Whac-A-Mole - Part 5: Response to hammer hit",
     "description": "Doing a response when a mole is being hit",
     "objective": "",
-    "keywords": ["Event", "Mouse move", "Mouse click"],
-    "keypoints": [],
+    "keywords": ["Mouse Event", "Condition Statement", "if...else"],
+    "keypoints": [
+      "How to respond mouse event such as move or click?",
+      "How to do basic flow control?",
+      "Any other condtition statement to do flow control?"
+    ],
     "level": 1,
     "cover": "images/cover/challenges_covers.005.png",
     "thumbnail": "images/cover/thumbnail_5.png",
     "videoURL": "",
-    "prerequisite": [],
+    "prerequisite": [
+      {
+        "name": "Web MouseEvent interactions",
+        "title": "Events dispatched from web document",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"
+      },
+      {
+        "name": "JavaScript if, else, and else if",
+        "title": "Conditional Statements",
+        "url": "https://www.w3schools.com/js/js_if_else.asp"
+      },
+      {
+        "name": "The JavaScript Switch Statement",
+        "title": "Yet another kind of Conditional Statement",
+        "url": "https://www.w3schools.com/js/js_switch.asp"
+      }
+    ],
     "codeDecorations": [
       { "type": "todo", "position": [22, 4, 22, 8] },
       { "type": "todo", "position": [25, 4, 25, 8] }
