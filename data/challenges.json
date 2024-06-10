@@ -183,8 +183,8 @@
     "prerequisite": [
       {
         "name": "Web MouseEvent interactions",
-        "title": "Events dispatched from web document",
-        "url": "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"
+        "title": "Listening events dispatched from browser document",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
       },
       {
         "name": "JavaScript if, else, and else if",
@@ -199,7 +199,7 @@
     ],
     "codeDecorations": [
       { "type": "todo", "position": [22, 4, 22, 8] },
-      { "type": "todo", "position": [25, 4, 25, 8] }
+      { "type": "todo", "position": [24, 4, 24, 8] }
     ],
     "baseCode": "challenges/c5/c5_base.txt",
     "startCode": "challenges/c5/c5_start.txt",
