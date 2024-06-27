@@ -210,23 +210,39 @@
   },
   {
     "id": 6,
-    "name": "Whac-A-Mole - Part 6: Score counting",
+    "name": "Whac-A-Mole - Part 6: Hit counting",
     "description": "Count the moles being hit and display the value",
-    "objective": "",
-    "keywords": ["Counter"],
-    "keypoints": [],
+    "objective": "Learn how to simulate hitting by hit-detection.",
+    "keywords": ["Hit Detection", "Counter"],
+    "keypoints": [
+      "How to check the nearest hole from the position of a hammer?",
+      "How to determine two objects are contacting(or colliding)?",
+      "What's the simplest way to do hit detection?",
+      "How can we show the appearance of a mole being hit?"
+    ],
     "level": 2,
     "cover": "images/cover/gw_poster.jpg",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
     "videoURL": "",
-    "videoSubtitle": "challenges/cx_subtitle.md",
-    "prerequisite": [],
+    "videoSubtitle": "challenges/c6/c6_subtitle.md",
+    "prerequisite": [
+      {
+        "name": "Measure distance of two points",
+        "title": "using javascript math function to do hypotenuse calculation",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot"
+      },
+      {
+        "name": "Hit(Collision) detection calculation with javascript",
+        "title": "different ways to determine if two objects are colliding",
+        "url": "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection"
+      }
+    ],
     "codeDecorations": [],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": "",
-    "createDate": "2024/01/28"
+    "baseCode": "challenges/c6/c6_base.txt",
+    "startCode": "challenges/c6/c6_start.txt",
+    "testCode": "challenges/c6/c6_test.json",
+    "finalCode": "challenges/c6/c6_final.txt",
+    "createDate": "2024/6/16"
   },
   {
     "id": 7,

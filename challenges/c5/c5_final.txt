@@ -51,8 +51,19 @@ const molePositions = []
 const canvas = document.getElementById('codePresenter')
 const ctx = canvas.getContext('2d')
 
-// hide cursor
-canvas.style.cursor = 'none';
+// == global variables for test function use ==
+let mockHammerDrawState = 0; // 1: draw down, 0: draw up
+let currentMouseX = 0;
+let currentMouseY = 0;
+
+// == mock variable setter for test script use ==
+const triggerMouseDown = () => {
+  document.dispatchEvent(new Event('mousedown'))
+}
+const triggerMouseUp = () => {
+  document.dispatchEvent(new Event('mouseup'))
+}
+
 
 /**  Expose this function to game since challenge-5 */
 const getCanvasPosition = () => {
@@ -265,6 +276,14 @@ const startGame = (painter, cursor) => {
   console.log(` ### game loop started! ###`)
   // start first paint to enable validator
   painter()
+  cursor()
+}
+
+/**
+ * == Sub main function with cursor callback
+ */
+const startGameWithCursor = (cursor) => {
+  startGame(paintMainScene, cursor);
 }
 
 /**
@@ -320,6 +339,16 @@ function drawRotatedRect(ctx, x, y, width, height, degrees) {
 }
 
 const paintHammerUp = (ctx, mx, my) => {
+
+  mockHammerDrawState = 0;
+
+  // save current `hammerX` for test case
+  currentMouseX = mx;
+  // save current `hammerY` for test case
+  currentMouseY = my;
+
+  if (!ctx) return;
+
   // Draw the ellipse
   ctx.fillStyle = 'red'
   // Draw the ellipse
@@ -355,6 +384,11 @@ const paintHammerUp = (ctx, mx, my) => {
 }
 
 const paintHammerDown = (ctx, mx, my) => {
+
+  mockHammerDrawState = 1;
+
+  if (!ctx) return;
+
   // Draw the ellipse
   ctx.fillStyle = 'red'
   // Draw the ellipse
@@ -389,10 +423,6 @@ const paintHammerDown = (ctx, mx, my) => {
   drawRotatedRect(ctx, mx + 6, my + 22, 80, 10, 15)
 }
 
-
-// ============= start code ===============
-
-
 // document level variables:
 let globalMouseX = 0;
 let globalMouseY = 0;
@@ -403,21 +433,23 @@ document.addEventListener('mousemove', function (mouseEvent){
   globalMouseX = mouseEvent.clientX;
   globalMouseY = mouseEvent.clientY;
 })
-
 // listening mouse pressed
-document.addEventListener('mousedown', function (mouseEvent) {
+document.addEventListener('mousedown', function () {
   isMouseDown = true
 })
 // listening mouse up
-document.addEventListener('mouseup', function (mouseEvent) {
+document.addEventListener('mouseup', function () {
   isMouseDown = false
 })
 
 /**
  * == Draw a mouse-responsive hammer ==
+ * TODO: put `hammerX` and `hammerY` values into the `paintHammerDown`
+ * and `paintHammerDown` functions to make hammer moving!
  * TODO: check `isMouseDown` with `if ... else ...`
  * to execute `paintHammerDown` while mouse is down,
  * otherwise to execute `paintHammerUp` while mouse is up!
+ *
  * @param ctx canvas context
  */
 const paintMouseFollowHammer = (ctx) => {
@@ -432,4 +464,4 @@ const paintMouseFollowHammer = (ctx) => {
 }
 
 // start game
-startGame(paintMainScene, paintMouseFollowHammer);
+startGameWithCursor(paintMouseFollowHammer);
