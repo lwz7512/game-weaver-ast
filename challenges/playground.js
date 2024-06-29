@@ -48,8 +48,8 @@ const tester = () => {
 // =============== Network Assets =============
 const sourceRepo =
   'https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/';
-const hitSoundFile = `${sourceRepo}assets/sound/punch-hit-pixabay.mp3`;
-const ouchSoundFile = `${sourceRepo}assets/sound/ough-pixabay.mp3`;
+const hitSoundFile = `${sourceRepo}assets/sound/punch-hit-pixabay-cut.mp3`;
+const ouchSoundFile = `${sourceRepo}assets/sound/ough-pixabay-cut.mp3`;
 const hitSoundTrack = new Audio(hitSoundFile);
 hitSoundTrack.playbackRate = 2; // faster play
 const ouchSoundTrack = new Audio(ouchSoundFile);
@@ -381,6 +381,7 @@ class SimpleMoleState {
       if (collided) {
         this.isTouching = true;
         // play sound
+        ouchSoundTrack.currentTime = 0;
         ouchSoundTrack.play();
         // console.log(`### Being hited!`);
       }
@@ -703,6 +704,7 @@ document.addEventListener('mousemove', function (mouseEvent) {
 document.addEventListener('mousedown', function (mouseEvent) {
   isMouseDown = true;
   hammer.setState('DOWN');
+  hitSoundTrack.currentTime = 0;
   hitSoundTrack.play();
 });
 // listening mouse up
