@@ -1,1 +1,28 @@
-// start code for challenge c6
+/**
+ * User Customizable Mole!
+ * before `initMoleGrid` function
+ */
+class HitableCuteMole extends SimpleMoleState {
+  constructor(posX, posY, index) {
+    super(posX, posY, index);
+  }
+
+  /**
+   * TODO: leave this to user!
+   * @returns
+   */
+  checkCollistion() {
+    const xOffset = 36;
+    const yOffset = 6;
+    const xDiff = this.posX - this.mouseX;
+    const yDiff = this.posY - this.mouseY;
+    const distance = Math.hypot(xDiff + xOffset, yDiff + yOffset);
+    // distance within this threshold considered hit success!
+    const threshold = 30;
+    // console.log(distance);
+    return threshold > distance;
+  }
+}
+
+// run game with default param!
+buildWhacMoleGame();

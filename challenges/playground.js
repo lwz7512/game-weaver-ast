@@ -75,9 +75,13 @@ if (window.animRequestRef === undefined) {
 const isGameRunning = () => window.animationRunning;
 
 // ======== Global game context info will change wile game running ===============
-let globalMouseX = 0;
-let globalMouseY = 0;
-let isMouseDown = false;
+const GW = {
+  hammer: null, // to init later
+  isMouseDown: false,
+  globalMouseX: 0,
+  globalMouseY: 0,
+};
+
 let loopCounter = 0;
 let globalRandomMole = 0;
 // ======== End of global game context =============
@@ -90,8 +94,8 @@ const getCanvasPosition = () => {
 
 const getCursorPositionInCanvas = () => {
   const canvasPosition = getCanvasPosition();
-  const hammerX = globalMouseX - canvasPosition.x;
-  const hammerY = globalMouseY - canvasPosition.y;
+  const hammerX = GW.globalMouseX - canvasPosition.x;
+  const hammerY = GW.globalMouseY - canvasPosition.y;
   return [hammerX, hammerY];
 };
 // ====== End of utility functions ======
@@ -157,6 +161,11 @@ const startGame = (painterOnFrame, cursorOnFrame, refreshOnSecond) => {
 };
 
 // ================= Statefull Mole Implementation Area ==============
+
+/**
+ * Mole state implementation
+ * @date 2024/06/26
+ */
 class SimpleMoleState {
   /** mole x coordinate */
   posX = 0;
@@ -606,9 +615,10 @@ class HitableCuteMole extends SimpleMoleState {
 
 /**
  * Moles grid to cache each state of mole
+ * @param { SimpleMoleState } MoleStateClass
  * @returns
  */
-const initMoleGrid = () => {
+const initMoleGrid = (MoleStateClass) => {
   // PARAMETERS USED IN THIS DRAWING:
   const moles = [];
   const mSize = 4;
@@ -621,7 +631,7 @@ const initMoleGrid = () => {
       const posX = col * mWidth + mStartX;
       const posY = row * mHeight + mStartY;
       const index = row * mSize + col;
-      const mole = new HitableCuteMole(posX, posY, index);
+      const mole = new MoleStateClass(posX, posY, index);
       moles.push(mole);
     }
   }
@@ -664,19 +674,12 @@ const drawSkyAndGrassland = (ctx) => {
   molePositions.length = 0;
 };
 
-// === setup grass meta data ===
-initGrass();
-// === Game asset-1: Build Moles grid to render later
-const moleGrid = initMoleGrid();
-// === Game asset-2: Hammer
-const hammer = new SimpleHammerState();
-
 /**
  * Main function that paint a Whac-A-Mole grid, in every frame!!
  *
  * @param {*} ctx canvas graphic context
  */
-const paintMainScene = (ctx) => {
+const paintMainScene = (ctx, moleGrid) => {
   // - Part 1 -
   drawSkyAndGrassland(ctx);
 
@@ -687,7 +690,7 @@ const paintMainScene = (ctx) => {
   moleGrid.forEach((m) => {
     // m.setDebugMode();
     m.setMousePosition(hammerX, hammerY);
-    m.setHitState(isMouseDown);
+    m.setHitState(GW.isMouseDown);
     m.selectMoleAt(globalRandomMole);
     m.render(ctx);
   });
@@ -695,32 +698,66 @@ const paintMainScene = (ctx) => {
 
 // ============= start code ===============
 
+/**
+ * Safe way to avoid repetitive event listening
+ *
+ * @param {string} event event name such as `mousemove`, `mousedown`
+ * @param {Function} listener event handler, or callback
+ */
+const eventHandlerSafeListener = (event, listener) => {
+  if (window[event]) {
+    document.removeEventListener(event, window[event]);
+  }
+  document.addEventListener(event, listener);
+  window[event] = listener;
+};
+
 // listening mouse move...to save it's position:
-document.addEventListener('mousemove', function (mouseEvent) {
-  globalMouseX = mouseEvent.clientX;
-  globalMouseY = mouseEvent.clientY;
-});
+const mouseMoveHandler = function (mouseEvent) {
+  GW.globalMouseX = mouseEvent.clientX;
+  GW.globalMouseY = mouseEvent.clientY;
+};
+eventHandlerSafeListener('mousemove', mouseMoveHandler);
+
 // listening mouse pressed
-document.addEventListener('mousedown', function (mouseEvent) {
-  isMouseDown = true;
-  hammer.setState('DOWN');
+const mouseDownHandler = function (mouseEvent) {
+  GW.isMouseDown = true;
+  GW.hammer.setState('DOWN');
   hitSoundTrack.currentTime = 0;
   hitSoundTrack.play();
-});
-// listening mouse up
-document.addEventListener('mouseup', function (mouseEvent) {
-  isMouseDown = false;
-  hammer.setState('UP');
-});
+};
+eventHandlerSafeListener('mousedown', mouseDownHandler);
 
-// === Start game ===
-startGame(
-  paintMainScene,
-  function (ctx) {
-    hammer.render(ctx);
-  },
-  function () {
-    // updage random position
-    // globalRandomMole = Math.floor(Math.random() * 16);
-  }
-);
+// listening mouse up
+const mouseUpHandler = function (mouseEvent) {
+  GW.isMouseDown = false;
+  GW.hammer.setState('UP');
+};
+eventHandlerSafeListener('mouseup', mouseUpHandler);
+
+// === Init Game Assets and Start ===
+const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
+  // === setup grass meta data ===
+  initGrass();
+  // === Game asset-1: Build Moles grid to render later
+  const moleGrid = initMoleGrid(MoleClass);
+  // === Game asset-2: Hammer
+  GW.hammer = new SimpleHammerState();
+
+  // === Start game ===
+  startGame(
+    function (ctx) {
+      paintMainScene(ctx, moleGrid);
+    },
+    function (ctx) {
+      GW.hammer.render(ctx);
+    },
+    function () {
+      // updage random position
+      globalRandomMole = Math.floor(Math.random() * 16);
+    }
+  );
+};
+
+// run game with default param!
+buildWhacMoleGame();
