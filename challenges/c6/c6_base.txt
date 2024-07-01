@@ -364,8 +364,9 @@ class SimpleMoleState {
     ctx.lineTo(posX + r + 16, posY + 71 - position);
     ctx.stroke();
 
-    // TODO: draw hit reference red dot
-    if (this.isDebugMode) {
+    // draw hit reference red dot
+    const visible = this.checkIsVisible();
+    if (this.isDebugMode && visible) {
       ctx.moveTo(posX, posY);
       ctx.fillStyle = '#FF0000';
       ctx.beginPath();
@@ -414,6 +415,12 @@ class SimpleMoleState {
 class SimpleHammerState {
   currentState = 'UP'; // UP | DOWN
   _canvasCtx = null;
+  /** Dev mode to show reference dot */
+  isDebugMode = false;
+
+  constructor(debug = false) {
+    this.isDebugMode = debug;
+  }
 
   setState(upOrDn) {
     this.currentState = upOrDn;
@@ -564,11 +571,20 @@ class SimpleHammerState {
     if (this.currentState === 'UP') {
       this.paintHammerUp(ctx, hammerX, hammerY);
     } else {
-      // TODO: check if hit the mole to draw star!
+      // check if hit the mole to draw star!
       // for now just draw star at each hit
       this.drawStar(hammerX - 10, hammerY + 30, 12, 30, 15);
       // then draw hammer
       this.paintHammerDown(ctx, hammerX, hammerY);
+    }
+    // draw hit reference red dot
+    if (this.isDebugMode) {
+      ctx.strokeStyle = '#000000';
+      ctx.moveTo(hammerX, hammerY);
+      ctx.fillStyle = '#00FF00';
+      ctx.beginPath();
+      ctx.arc(hammerX, hammerY, 4, 0, 2 * Math.PI);
+      ctx.fill();
     }
   } // end of state rendering
 } // end of SimpleHammerState
@@ -689,7 +705,7 @@ const paintMainScene = (ctx, moleGrid) => {
 
   // - Part 2: update moles state -
   moleGrid.forEach((m) => {
-    // m.setDebugMode();
+    m.setDebugMode();
     m.setMousePosition(hammerX, hammerY);
     m.setHitState(GW.isMouseDown);
     m.selectMoleAt(globalRandomMole);
@@ -752,9 +768,11 @@ const mouseDownHandler = function (mouseEvent) {
 const mouseUpHandler = function (mouseEvent) {
   const isCanvas = isElementCanvas(mouseEvent.target);
   if (!isCanvas) return;
-
-  GW.isMouseDown = false;
-  GW.hammer.setState('UP');
+  // lazy mouse up to extend mouse down state length
+  setTimeout(() => {
+    GW.isMouseDown = false;
+    GW.hammer.setState('UP');
+  }, 100);
 };
 
 /**
@@ -776,7 +794,7 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
   // === Game asset-1: Build Moles grid to render later
   const moleGrid = initMoleGrid(MoleClass);
   // === Game asset-2: Hammer
-  GW.hammer = new SimpleHammerState();
+  GW.hammer = new SimpleHammerState(true);
 
   // === Start game ===
   startGame(
@@ -793,6 +811,8 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
   );
 
   // === setup user input handlers ===
+  // TODO: better place to use this line?
+  // @2024/07/01
   initUserInputs();
 };
 
