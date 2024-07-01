@@ -134,6 +134,7 @@ const stopGame = () => {
   window.cancelAnimationFrame(window.animRequestRef);
   window.animationRunning = false;
   // console.log(` ### game stopped first! ### `);
+  eventsHandlerCleaner();
 };
 
 // expose it to global
@@ -712,28 +713,61 @@ const eventHandlerSafeListener = (event, listener) => {
   window[event] = listener;
 };
 
+/**
+ * Cleanup event listeners after left game stage
+ */
+const eventsHandlerCleaner = () => {
+  if (window['mousemove']) {
+    document.removeEventListener('mousemove', window['mousemove']);
+  }
+  if (window['mousedown']) {
+    document.removeEventListener('mousedown', window['mousedown']);
+  }
+  if (window['mouseup']) {
+    document.removeEventListener('mouseup', window['mouseup']);
+  }
+  console.log(`## event handlers cleaned up!`);
+};
+
+const isElementCanvas = (htmlElmt) => htmlElmt.tagName === 'CANVAS';
+
 // listening mouse move...to save it's position:
 const mouseMoveHandler = function (mouseEvent) {
   GW.globalMouseX = mouseEvent.clientX;
   GW.globalMouseY = mouseEvent.clientY;
 };
-eventHandlerSafeListener('mousemove', mouseMoveHandler);
 
 // listening mouse pressed
 const mouseDownHandler = function (mouseEvent) {
+  const isCanvas = isElementCanvas(mouseEvent.target);
+  if (!isCanvas) return;
+
   GW.isMouseDown = true;
   GW.hammer.setState('DOWN');
   hitSoundTrack.currentTime = 0;
   hitSoundTrack.play();
 };
-eventHandlerSafeListener('mousedown', mouseDownHandler);
 
 // listening mouse up
 const mouseUpHandler = function (mouseEvent) {
+  const isCanvas = isElementCanvas(mouseEvent.target);
+  if (!isCanvas) return;
+
   GW.isMouseDown = false;
   GW.hammer.setState('UP');
 };
-eventHandlerSafeListener('mouseup', mouseUpHandler);
+
+/**
+ * Listening user input:
+ * - mouse move
+ * - mouse down
+ * - mouse up
+ */
+const initUserInputs = () => {
+  eventHandlerSafeListener('mousemove', mouseMoveHandler);
+  eventHandlerSafeListener('mousedown', mouseDownHandler);
+  eventHandlerSafeListener('mouseup', mouseUpHandler);
+};
 
 // === Init Game Assets and Start ===
 const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
@@ -757,6 +791,9 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
       globalRandomMole = Math.floor(Math.random() * 16);
     }
   );
+
+  // === setup user input handlers ===
+  initUserInputs();
 };
 
 // run game with default param!
