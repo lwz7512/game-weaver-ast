@@ -8,21 +8,22 @@ class HitableCuteMole extends SimpleMoleState {
   }
 
   /**
-   * TODO: leave this to user!
-   * @returns
+   * TODO: Check mouse distance between `mole` and `hammer`:
+   * if the distance below `30`? if true, it means they are colliding!
+   * @returns boolean value of comparision
    */
   checkCollistion() {
     const xOffset = 36;
     const yOffset = 6;
     const xDiff = this.posX - this.mouseX;
     const yDiff = this.posY - this.mouseY;
-    const distance = Math.hypot(xDiff + xOffset, yDiff + yOffset);
+    // const distance = ?;
     // distance within this threshold considered hit success!
     const threshold = 30;
-    // console.log(distance);
-    return threshold > distance;
+    // return threshold > distance;
+    return false;
   }
 }
 
 // run game with default param!
-buildWhacMoleGame();
+buildWhacMoleGame(HitableCuteMole);

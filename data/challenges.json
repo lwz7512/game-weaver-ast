@@ -213,12 +213,11 @@
     "name": "Whac-A-Mole - Part 6: Hit Testing",
     "description": "Check if two objecs is colliding",
     "objective": "Learn how to simulate hitting by hit-detection.",
-    "keywords": ["Hit Detection", "Counter"],
+    "keywords": ["Hit Detection", "Math"],
     "keypoints": [
       "How to check the nearest hole from the position of a hammer?",
       "How to determine two objects are contacting(or colliding)?",
-      "What's the simplest way to do hit detection?",
-      "How can we show the appearance of a mole being hit?"
+      "What's the simplest way to do hit detection?"
     ],
     "level": 2,
     "cover": "images/cover/challenges_covers.006.png",

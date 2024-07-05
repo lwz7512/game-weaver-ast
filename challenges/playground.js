@@ -121,13 +121,13 @@ const loop = () => {
   window.mouseViewPainter && window.mouseViewPainter(ctx);
 
   // NOTE: only continue at each 1.0 second
-  if (loopCounter % 60 !== 0) return;
+  if (loopCounter % 40 !== 0) return;
 
   if (typeof window.mainScenePainter !== 'undefined') {
     // update the mole position at each second
     window.stateUpdaterBySecond && window.stateUpdaterBySecond();
   }
-  // console.log(`>> Tick/sec!`)
+  // console.log(`>> Tick/sec!`);
 };
 
 const stopGame = () => {
@@ -185,6 +185,9 @@ class SimpleMoleState {
   isTouching = false;
   /** Dev mode to show reference dot */
   isDebugMode = false;
+
+  /** keep hit state counter */
+  hitStayTimer = 0;
 
   constructor(x, y, sequence) {
     this.posX = x;
@@ -386,6 +389,15 @@ class SimpleMoleState {
   render(ctx) {
     const visible = this.checkIsVisible();
     const h = visible ? 45 : 0;
+
+    // show hit state for 10 frames
+    const stayTimeUp = this.hitStayTimer < 10;
+    if (this.isTouching && stayTimeUp) {
+      this.drawMoleHoleWithDynaHead(ctx, this.posX, this.posY, 20);
+      this.hitStayTimer += 1;
+      return;
+    }
+
     // is showing and mouse down!
     if (visible && this.isHit) {
       const collided = this.checkCollistion();
@@ -395,6 +407,7 @@ class SimpleMoleState {
         ouchSoundTrack.currentTime = 0;
         ouchSoundTrack.play();
         // console.log(`### Being hited!`);
+        this.hitStayTimer = 0;
       }
     } else {
       this.isTouching = false;
@@ -817,4 +830,4 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
 };
 
 // run game with default param!
-buildWhacMoleGame();
+buildWhacMoleGame(HitableCuteMole);
