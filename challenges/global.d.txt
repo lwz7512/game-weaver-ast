@@ -116,3 +116,19 @@ declare function paintHammerDown(ctx: CanvasRenderingContext2D, hammerX: number,
  * Start game with `Mole` state class that implement `checkCollistion` function
  */
  declare function buildWhacMoleGame(MoleClass: SimpleMoleState): void;
+
+/**
+ * Hammer State Machine
+ * @date 2024/06/23
+ */
+declare class SimpleHammerState {
+
+  /** hammer position in horizontal */
+  hammerX: number;
+  /** hammer position in vertical */
+  hammerY: number;
+  /** constructor function */
+  constructor(posX: number, posY: number, index: number);
+  /** user implementation */
+  checkCollistion(): boolean;
+}

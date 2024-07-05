@@ -177,10 +177,10 @@ class SimpleMoleState {
   index = 0;
   /** is mouse down */
   isHit = false;
-  /** mouse x */
-  mouseX = 0;
-  /** mouse y */
-  mouseY = 0;
+  /** hammer x */
+  hammerX = 0;
+  /** hammer y */
+  hammerY = 0;
   /** if being hit by the hammer  */
   isTouching = false;
   /** Dev mode to show reference dot */
@@ -202,8 +202,8 @@ class SimpleMoleState {
   checkCollistion() {
     // const xOffset = 36;
     // const yOffset = 6;
-    // const xDiff = this.posX - this.mouseX;
-    // const yDiff = this.posY - this.mouseY;
+    // const xDiff = this.posX - this.hammerX;
+    // const yDiff = this.posY - this.hammerY;
     // const distance = Math.hypot(xDiff + xOffset, yDiff + yOffset);
     // // distance within this threshold considered hit success!
     // const threshold = 30;
@@ -234,8 +234,8 @@ class SimpleMoleState {
    * @param {number} mY mouse y
    */
   setMousePosition(mX, mY) {
-    this.mouseX = mX;
-    this.mouseY = mY;
+    this.hammerX = mX;
+    this.hammerY = mY;
   }
 
   /**
@@ -633,8 +633,8 @@ class HitableCuteMole extends SimpleMoleState {
   checkCollistion() {
     const xOffset = 36;
     const yOffset = 6;
-    const xDiff = this.posX - this.mouseX;
-    const yDiff = this.posY - this.mouseY;
+    const xDiff = this.posX - this.hammerX;
+    const yDiff = this.posY - this.hammerY;
     const distance = Math.hypot(xDiff + xOffset, yDiff + yOffset);
     // distance within this threshold considered hit success!
     const threshold = 30;

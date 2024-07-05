@@ -1,6 +1,6 @@
 /**
  * User Customizable Mole!
- * before `initMoleGrid` function
+ * Need to implement `checkCollistion` function below!
  */
 class HitableCuteMole extends SimpleMoleState {
   constructor(posX, posY, index) {
@@ -8,15 +8,17 @@ class HitableCuteMole extends SimpleMoleState {
   }
 
   /**
-   * TODO: Check mouse distance between `mole` and `hammer`:
-   * if the distance below `30`? if true, it means they are colliding!
-   * @returns boolean value of comparision
+   * TODO: Check mouse distance between `mole` and `hammer`,
+   * and compare it with threshold value `30`.
+   * the distance below `30` means they are colliding, otherwise not in collision!
+   *
+   * @returns boolean value of comparision result
    */
   checkCollistion() {
     const xOffset = 36;
     const yOffset = 6;
-    const xDiff = this.posX - this.mouseX;
-    const yDiff = this.posY - this.mouseY;
+    const xDiff = this.posX - this.hammerX;
+    const yDiff = this.posY - this.hammerY;
     // const distance = ?;
     // distance within this threshold considered hit success!
     const threshold = 30;
