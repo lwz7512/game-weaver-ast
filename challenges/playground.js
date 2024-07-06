@@ -229,9 +229,9 @@ class SimpleMoleState {
   }
 
   /**
-   * Save the mouse position to check collision later
-   * @param {number} mX mouse x
-   * @param {number} mY mouse y
+   * Save the hammer position to check collision later
+   * @param {number} mX hammer x
+   * @param {number} mY hammer y
    */
   setMousePosition(mX, mY) {
     this.hammerX = mX;
@@ -373,7 +373,7 @@ class SimpleMoleState {
       ctx.moveTo(posX, posY);
       ctx.fillStyle = '#FF0000';
       ctx.beginPath();
-      // NOTE: this is the hit detection coordinates
+      // this is the hit detection coordinates
       ctx.arc(posX + 36, posY + 6, 4, 0, 2 * Math.PI);
       ctx.fill();
     }
@@ -622,6 +622,12 @@ const initGrass = () => {
  * before `initMoleGrid` function
  */
 class HitableCuteMole extends SimpleMoleState {
+  /**
+   * Collisionable mole constructor
+   * @param {number} posX mole x position
+   * @param {number} posY mole y position
+   * @param {number} index mole sequence
+   */
   constructor(posX, posY, index) {
     super(posX, posY, index);
   }
@@ -831,3 +837,15 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
 
 // run game with default param!
 buildWhacMoleGame(HitableCuteMole);
+
+// =============== TESTING MOCK CODE ===============
+
+// var mockMole1 = new HitableCuteMole(0, 0, 0);
+// mockMole1.setMousePosition(100, 100);
+// var expectCollidedFalse = mockMole1.checkCollistion();
+// console.log(expectCollidedFalse);
+
+// var mockMole2 = new HitableCuteMole(0, 0, 0);
+// mockMole2.setMousePosition(10, 10);
+// var expectCollidedTrue = mockMole2.checkCollistion();
+// console.log(expectCollidedTrue);

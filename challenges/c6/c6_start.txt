@@ -3,6 +3,13 @@
  * Need to implement `checkCollistion` function below!
  */
 class HitableCuteMole extends SimpleMoleState {
+
+  /**
+   * Collisionable mole constructor
+   * @param {number} posX mole x position
+   * @param {number} posY mole y position
+   * @param {number} index mole sequence
+   */
   constructor(posX, posY, index) {
     super(posX, posY, index);
   }
@@ -19,6 +26,7 @@ class HitableCuteMole extends SimpleMoleState {
     const yOffset = 6;
     const xDiff = this.posX - this.hammerX;
     const yDiff = this.posY - this.hammerY;
+    // TODO: rewrite belowing code line, develope the right code to replace the `?`!
     // const distance = ?;
     // distance within this threshold considered hit success!
     const threshold = 30;
