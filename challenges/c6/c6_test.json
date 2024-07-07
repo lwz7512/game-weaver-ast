@@ -4,7 +4,7 @@
     "comment": "construct a far hammer distance to expect false result of collision check.",
     "validator": [
       "() => {",
-      "  var mockMole1 = new HitableCuteMole(0, 0, 0);",
+      "  var mockMole1 = new GW.MoleClass(0, 0, 0);",
       "  mockMole1.setMousePosition(100, 100);",
       "  return mockMole1.checkCollistion();",
       "}"
@@ -17,7 +17,7 @@
     "comment": "construct a close hammer distance to expect true result of collision check.",
     "validator": [
       "() => {",
-      "  var mockMole2 = new HitableCuteMole(0, 0, 0);",
+      "  var mockMole2 = new GW.MoleClass(0, 0, 0);",
       "  mockMole2.setMousePosition(10, 10);",
       "  return mockMole2.checkCollistion();",
       "}"

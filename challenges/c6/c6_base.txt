@@ -30,20 +30,6 @@ const funTracer = [];
 // base functions hidden from user ... but need to be included for client side running & testing
 // console.log('## this is a challenge code base ...')
 
-// ====== NOTE: Mock Validator NOT IN USE! ===========
-const tester = () => {
-  const largeHeightSet = [];
-  const zeroHeightSet = [];
-  molePositions.forEach((h) => {
-    if (h === 45) largeHeightSet.push(1);
-    if (h === 0) zeroHeightSet.push(1);
-  });
-  const fullHeight_1 = largeHeightSet.length === 1;
-  const zeroHeight_15 = zeroHeightSet.length === 15;
-
-  if (fullHeight_1 && zeroHeight_15) return true;
-  return false;
-};
 
 // =============== Network Assets =============
 const sourceRepo =
@@ -80,6 +66,7 @@ const GW = {
   isMouseDown: false,
   globalMouseX: 0,
   globalMouseY: 0,
+  MoleClass: null,
 };
 
 let loopCounter = 0;
@@ -779,6 +766,8 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
   const moleGrid = initMoleGrid(MoleClass);
   // === Game asset-2: Hammer
   GW.hammer = new SimpleHammerState(true);
+  // === Remember MoleClass implementation for later test cases
+  GW.MoleClass = MoleClass;
 
   // === Start game ===
   startGame(

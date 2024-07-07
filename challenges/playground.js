@@ -80,6 +80,7 @@ const GW = {
   isMouseDown: false,
   globalMouseX: 0,
   globalMouseY: 0,
+  MoleClass: null,
 };
 
 let loopCounter = 0;
@@ -814,6 +815,8 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
   const moleGrid = initMoleGrid(MoleClass);
   // === Game asset-2: Hammer
   GW.hammer = new SimpleHammerState(true);
+  // === Remember MoleClass implementation for later test cases
+  GW.MoleClass = MoleClass;
 
   // === Start game ===
   startGame(
