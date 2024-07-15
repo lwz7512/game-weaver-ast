@@ -24,8 +24,8 @@ class HitableCuteMole extends SimpleMoleState {
   checkCollistion() {
     const xOffset = 36;
     const yOffset = 6;
-    const xDiff = this.posX - this.hammerX;
-    const yDiff = this.posY - this.hammerY;
+    const xDiff = (this.posX - this.hammerX) + xOffset;
+    const yDiff = (this.posY - this.hammerY) + yOffset;
     // TODO: rewrite belowing code line, develope the right code to replace the `?`!
     // const distance = ?;
     // distance within this threshold considered hit success!
