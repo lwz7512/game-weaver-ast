@@ -1,1 +1,38 @@
-// final code for challenge c6
+/**
+ * User Customizable Mole!
+ * Need to implement `checkCollistion` function below!
+ */
+class HitableCuteMole extends SimpleMoleState {
+
+  /**
+   * Collisionable mole constructor
+   * @param {number} posX mole x position
+   * @param {number} posY mole y position
+   * @param {number} index mole sequence
+   */
+  constructor(posX, posY, index) {
+    super(posX, posY, index);
+  }
+
+  /**
+   * TODO: Check mouse distance between `mole` and `hammer`,
+   * and compare it with threshold value `30`.
+   * the distance below `30` means they are colliding, otherwise not in collision!
+   *
+   * @returns boolean value of comparision result
+   */
+  checkCollistion() {
+    const xOffset = 36;
+    const yOffset = 6;
+    const xDiff = (this.posX - this.hammerX) + xOffset;
+    const yDiff = (this.posY - this.hammerY) + yOffset;
+    // TODO: rewrite belowing code line, develope the right code to replace the `?`!
+    const distance = Math.hypot(xDiff, yDiff);
+    // distance within this threshold considered hit success!
+    const threshold = 30;
+    return threshold > distance;
+  }
+}
+
+// run game with default param!
+buildWhacMoleGame(HitableCuteMole);

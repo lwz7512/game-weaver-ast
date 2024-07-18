@@ -118,10 +118,9 @@ declare function paintHammerDown(ctx: CanvasRenderingContext2D, hammerX: number,
  declare function buildWhacMoleGame(MoleClass: SimpleMoleState): void;
 
 /**
- * Hammer State Machine
- * @date 2024/06/23
+ * Draw mole skin with its state change.
  */
-declare class SimpleHammerState {
+declare class SimpleMoleState {
 
   /** hammer position in horizontal */
   hammerX: number;

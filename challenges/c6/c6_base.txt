@@ -173,6 +173,10 @@ class SimpleMoleState {
   /** Dev mode to show reference dot */
   isDebugMode = false;
 
+  /** keep hit state counter */
+  hitStayTimer = 0;
+
+
   constructor(x, y, sequence) {
     this.posX = x;
     this.posY = y;
@@ -391,6 +395,7 @@ class SimpleMoleState {
         ouchSoundTrack.currentTime = 0;
         ouchSoundTrack.play();
         // console.log(`### Being hited!`);
+        this.hitStayTimer = 0;
       }
     } else {
       this.isTouching = false;
