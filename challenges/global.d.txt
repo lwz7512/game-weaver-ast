@@ -118,7 +118,7 @@ declare function paintHammerDown(ctx: CanvasRenderingContext2D, hammerX: number,
  declare function buildWhacMoleGame(MoleClass: SimpleMoleState): void;
 
 /**
- * Draw mole skin with its state change.
+ * Draw mole skin by its state change.
  */
 declare class SimpleMoleState {
 
