@@ -15,7 +15,7 @@ class HitableCuteMole extends SimpleMoleState {
   }
 
   /**
-   * TODO: Check mouse distance between `mole` and `hammer`,
+   * NOTE: Check mouse distance between `mole` and `hammer`,
    * and compare it with threshold value `30`.
    * the distance below `30` means they are colliding, otherwise not in collision!
    *
@@ -26,12 +26,11 @@ class HitableCuteMole extends SimpleMoleState {
     const yOffset = 6;
     const xDiff = (this.posX - this.hammerX) + xOffset;
     const yDiff = (this.posY - this.hammerY) + yOffset;
-    // TODO: rewrite belowing code line, develope the right code to replace the `?`!
-    // const distance = ?;
+    // TODO: rewrite belowing code line, develope the right code to replace the `100`!
+    const distance = 100;
     // distance within this threshold considered hit success!
     const threshold = 30;
-    // return threshold > distance;
-    return false;
+    return threshold > distance;
   }
 }
 

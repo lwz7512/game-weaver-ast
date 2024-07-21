@@ -237,7 +237,7 @@
       }
     ],
     "codeDecorations": [
-      { "type": "todo", "position": [18, 6, 18, 10] },
+      { "type": "note", "position": [18, 6, 18, 10] },
       { "type": "todo", "position": [29, 8, 29, 12] }
     ],
     "baseCode": "challenges/c6/c6_base.txt",

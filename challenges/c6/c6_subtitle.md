@@ -21,7 +21,18 @@ That's all right! let's move on!
 
 ## First step: 
 
-Lets first click the `Run` button, to see what would happen?
+Lets first click the `Run` button, try to see what would happen?
+
+The game is running, but we got one test failure in message panel, it saying: 
+
+> test `checkCollistion` implementation under threshold case!
+
+That is expected, because we havent finished the coding tasks in this challenge!
+
+Let's take a look at the coding editor, to find out what's the tasks...
+
+In the code line `18`, we could see a `NOTE` mark, that reminds us the description of function `checkCollistion`.
+
 
 
 ## Second step:
