@@ -1,25 +1,25 @@
 [
   {
-    "description": "test `checkCollistion` implementation beyond threshold case!",
+    "description": "test `checkCollision` implementation beyond threshold case!",
     "comment": "construct a far hammer distance to expect false result of collision check.",
     "validator": [
       "() => {",
       "  var mockMole1 = new GW.MoleClass(0, 0, 0);",
       "  mockMole1.setMousePosition(100, 100);",
-      "  return mockMole1.checkCollistion();",
+      "  return mockMole1.checkCollision();",
       "}"
     ],
     "params": [],
     "expectation": false
   },
   {
-    "description": "test `checkCollistion` implementation under threshold case!",
+    "description": "test `checkCollision` implementation under threshold case!",
     "comment": "construct a close hammer distance to expect true result of collision check.",
     "validator": [
       "() => {",
       "  var mockMole2 = new GW.MoleClass(0, 0, 0);",
       "  mockMole2.setMousePosition(10, 10);",
-      "  return mockMole2.checkCollistion();",
+      "  return mockMole2.checkCollision();",
       "}"
     ],
     "params": [],

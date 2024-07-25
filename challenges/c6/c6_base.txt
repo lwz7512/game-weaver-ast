@@ -187,7 +187,7 @@ class SimpleMoleState {
    * TODO: to move this function out ... for user implementation!
    * @returns
    */
-  checkCollistion() {
+  checkCollision() {
     // const xOffset = 36;
     // const yOffset = 6;
     // const xDiff = this.posX - this.hammerX;
@@ -388,7 +388,7 @@ class SimpleMoleState {
 
     // is showing and mouse down!
     if (visible && this.isHit) {
-      const collided = this.checkCollistion();
+      const collided = this.checkCollision();
       if (collided) {
         this.isTouching = true;
         // play sound

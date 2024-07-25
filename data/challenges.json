@@ -226,13 +226,18 @@
     "videoSubtitle": "challenges/c6/c6_subtitle.md",
     "prerequisite": [
       {
+        "name": "Get distance between two points in canvas",
+        "title": "Applying pythagoras theorem to find out the distance of two points",
+        "url": "https://stackoverflow.com/a/20916980/2358577"
+      },
+      {
         "name": "Measure distance of two points",
-        "title": "using javascript math function to do hypotenuse calculation",
+        "title": "Calculating the hypotenuse of a right triangle",
         "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot"
       },
       {
         "name": "Hit(Collision) detection calculation with javascript",
-        "title": "different ways to determine if two objects are colliding",
+        "title": "Different ways to determine if two objects are colliding",
         "url": "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection"
       }
     ],

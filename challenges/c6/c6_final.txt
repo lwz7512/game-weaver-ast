@@ -1,6 +1,6 @@
 /**
  * User Customizable Mole!
- * Need to implement `checkCollistion` function below!
+ * Need to implement `checkCollision` function below!
  */
 class HitableCuteMole extends SimpleMoleState {
 
@@ -21,7 +21,7 @@ class HitableCuteMole extends SimpleMoleState {
    *
    * @returns boolean value of comparision result
    */
-  checkCollistion() {
+  checkCollision() {
     const xOffset = 36;
     const yOffset = 6;
     const xDiff = (this.posX - this.hammerX) + xOffset;

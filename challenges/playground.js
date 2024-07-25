@@ -200,7 +200,7 @@ class SimpleMoleState {
    * TODO: to move this function out ... for user implementation!
    * @returns
    */
-  checkCollistion() {
+  checkCollision() {
     // const xOffset = 36;
     // const yOffset = 6;
     // const xDiff = this.posX - this.hammerX;
@@ -401,7 +401,7 @@ class SimpleMoleState {
 
     // is showing and mouse down!
     if (visible && this.isHit) {
-      const collided = this.checkCollistion();
+      const collided = this.checkCollision();
       if (collided) {
         this.isTouching = true;
         // play sound
@@ -637,7 +637,7 @@ class HitableCuteMole extends SimpleMoleState {
    * TODO: leave this to user!
    * @returns
    */
-  checkCollistion() {
+  checkCollision() {
     const xOffset = 36;
     const yOffset = 6;
     const xDiff = this.posX - this.hammerX;
@@ -845,10 +845,10 @@ buildWhacMoleGame(HitableCuteMole);
 
 // var mockMole1 = new HitableCuteMole(0, 0, 0);
 // mockMole1.setMousePosition(100, 100);
-// var expectCollidedFalse = mockMole1.checkCollistion();
+// var expectCollidedFalse = mockMole1.checkCollision();
 // console.log(expectCollidedFalse);
 
 // var mockMole2 = new HitableCuteMole(0, 0, 0);
 // mockMole2.setMousePosition(10, 10);
-// var expectCollidedTrue = mockMole2.checkCollistion();
+// var expectCollidedTrue = mockMole2.checkCollision();
 // console.log(expectCollidedTrue);

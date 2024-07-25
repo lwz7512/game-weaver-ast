@@ -1,6 +1,6 @@
 /**
  * User Customizable Mole!
- * Need to implement `checkCollistion` function below!
+ * Need to implement `checkCollision` function below!
  */
 class HitableCuteMole extends SimpleMoleState {
 
@@ -15,13 +15,13 @@ class HitableCuteMole extends SimpleMoleState {
   }
 
   /**
-   * NOTE: Check mouse distance between `mole` and `hammer`,
+   * NOTE: Check the straight distance between `mole` and `hammer`,
    * and compare it with threshold value `30`.
    * the distance below `30` means they are colliding, otherwise not in collision!
    *
    * @returns boolean value of comparision result
    */
-  checkCollistion() {
+  checkCollision() {
     const xOffset = 36;
     const yOffset = 6;
     const xDiff = (this.posX - this.hammerX) + xOffset;
