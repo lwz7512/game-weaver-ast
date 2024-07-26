@@ -55,6 +55,13 @@ In a 2D space or 2D coordinate system, there is only one way to calculate the di
 
 > Pythagorean theorem
 
+Just like belowing illustration, we want to get the distance `c` of two red points: 
+
+- point-1, being represented by a 2D coordinate (x1, y1), 
+- point-2, being represented by a 2D coordinate (x2, y2),
+
+To get the distance of point 1 and point 2 which is called length of `hypotenuse` , we could utilize the `Pythagorean theorem` to calculate the `hypotenuse` by two adjacent sides.
+
 ![stackoverflow_pythagoras_theorem](https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/images/stackoverflow_pythagoras_theorem.png)
 
 A simple pseudo-code to implement the `pythagorean theorem` in javascript may like this:
@@ -62,11 +69,16 @@ A simple pseudo-code to implement the `pythagorean theorem` in javascript may li
 ```
 var a = x1 - x2;
 var b = y1 - y2;
-// c is the distance
+// c is the distance, 
+// The Math.sqrt() static method returns the square root of a number.
 var c = Math.sqrt( a*a + b*b );
 ```
 
+Ok, we enough basic math knowledge and some javascript psedu code to apply in our collision test algorithm!
 
+Let's find out the clues in the function `checkCollision`!
+
+...
 
 ## Third step:
 
