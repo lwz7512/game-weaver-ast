@@ -55,17 +55,15 @@ In a 2D space or 2D coordinate system, there is only one way to calculate the di
 
 > Pythagorean theorem
 
-<img src="https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/images/stackoverflow_pythagoras_theorem.png" alt="stackoverflow_pythagoras_theorem.png"/>
+![stackoverflow_pythagoras_theorem](https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/images/stackoverflow_pythagoras_theorem.png)
 
 A simple pseudo-code to implement the `pythagorean theorem` in javascript may like this:
 
 ```
 var a = x1 - x2;
 var b = y1 - y2;
-
-var c = Math.sqrt( a*a + b*b );
-
 // c is the distance
+var c = Math.sqrt( a*a + b*b );
 ```
 
 
