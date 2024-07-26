@@ -25,7 +25,7 @@ Lets first click the `Run` button, try to see what would happen?
 
 The game is running, but we got one test failure in message panel, it saying: 
 
-> test `checkCollision` implementation under threshold case!
+> ✘ 🤔 test `checkCollision` implementation under threshold case!
 
 That is expected, because we havent finished the coding tasks in this challenge!
 
@@ -55,7 +55,7 @@ In a 2D space or 2D coordinate system, there is only one way to calculate the di
 
 > Pythagorean theorem
 
-<img src="https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/images/stackoverflow_pythagoras_theorem.png" alt="stackoverflow_pythagoras_theorem.png">
+<img src="https://raw.githubusercontent.com/lwz7512/game-weaver-ast/master/images/stackoverflow_pythagoras_theorem.png" alt="stackoverflow_pythagoras_theorem.png"/>
 
 A simple pseudo-code to implement the `pythagorean theorem` in javascript may like this:
 
