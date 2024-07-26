@@ -103,6 +103,11 @@
     "videoSubtitle": "challenges/c3/c3_subtitle.md",
     "prerequisite": [
       {
+        "name": "Cartesian coordinate system",
+        "title": "A math method that describe 1D and 2D objects plane geometry",
+        "url": "https://en.wikipedia.org/wiki/Cartesian_coordinate_system"
+      },
+      {
         "name": "HTML Canvas Coordinates",
         "title": "Figure out the html canvas coordinates system differ from Cartesian coordinate system",
         "url": "https://www.w3schools.com/graphics/canvas_coordinates.asp"

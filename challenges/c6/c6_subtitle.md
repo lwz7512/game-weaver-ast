@@ -19,7 +19,7 @@ Not very clear?
 That's all right! let's move on!
 
 
-## First step: 
+## First step: figure out task
 
 Lets first click the `Run` button, try to see what would happen?
 
@@ -39,7 +39,7 @@ You may wonder, how to know the distance of two objects which are mole and hamme
 
 No worries, let's proceed to the function body to discover more details!
 
-## Second step:
+## Second step: find the solution
 
 By checking code of `checkCollision` function, we can see two constant declaration `xDiff` and `yDiff`.
 
@@ -76,12 +76,47 @@ var c = Math.sqrt( a*a + b*b );
 
 Ok, we enough basic math knowledge and some javascript psedu code to apply in our collision test algorithm!
 
-Let's find out the clues in the function `checkCollision`!
+Let's find out the similarities between the function `checkCollision` and psedu-code above!
 
-...
+Now that we got the equation of hypotenuse, lets find out what's the side `a` in the `checkCollision` function?
 
-## Third step:
+Is it possilbe `xDiff`? Yes! absolutely! Side `a` is just the horizontal distance of two points.
+
+In the same way, we conclude that `yDiff` is just the side `b`, the vertical distance of two points.
+
+oh yeah, it seems our answer is just ahead! right?
 
 
+## Third step: write the expression
 
-...
+Let's try to write the equation for the constant `distance` in code line `30`:
+
+First, we copy the hypotenuse formula:
+
+```
+Math.sqrt( a*a + b*b )
+```
+
+Then, use it to replace the harde coded value `100` in the code line `30`;
+
+Last, we replace `xDiff` to replace `a`, and use `yDiff` to replace `b`;
+
+Now, we got this expression:
+
+```
+const distance = Math.sqrt( xDiff*xDiff + yDiff*yDiff );
+```
+
+Oh, yeah! this is our solution to get the straight disatance of hammer and mole!
+
+
+Let's hit the `Run` button to see if it works?
+
+
+Congratulations!
+
+You passed the challenge 6!
+
+Dont forget to press the `submit` button to get one credit!
+
+See you next challenge!
