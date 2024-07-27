@@ -267,14 +267,14 @@
     "cover": "images/cover/challenges_covers.007.png",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
     "videoURL": "",
-    "videoSubtitle": "challenges/c1_subtitle.md",
+    "videoSubtitle": "challenges/c7/c7_subtitle.md",
     "prerequisite": [],
     "codeDecorations": [],
-    "baseCode": "",
-    "startCode": "",
-    "testCode": "",
-    "finalCode": "",
-    "createDate": "2024/01/28"
+    "baseCode": "challenges/c7/c7_base.txt",
+    "startCode": "challenges/c7/c7_start.txt",
+    "testCode": "challenges/c7/c7_test.json",
+    "finalCode": "challenges/c7/c7_final.txt",
+    "createDate": "2024/7/27"
   },
   {
     "id": 8,

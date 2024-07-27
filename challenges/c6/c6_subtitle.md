@@ -117,6 +117,6 @@ Congratulations!
 
 You passed the challenge 6!
 
-Dont forget to press the `submit` button to get one credit!
+Dont forget to press the `Done` button to earn one credit!
 
 See you next challenge!

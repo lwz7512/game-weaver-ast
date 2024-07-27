@@ -1,0 +1,47 @@
+/**
+ * test two value: x, y if equal, and throw errorMessage if not
+ */
+function assertEqual(x, y, errorMessage = 'Test Case Failed!') {
+  if (
+    x === y ||
+    (typeof x === 'object' &&
+      typeof y === 'object' &&
+      x.length === y.length &&
+      x.every((element, index) => element === y[index]))
+  ) {
+    return;
+  } else {
+    throw new Error(errorMessage);
+  }
+}
+
+function assertTrue(x) {
+  assertEqual(x, true);
+}
+
+function assertFalse(x) {
+  assertEqual(x, false);
+}
+
+// == remember drawing result for test case use ==
+const funTracer = [];
+
+
+// base functions hidden from user ... but need to be included for client side running & testing
+console.log('## this is a challenge code base ...');
+
+// =============== starting challenge main code block ===================
+
+// this is the real size of canvas element in `GM`
+const canvasWidth = 440;
+const conavasHeight = 378;
+
+const canvas = document.getElementById("codePresenter");
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "yellow";
+ctx.strokeStyle = "red";
+ctx.lineWidth = 4;
+
+
+ctx.clearRect(0, 0, 450, 450);
