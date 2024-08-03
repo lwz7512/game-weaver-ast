@@ -218,7 +218,7 @@
     "name": "Whac-A-Mole - Part 6: Hit Testing",
     "description": "Check if hammer is colliding with mole.",
     "objective": "Learn how to simulate hitting by hit-detection.",
-    "keywords": ["Hit Detection", "Math"],
+    "keywords": ["Hit Detection", "Math", "pythagorean theorem"],
     "keypoints": [
       "How to check the nearest hole from the position of a hammer?",
       "How to determine two objects are contacting(or colliding)?",
@@ -258,17 +258,27 @@
   },
   {
     "id": 7,
-    "name": "Whac-A-Mole - Part 7: Hit counting",
-    "description": "Count the moles being hit and display the value",
-    "objective": "",
-    "keywords": ["Timer"],
-    "keypoints": [],
-    "level": 3,
+    "name": "Whac-A-Mole - Part 7: Countdown and failure",
+    "description": "Count the moles being hit and display the failure screen when time up!",
+    "objective": "Learn how to use timer to end game and draw number of moles being hit",
+    "keywords": ["Timer", "Counter", "Scene switch"],
+    "keypoints": [
+      "How to do a countdown operation?",
+      "How to show the countdown progress bar?",
+      "How to switch game scence?"
+    ],
+    "level": 2,
     "cover": "images/cover/challenges_covers.007.png",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",
     "videoURL": "",
     "videoSubtitle": "challenges/c7/c7_subtitle.md",
-    "prerequisite": [],
+    "prerequisite": [
+      {
+        "name": "Execute at an interval in javascript",
+        "title": "repeatedly calls a function or executes a code snippet",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/setInterval"
+      }
+    ],
     "codeDecorations": [],
     "baseCode": "challenges/c7/c7_base.txt",
     "startCode": "challenges/c7/c7_start.txt",
