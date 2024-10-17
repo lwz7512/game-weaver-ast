@@ -260,12 +260,11 @@
     "id": 7,
     "name": "Whac-A-Mole - Part 7: Countdown and failure",
     "description": "Count the moles being hit and display the failure screen when time up!",
-    "objective": "Learn how to use timer to end game and draw number of moles being hit",
-    "keywords": ["Timer", "Counter", "Scene switch"],
+    "objective": "Learn how to use timer to end game when user can not finish hitting the moles to a certain count!",
+    "keywords": ["Draw text", "Timer"],
     "keypoints": [
       "How to do a countdown operation?",
-      "How to show the countdown progress bar?",
-      "How to switch game scence?"
+      "How to show the countdown progress bar?"
     ],
     "level": 2,
     "cover": "images/cover/challenges_covers.007.png",
@@ -292,7 +291,7 @@
     "description": "Add welcome screen to allow user starting game",
     "objective": "",
     "keywords": ["Scene", "Transition"],
-    "keypoints": [],
+    "keypoints": ["How to switch game scence?"],
     "level": 1,
     "cover": "images/cover/challenges_covers.008.png",
     "thumbnail": "images/cover/gw_poster_thumbnail.jpg",

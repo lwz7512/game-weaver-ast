@@ -2,15 +2,12 @@
 
 Hi Dear Game Weavers:
 
-Welcome to Coding Challenge `Whac-A-Mole` part-5: Response to hammer hit.
+Welcome to Coding Challenge `Whac-A-Mole` part-7: Countdown and failure.
 
 
-In this challenge, we will learn how to achieve game interaction with our mouse!
+In this challenge, we will learn how to use timer to end game when user can not finish hitting the moles to a certain count!
 
-To simply put, by listening mouse events such as `mousemove` or `mousedown`, we could do some responding work to achive the game interaction!
-
-Let's move on to see, how could we listen events, and what kind of event handler work to make our game alive!
-
+Our mission is ...
 
 ## First step: 
 

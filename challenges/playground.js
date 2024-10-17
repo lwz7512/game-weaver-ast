@@ -81,6 +81,10 @@ const GW = {
   globalMouseX: 0,
   globalMouseY: 0,
   MoleClass: null,
+  /** count down seconds to display */
+  countDownSeconds: 60,
+  /** game state: [0]-running | [1]-success | [-1]-failed */
+  state: 0,
 };
 
 let loopCounter = 0;
@@ -675,11 +679,14 @@ const initMoleGrid = (MoleStateClass) => {
   return moles;
 };
 
+const cleanupCanvas = (ctx) => {
+  ctx.clearRect(0, 0, 450, 450);
+};
+
 // STEP - 2: build sky background and grassland
 
 const drawSkyAndGrassland = (ctx) => {
-  ctx.clearRect(0, 0, 450, 450);
-
+  cleanupCanvas(ctx);
   // background sky, add linear gradient
   const grd = ctx.createLinearGradient(0, 0, 0, 150);
   // light blue
@@ -808,7 +815,11 @@ const initUserInputs = () => {
 };
 
 // === Init Game Assets and Start ===
-const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
+const buildWhacMoleGame = (
+  MoleClass = SimpleMoleState,
+  successHit = 3,
+  onSuccessPaint
+) => {
   // === setup grass meta data ===
   initGrass();
   // === Game asset-1: Build Moles grid to render later
@@ -821,12 +832,24 @@ const buildWhacMoleGame = (MoleClass = SimpleMoleState) => {
   // === Start game ===
   startGame(
     function (ctx) {
+      if (GW.state == -1) return cleanupCanvas(ctx);
       paintMainScene(ctx, moleGrid);
     },
     function (ctx) {
+      if (GW.state == -1) return;
       GW.hammer.render(ctx);
+      // TODO: draw countdown text
+
+      // TODO: draw hit success count
     },
     function () {
+      if (GW.countDownSeconds < 1) {
+        GW.state = -1;
+        return console.warn(`## time is up, game failed!`);
+      }
+      // === count down seconds to display
+      GW.countDownSeconds -= 1;
+
       // updage random position
       globalRandomMole = Math.floor(Math.random() * 16);
     }
